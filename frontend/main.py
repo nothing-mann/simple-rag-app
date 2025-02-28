@@ -208,15 +208,25 @@ def render_transcript_stage():
     if url:
         if st.button("Download Transcript"):
             try:
-                downloader = YouTubeTranscriptDownloader()
-                transcript = downloader.get_transcript(url)
-                if transcript:
-                    # Store the raw transcript text in session state
-                    transcript_text = "\n".join([entry['text'] for entry in transcript])
-                    st.session_state.transcript = transcript_text
-                    st.success("Transcript downloaded successfully!")
-                else:
-                    st.error("No transcript found for this video.")
+                with st.spinner("Downloading transcript..."):
+                    downloader = YouTubeTranscriptDownloader()
+                    transcript = downloader.get_transcript(url)
+                    video_id = downloader.extract_video_id(url)
+                    
+                    # Create a directory for storing transcripts if it doesn't exist
+                    transcript_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "backend", "transcripts")
+                    os.makedirs(transcript_dir, exist_ok=True)
+                    
+                    # Save the transcript with a proper name and extension
+                    file_path = os.path.join(transcript_dir, f"{video_id}.json")
+                    downloader.save_transcript(transcript, file_path)
+                    if transcript:
+                        # Store the raw transcript text in session state
+                        transcript_text = "\n".join([entry['text'] for entry in transcript])
+                        st.session_state.transcript = transcript_text
+                        st.success("Transcript downloaded successfully!")
+                    else:
+                        st.error("No transcript found for this video.")
             except Exception as e:
                 st.error(f"Error downloading transcript: {str(e)}")
 
@@ -240,12 +250,12 @@ def render_transcript_stage():
             st.metric("Characters", len(st.session_state.transcript))
             st.metric("Lines", len(st.session_state.transcript.split('\n')))
             # Calculate stats
-            jp_chars, total_chars = count_characters(st.session_state.transcript)
+            np_chars, total_chars = count_characters(st.session_state.transcript)
             total_lines = len(st.session_state.transcript.split('\n'))
             
             # Display stats
             st.metric("Total Characters", total_chars)
-            st.metric("Japanese Characters", jp_chars)
+            st.metric("Nepalese Characters", np_chars)
             st.metric("Total Lines", total_lines)
         else:
             st.info("Load a transcript to see statistics")
