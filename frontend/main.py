@@ -8,8 +8,8 @@ import re
 
 # Page config
 st.set_page_config(
-    page_title="Japanese Learning Assistant",
-    page_icon="🎌",
+    page_title="Cultural Heritage Information",
+    page_icon="🇳🇵",
     layout="wide"
 )
 
@@ -21,9 +21,9 @@ if 'messages' not in st.session_state:
 
 def render_header():
     """Render the header section"""
-    st.title("🎌 Japanese Learning Assistant")
+    st.title("🇳🇵 Enlighten Nepal Heritage Information")
     st.markdown("""
-    Transform YouTube transcripts into interactive Japanese learning experiences.
+    Transform YouTube transcripts into interactive culture learning experiences.
     
     This tool demonstrates:
     - Base LLM Capabilities
@@ -53,7 +53,7 @@ def render_sidebar():
         stage_info = {
             "1. Chat with Claude": """
             **Current Focus:**
-            - Basic Japanese learning
+            - Basic Cultural Heritage Information
             - Understanding LLM capabilities
             - Identifying limitations
             """,
@@ -98,8 +98,7 @@ def render_chat_stage():
     
     # Introduction text
     st.markdown("""
-    Start by exploring Claude's base Japanese language capabilities. Try asking questions about Japanese grammar, 
-    vocabulary, or cultural aspects.
+    Start by exploring Claude's base Nepali Cultural heritage information capabilities. Try asking questions about cultural heritages in Nepal.
     """)
 
     # Initialize chat history if not exists
@@ -112,7 +111,7 @@ def render_chat_stage():
             st.markdown(message["content"])
 
     # Chat input area
-    if prompt := st.chat_input("Ask about Japanese language..."):
+    if prompt := st.chat_input("Ask about Nepali heritage sites..."):
         # Add user message to state and display
         st.session_state.messages.append({"role": "user", "content": prompt})
         with st.chat_message("user", avatar="🧑‍💻"):
@@ -128,12 +127,12 @@ def render_chat_stage():
     with st.sidebar:
         st.markdown("### Try These Examples")
         example_questions = [
-            "How do I say 'Where is the train station?' in Japanese?",
-            "Explain the difference between は and が",
-            "What's the polite form of 食べる?",
-            "How do I count objects in Japanese?",
-            "What's the difference between こんにちは and こんばんは?",
-            "How do I ask for directions politely?"
+            "Tell me about Krishna Mandir in Patan Durbar Square",
+            "What is the historical significance of Bouddhanath Stupa?",
+            "When was Krishna Mandir built and by whom?",
+            "What are the architectural features of Bouddhanath Stupa?",
+            "How did Krishna Mandir survive the 2015 earthquake?",
+            "What rituals are performed at Bouddhanath Stupa by Buddhists?"
         ]
         
         for q in example_questions:
@@ -155,7 +154,7 @@ def render_transcript_stage():
     # URL input
     url = st.text_input(
         "YouTube URL",
-        placeholder="Enter a Japanese lesson YouTube URL"
+        placeholder="Enter a Heritage site educational video YouTube URL"
     )
     
     col1, col2 = st.columns(2)
@@ -203,7 +202,7 @@ def render_rag_stage():
     # Query input
     query = st.text_input(
         "Test Query",
-        placeholder="Enter a question about Japanese..."
+        placeholder="Enter a question about a Nepali heritage site..."
     )
     
     col1, col2 = st.columns(2)
