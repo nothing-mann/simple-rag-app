@@ -214,7 +214,7 @@ def render_transcript_stage():
                     video_id = downloader.extract_video_id(url)
                     
                     # Create a directory for storing transcripts if it doesn't exist
-                    transcript_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "backend", "transcripts")
+                    transcript_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "backend", "data", "transcripts")
                     os.makedirs(transcript_dir, exist_ok=True)
                     
                     # Save the transcript with a proper name and extension

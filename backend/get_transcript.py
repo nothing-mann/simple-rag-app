@@ -80,7 +80,7 @@ def main(video_url, print_transcript=False):
     if transcript:
         # Save transcript
         video_id = downloader.extract_video_id(video_url)
-        if downloader.save_transcript(transcript, f"./transcripts/{video_id}"):
+        if downloader.save_transcript(transcript, f"./data/transcripts/{video_id}"):
             print(f"Transcript saved successfully to {video_id}.txt")
             #Print transcript if True
             if print_transcript:

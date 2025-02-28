@@ -68,8 +68,8 @@ Heritage site to structure: {heritage_site}
 if __name__ == "__main__":
     structurer = HeritageDataStructurer()
     # Example usage
-    transcript = structurer.load_transcript("transcripts/qUV3Gsy9mjw.txt")
+    transcript = structurer.load_transcript("data/transcripts/q_HLhjtQUM8.json.txt")
     site_data = structurer.structure_heritage_data(transcript)
     if site_data:
         print(site_data)
-        # structurer.save_to_file(site_data, "heritage_sites/krishna_mandir.txt")
+        structurer.save_to_file(site_data, "data/heritage_sites/basantapur.txt")
