@@ -3,7 +3,13 @@ from typing import Dict
 import json
 from collections import Counter
 import re
+import sys
+import os
 
+# Add parent directory to Python path
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from backend.chat import LiteLLMChat
 
 
 # Page config
@@ -41,7 +47,7 @@ def render_sidebar():
         selected_stage = st.radio(
             "Select Stage:",
             [
-                "1. Chat with Claude",
+                "1. Chat with OpenAI",
                 "2. Raw Transcript",
                 "3. Structured Data",
                 "4. RAG Implementation",
@@ -51,7 +57,7 @@ def render_sidebar():
         
         # Stage descriptions
         stage_info = {
-            "1. Chat with Claude": """
+            "1. Chat with OpenAI": """
             **Current Focus:**
             - Basic Cultural Heritage Information
             - Understanding LLM capabilities
@@ -94,11 +100,15 @@ def render_sidebar():
 
 def render_chat_stage():
     """Render an improved chat interface"""
-    st.header("Chat with Claude")
+    st.header("Chat with OpenAI")
+    
+    # Initialize the bedrock instance
+    if 'bedrock_chat' not in st.session_state:
+        st.session_state.bedrock_chat = LiteLLMChat()
     
     # Introduction text
     st.markdown("""
-    Start by exploring Claude's base Nepali Cultural heritage information capabilities. Try asking questions about cultural heritages in Nepal.
+    Start by exploring OpenAI's base Nepali Cultural heritage information capabilities. Try asking questions about cultural heritages in Nepal.
     """)
 
     # Initialize chat history if not exists
@@ -112,16 +122,19 @@ def render_chat_stage():
 
     # Chat input area
     if prompt := st.chat_input("Ask about Nepali heritage sites..."):
-        # Add user message to state and display
-        st.session_state.messages.append({"role": "user", "content": prompt})
-        with st.chat_message("user", avatar="🧑‍💻"):
-            st.markdown(prompt)
+        # # Add user message to state and display
+        # st.session_state.messages.append({"role": "user", "content": prompt})
+        # with st.chat_message("user", avatar="🧑‍💻"):
+        #     st.markdown(prompt)
 
-        # Add Claude's response to state and display
-        response = "This is where Claude's response will go. We'll integrate the actual Bedrock call here."
-        st.session_state.messages.append({"role": "assistant", "content": response})
-        with st.chat_message("assistant", avatar="🤖"):
-            st.markdown(response)
+        # # Add OpenAI's response to state and display
+        # response = "This is where OpenAI's response will go. We'll integrate the actual Bedrock call here."
+        # st.session_state.messages.append({"role": "assistant", "content": response})
+        # with st.chat_message("assistant", avatar="🤖"):
+        #     st.markdown(response)
+        
+        # Process the user input
+        process_message(prompt)
 
     # Example questions in a clean sidebar card
     with st.sidebar:
@@ -137,15 +150,37 @@ def render_chat_stage():
         
         for q in example_questions:
             if st.button(q, use_container_width=True, type="secondary"):
-                # When example is clicked, add it to chat input
-                st.session_state.messages.append({"role": "user", "content": q})
-                # This will trigger a rerun with the new message
+                # # When example is clicked, add it to chat input
+                # st.session_state.messages.append({"role": "user", "content": q})
+                # # This will trigger a rerun with the new message
+
+                # Process the example question
+                process_message(q)
+                st.rerun()
 
     # Add a clear chat button
     if st.session_state.messages:  # Only show if there are messages
         if st.button("Clear Chat", type="primary"):
             st.session_state.messages = []
             st.rerun()
+
+def process_message(message: str):
+    """Process a message and generate a response"""
+    # Add user message to state and display
+    st.session_state.messages.append({"role": "user", "content": message})
+    with st.chat_message("user", avatar="🧑‍💻"):
+        st.markdown(message)
+
+    # Generate and display assistant's response
+    with st.chat_message("assistant", avatar="🤖"):
+        response = st.session_state.bedrock_chat.generate_response(message)
+        if response:
+            st.markdown(response)
+            st.session_state.messages.append({"role": "assistant", "content": response})
+
+
+
+
 
 def render_transcript_stage():
     """Render the raw transcript stage"""
@@ -252,7 +287,7 @@ def main():
     selected_stage = render_sidebar()
     
     # Render appropriate stage
-    if selected_stage == "1. Chat with Claude":
+    if selected_stage == "1. Chat with OpenAI":
         render_chat_stage()
     elif selected_stage == "2. Raw Transcript":
         render_transcript_stage()
