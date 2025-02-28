@@ -179,7 +179,18 @@ def process_message(message: str):
             st.markdown(response)
             st.session_state.messages.append({"role": "assistant", "content": response})
 
-
+def count_characters(text):
+    """Count Japanese and total characters in text"""
+    if not text:
+        return 0, 0
+        
+    def is_nepali(char):
+        return any([
+            '\u0900' <= char <= '\u097F',  # Devnagari Characters
+        ])
+    
+    np_chars = sum(1 for char in text if is_nepali(char))
+    return np_chars, len(text)
 
 
 
@@ -193,13 +204,29 @@ def render_transcript_stage():
         placeholder="Enter a Heritage site educational video YouTube URL"
     )
     
+     # Download button and processing
+    if url:
+        if st.button("Download Transcript"):
+            try:
+                downloader = YouTubeTranscriptDownloader()
+                transcript = downloader.get_transcript(url)
+                if transcript:
+                    # Store the raw transcript text in session state
+                    transcript_text = "\n".join([entry['text'] for entry in transcript])
+                    st.session_state.transcript = transcript_text
+                    st.success("Transcript downloaded successfully!")
+                else:
+                    st.error("No transcript found for this video.")
+            except Exception as e:
+                st.error(f"Error downloading transcript: {str(e)}")
+
     col1, col2 = st.columns(2)
     
     with col1:
         st.subheader("Raw Transcript")
         if st.session_state.transcript:
             st.text_area(
-                "Raw text",
+                label="Raw text",
                 value=st.session_state.transcript,
                 height=400,
                 disabled=True
@@ -212,6 +239,14 @@ def render_transcript_stage():
         if st.session_state.transcript:
             st.metric("Characters", len(st.session_state.transcript))
             st.metric("Lines", len(st.session_state.transcript.split('\n')))
+            # Calculate stats
+            jp_chars, total_chars = count_characters(st.session_state.transcript)
+            total_lines = len(st.session_state.transcript.split('\n'))
+            
+            # Display stats
+            st.metric("Total Characters", total_chars)
+            st.metric("Japanese Characters", jp_chars)
+            st.metric("Total Lines", total_lines)
         else:
             st.info("Load a transcript to see statistics")
 
