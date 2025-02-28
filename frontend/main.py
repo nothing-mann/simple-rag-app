@@ -180,7 +180,7 @@ def process_message(message: str):
             st.session_state.messages.append({"role": "assistant", "content": response})
 
 def count_characters(text):
-    """Count Japanese and total characters in text"""
+    """Count Nepali and total characters in text"""
     if not text:
         return 0, 0
         
@@ -218,7 +218,7 @@ def render_transcript_stage():
                     os.makedirs(transcript_dir, exist_ok=True)
                     
                     # Save the transcript with a proper name and extension
-                    file_path = os.path.join(transcript_dir, f"{video_id}.json")
+                    file_path = os.path.join(transcript_dir, f"{video_id}")
                     downloader.save_transcript(transcript, file_path)
                     if transcript:
                         # Store the raw transcript text in session state

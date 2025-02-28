@@ -3,8 +3,9 @@ from typing import Optional, List, Dict
 
 
 class YouTubeTranscriptDownloader:
-    def __init__(self, languages: List[str] = ["np", "en"]):
+    def __init__(self, languages: List[str] = ["ne", "en", "en-US", "hi"]):
         self.languages = languages
+        self.target_language = "en"  # Default translation target language
 
     def extract_video_id(self, url: str) -> Optional[str]:
         """
@@ -24,7 +25,7 @@ class YouTubeTranscriptDownloader:
 
     def get_transcript(self, video_id: str) -> Optional[List[Dict]]:
         """
-        Download YouTube Transcript
+        Download YouTube Transcript and translate if needed
         
         Args:
             video_id (str): YouTube video ID or URL
@@ -43,7 +44,65 @@ class YouTubeTranscriptDownloader:
         print(f"Downloading transcript for video ID: {video_id}")
         
         try:
-            return YouTubeTranscriptApi.get_transcript(video_id, languages=self.languages)
+            # Try to get transcript list for language detection and translation
+            transcript_list = YouTubeTranscriptApi.list_transcripts(video_id)
+            
+            # Step 1: Check if there's a manually created English transcript (highest priority)
+            try:
+                manual_en_transcript = transcript_list.find_manually_created_transcript(['en'])
+                print("Found manually created English transcript")
+                return manual_en_transcript.fetch()
+            except Exception as e:
+                print(f"No manually created English transcript available: {str(e)}")
+            
+            # Step 2: Check for manually created transcripts in other requested languages
+            for lang in self.languages:
+                if lang == 'en':
+                    continue  # Already checked above
+                try:
+                    manual_transcript = transcript_list.find_manually_created_transcript([lang])
+                    print(f"Found manually created transcript in {lang}")
+                    
+                    # Only translate if not in English
+                    if manual_transcript.is_translatable:
+                        print(f"Translating manually created transcript from {lang} to English...")
+                        translated = manual_transcript.translate(self.target_language)
+                        return translated.fetch()
+                    else:
+                        return manual_transcript.fetch()
+                except Exception as e:
+                    print(f"No manually created transcript in {lang}: {str(e)}")
+            
+            # Step 3: Check for automatically generated English transcript
+            try:
+                auto_en_transcript = transcript_list.find_generated_transcript(['en'])
+                print("Found automatically generated English transcript")
+                return auto_en_transcript.fetch()
+            except Exception as e:
+                print(f"No automatically generated English transcript available: {str(e)}")
+            
+            # Step 4: Check for automatically generated transcripts in other languages and translate
+            for lang in self.languages:
+                if lang == 'en':
+                    continue  # Already checked above
+                try:
+                    auto_transcript = transcript_list.find_generated_transcript([lang])
+                    print(f"Found automatically generated transcript in {lang}")
+                    
+                    # Only translate if not in English
+                    if auto_transcript.is_translatable:
+                        print(f"Translating automatically generated transcript from {lang} to English...")
+                        translated = auto_transcript.translate(self.target_language)
+                        return translated.fetch()
+                    else:
+                        return auto_transcript.fetch()
+                except Exception as e:
+                    print(f"No automatically generated transcript in {lang}: {str(e)}")
+            
+            # Step 5: Fallback to the default method which will use any available transcript
+            print("Using fallback method to get transcript")
+            return YouTubeTranscriptApi.get_transcript(video_id, languages=self.languages, preserve_formatting=True)
+            
         except Exception as e:
             print(f"An error occurred: {str(e)}")
             return None
@@ -76,7 +135,6 @@ def main(video_url, print_transcript=False):
     
     # Get transcript
     transcript = downloader.get_transcript(video_url)
-    downloader.save_transcript(transcript, video_url)
     if transcript:
         # Save transcript
         video_id = downloader.extract_video_id(video_url)
@@ -94,6 +152,5 @@ def main(video_url, print_transcript=False):
         print("Failed to get transcript")
 
 if __name__ == "__main__":
-    video_id = "https://www.youtube.com/watch?v=qUV3Gsy9mjw"  # Extract from URL: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+    video_id = "https://www.youtube.com/watch?v=qUV3Gsy9mjw"
     transcript = main(video_id, print_transcript=True)
-        
