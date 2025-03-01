@@ -8,7 +8,7 @@ collection = client.create_collection("cultural-heritage-information")
 
 # Add docs to the collection. Can also update and delete. Row-based API coming soon!
 # Directory path containing your text files
-documents_dir = "./information"  # Update this path
+documents_dir = "/data/heritage_sites"  # Update this path
 documents = []
 metadatas = []
 ids = []

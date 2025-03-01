@@ -1,6 +1,7 @@
-from typing import Optional
+from typing import Optional, Dict, Any
 from litellm import completion
 import os
+import json
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -16,17 +17,18 @@ class HeritageDataStructurer:
 
     def structure_heritage_data(self, heritage_site: str) -> Optional[str]:
         """Structure the heritage site data using LiteLLM"""
-        prompt = f"""For the following heritage site, provide information in this exact format. Use the information that will be passed about the heritage site and only focus on structuring. Don't generate the information on your own. You should reference the data passed as much as possible. You don't have a character limit. Give me back all of the content I gave you to structure. Don't cut or crop out any part. I just need what I give you as is with spelling corrections in English and proper structure.
+        prompt = f"""For the following heritage site, extract and structure information in JSON format with these fields:
+- monument_name: The name of the monument
+- fun_fact: An interesting fact about the monument
+- description: A detailed description of the monument with historical significance
 
-Monument name: 
-[name of the monument]
-...................................
-Fun fact:
-[one interesting fact about the monument]
-.....................
-Description:
-[detailed description of the monument]
-.................
+Use the information provided in the input text. Don't generate information on your own.
+Focus on structuring the existing content with proper English spelling corrections.
+Don't cut or crop out the information passed to you. 
+Make sure the information structured is not changed and it flows as is like passed.
+There is no character limit in the description key so pass all the information. Don't leave out anything.
+You can skip the parts that seem like self promotion of the channels
+Return valid JSON format. 
 
 Heritage site to structure: {heritage_site}
 """
@@ -34,8 +36,9 @@ Heritage site to structure: {heritage_site}
         try:
             response = completion(
                 model=self.model_id,
+                response_format={"type": "json_object"},
                 messages=[
-                    {"role": "system", "content": "You are a Nepalese historical expert. Provide detailed information about heritage sites in the specified format."},
+                    {"role": "system", "content": "You are a Nepalese historical expert. Structure heritage site information in clean JSON format."},
                     {"role": "user", "content": prompt}
                 ],
                 temperature=0.3
@@ -46,24 +49,21 @@ Heritage site to structure: {heritage_site}
             print(f"Error structuring heritage data: {str(e)}")
             return None
 
-    def _extract_monument_name(self, structured_data: str) -> Optional[str]:
-        """Extract monument name from structured data"""
+    def _extract_monument_name(self, json_data: str) -> Optional[str]:
+        """Extract monument name from JSON data"""
         try:
-            lines = structured_data.split('\n')
-            for i, line in enumerate(lines):
-                if line.strip() == 'Monument name:':
-                    # Get the next line which contains the actual name
-                    if i + 1 < len(lines):
-                        name = lines[i + 1].strip()
-                        # Convert to lowercase and replace spaces with underscores for filename
-                        return '_'.join(name.lower().split())
+            data = json.loads(json_data)
+            if "monument_name" in data:
+                name = data["monument_name"]
+                # Convert to lowercase and replace spaces with underscores for filename
+                return '_'.join(name.lower().split())
             return None
         except Exception as e:
-            print(f"Error extracting monument name: {str(e)}")
+            print(f"Error extracting monument name from JSON: {str(e)}")
             return None
 
     def save_to_file(self, structured_data: str, directory: str = "data/heritage_sites") -> bool:
-        """Save structured heritage data to a file named after the monument"""
+        """Save structured heritage data to a JSON file named after the monument"""
         try:
             # Create directory if it doesn't exist
             os.makedirs(directory, exist_ok=True)
@@ -73,14 +73,53 @@ Heritage site to structure: {heritage_site}
             if not monument_name:
                 raise ValueError("Could not extract monument name from structured data")
             
-            filename = os.path.join(directory, f"{monument_name}.txt")
+            filename = os.path.join(directory, f"{monument_name}.json")
             
-            # Append mode if file exists, write mode if it doesn't
-            mode = 'a' if os.path.exists(filename) else 'w'
-            with open(filename, mode, encoding='utf-8') as f:
-                if mode == 'a':
-                    f.write('\n\n' + '='*50 + '\n\n')  # Separator between entries
-                f.write(structured_data)
+            # Parse the JSON data
+            try:
+                new_data = json.loads(structured_data)
+            except json.JSONDecodeError:
+                print("Warning: Data is not valid JSON. Saving as text.")
+                # Save as text if not valid JSON
+                with open(filename, 'w', encoding='utf-8') as f:
+                    f.write(structured_data)
+                return True
+            
+            # Handle append mode for JSON data
+            if os.path.exists(filename):
+                try:
+                    # Read existing file
+                    with open(filename, 'r', encoding='utf-8') as f:
+                        file_content = f.read()
+                    
+                    # Try parsing existing content as JSON
+                    try:
+                        existing_data = json.loads(file_content)
+                        
+                        # If existing data is a list, append the new data
+                        if isinstance(existing_data, list):
+                            existing_data.append(new_data)
+                            final_data = existing_data
+                        # If it's a dictionary, create a list with both
+                        else:
+                            final_data = [existing_data, new_data]
+                    except json.JSONDecodeError:
+                        # If existing content is not valid JSON, create a list with the new data
+                        final_data = [new_data]
+                        
+                    # Write updated data
+                    with open(filename, 'w', encoding='utf-8') as f:
+                        json.dump(final_data, f, indent=2, ensure_ascii=False)
+                    
+                except Exception as e:
+                    print(f"Error appending to JSON file: {str(e)}")
+                    return False
+            else:
+                # New file, just write the data
+                with open(filename, 'w', encoding='utf-8') as f:
+                    # Write the JSON data
+                    f.write(structured_data)
+            
             return True
             
         except Exception as e:
@@ -99,7 +138,7 @@ Heritage site to structure: {heritage_site}
 if __name__ == "__main__":
     structurer = HeritageDataStructurer()
     # Example usage
-    transcript = structurer.load_transcript("data/transcripts/Ky34soHXXno.txt")
+    transcript = structurer.load_transcript("data/transcripts/ypoB6S5mrts.txt")
     site_data = structurer.structure_heritage_data(transcript)
     if site_data:
         print(site_data)
