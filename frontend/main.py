@@ -5,143 +5,34 @@ from collections import Counter
 import re
 import sys
 import os
+import time
+from datetime import datetime
+import pytz
 
-# Add project root to Python path
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, project_root)
 
-# Now imports should work correctly
 from backend.config import COLLECTION_NAME, DEFAULT_MODEL
 from backend.get_transcript import YouTubeTranscriptDownloader
 from backend.chat import LiteLLMChat
 from backend.rag_chat import HeritageRAGChat
 
-
-# Page config
 st.set_page_config(
     page_title="Cultural Heritage Information",
     page_icon="🇳🇵",
     layout="wide"
 )
 
-# Consolidated and cleaned CSS for dark theme chat bubbles
-st.markdown("""
-<style>
-    /* --- Chat Message Container Styling --- */
-    [data-testid="stChatMessageContainer"] {
-        padding: 0.5rem 0;
-    }
-    
-    [data-testid="stChatMessage"] {
-        background-color: transparent !important;
-        padding: 0 !important;
-    }
-    
-    /* --- Avatar Styling --- */
-    [data-testid="stChatMessage"] .stAvatar {
-        background-color: #383838;
-        height: 32px !important;
-        width: 32px !important;
-        margin: 0 8px !important;
-    }
-    
-    /* --- User Message Styling --- */
-    [data-testid="stChatMessage"][data-chat-message-role="user"] {
-        display: flex;
-        justify-content: flex-end;
-    }
-    
-    [data-testid="stChatMessage"][data-chat-message-role="user"] .stAvatar {
-        order: 2;
-        background-color: #1E88E5 !important;
-    }
-    
-    [data-testid="stChatMessage"][data-chat-message-role="user"] [data-testid="stMarkdownContainer"] {
-        background-color: #1E88E5 !important;
-        color: white !important;
-        border-bottom-right-radius: 5px !important;
-    }
-    
-    /* --- Message Content Common Styling --- */
-    [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] {
-        border-radius: 18px !important;
-        padding: 10px 14px !important;
-        max-width: 80% !important;
-        display: inline-block !important;
-        margin: 0 !important;
-        word-wrap: break-word !important;
-        white-space: normal !important;
-    }
-    
-    /* --- Assistant Message Styling --- */
-    [data-testid="stChatMessage"]:not([data-chat-message-role="user"]) [data-testid="stMarkdownContainer"] {
-        background-color: #383838 !important;
-        color: #E0E0E0 !important;
-        border-bottom-left-radius: 5px !important;
-    }
-    
-    /* --- Link Styling --- */
-    [data-testid="stChatMessage"]:not([data-chat-message-role="user"]) [data-testid="stMarkdownContainer"] a {
-        color: #90CAF9;
-    }
-    
-    [data-testid="stChatMessage"][data-chat-message-role="user"] [data-testid="stMarkdownContainer"] a {
-        color: #ffffff;
-        text-decoration: underline;
-    }
-    
-    /* --- Code Block Styling --- */
-    [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] code {
-        background-color: rgba(255,255,255,0.1) !important;
-        padding: 2px 4px !important;
-        border-radius: 4px !important;
-        color: #E0E0E0 !important;
-    }
-    
-    [data-testid="stChatMessage"][data-chat-message-role="user"] [data-testid="stMarkdownContainer"] code {
-        background-color: rgba(255,255,255,0.2) !important;
-        color: white !important;
-    }
-    
-    [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] pre {
-        white-space: pre-wrap !important;
-        word-break: break-word;
-        background-color: #2D2D2D !important;
-        border-radius: 6px;
-        padding: 10px;
-        margin: 8px 0;
-    }
-    
-    /* --- Text Wrapping for Long Content --- */
-    [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] * {
-        overflow-wrap: break-word;
-        word-break: break-word;
-    }
-    
-    [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] > p {
-        margin: 0;
-        padding: 0;
-    }
-    
-    /* --- Other UI Elements --- */
-    button[kind="primary"] {
-        margin-top: 10px;
-    }
-    
-    .stChatContainer {
-        padding-bottom: 5px !important;
-    }
-</style>
-""", unsafe_allow_html=True)
+nepal_timezone = pytz.timezone('Asia/Kathmandu')
 
-# Initialize session state
 if 'transcript' not in st.session_state:
     st.session_state.transcript = None
 if 'messages' not in st.session_state:
     st.session_state.messages = []
+if 'is_typing' not in st.session_state:
+    st.session_state.is_typing = False
 
 def render_header():
-    """Render the header section"""
     st.title("🇳🇵 Enlighten Nepal Heritage Information")
     st.markdown("""
     Transform YouTube transcripts into interactive culture learning experiences.
@@ -154,11 +45,9 @@ def render_header():
     """)
 
 def render_sidebar():
-    """Render the sidebar with component selection"""
     with st.sidebar:
         st.header("Development Stages")
         
-        # Main component selection
         selected_stage = st.radio(
             "Select Stage:",
             [
@@ -170,7 +59,6 @@ def render_sidebar():
             ]
         )
         
-        # Stage descriptions
         stage_info = {
             "1. Chat with OpenAI": """
             **Current Focus:**
@@ -213,33 +101,60 @@ def render_sidebar():
         
         return selected_stage
 
+def format_message(message, with_timestamp=True):
+    content = message.get("content", "")
+    
+    if with_timestamp and "timestamp" in message:
+        return content, message['timestamp']
+    return content, None
+
+def get_nepal_time():
+    now = datetime.now(nepal_timezone)
+    return now.strftime("%H:%M")
+
+def display_chat_message(message, container=None):
+    role = message.get("role", "assistant")
+    
+    avatar = "🧑" if role == "user" else "🤖"
+    
+    display = container if container else st
+    
+    content, timestamp = format_message(message)
+    
+    with display.chat_message(role, avatar=avatar):
+        display.markdown(content)
+        
+        if timestamp:
+            display.caption(f"sent at {timestamp}")
+
 def render_chat_stage():
-    """Render an improved chat interface"""
     st.header("Chat with OpenAI")
     
-    # Initialize the bedrock instance
     if 'bedrock_chat' not in st.session_state:
         st.session_state.bedrock_chat = LiteLLMChat()
     
-    # Introduction text
     st.markdown("""
     Start by exploring OpenAI's base Nepali Cultural heritage information capabilities. Try asking questions about cultural heritages in Nepal.
     """)
 
-    # Initialize chat history if not exists
-    if "messages" not in st.session_state:
-        st.session_state.messages = []
+    chat_container = st.container()
+    with chat_container:
+        st.markdown("### Conversation")
+        
+        if not st.session_state.messages:
+            st.info("👋 Send a message to start the conversation!")
+            
+        for message in st.session_state.messages:
+            display_chat_message(message)
+            
+        if st.session_state.is_typing:
+            with st.chat_message("assistant", avatar="🤖"):
+                st.markdown("_Thinking..._")
 
-    # Display chat messages in a cleaner format
-    for message in st.session_state.messages:
-        with st.chat_message(message["role"], avatar="🧑‍💻" if message["role"] == "user" else "🤖"):
-            st.markdown(message["content"])
-
-    # Chat input area
-    if prompt := st.chat_input("Ask about Nepali heritage sites..."):
+    prompt = st.chat_input("Ask about Nepali heritage sites...", disabled=st.session_state.is_typing)
+    if prompt:
         process_message(prompt)
 
-    # Example questions in a clean sidebar card
     with st.sidebar:
         st.markdown("### Try These Examples")
         example_questions = [
@@ -253,36 +168,57 @@ def render_chat_stage():
         
         for q in example_questions:
             if st.button(q, use_container_width=True, type="secondary"):
-                # # When example is clicked, add it to chat input
-                # st.session_state.messages.append({"role": "user", "content": q})
-                # # This will trigger a rerun with the new message
-
-                # Process the example question
                 process_message(q)
                 st.rerun()
 
-    # Add a clear chat button
-    if st.session_state.messages:  # Only show if there are messages
-        if st.button("Clear Chat", type="primary"):
-            st.session_state.messages = []
-            st.rerun()
+    if st.session_state.messages:
+        col1, col2 = st.columns([5, 1])
+        with col2:
+            if st.button("Clear Chat", type="primary"):
+                st.session_state.messages = []
+                st.rerun()
 
 def process_message(message: str):
-    """Process a message and generate a response"""
-    # Add user message to state and display
-    st.session_state.messages.append({"role": "user", "content": message})
-    with st.chat_message("user", avatar="🧑‍💻"):
-        st.markdown(message)
+    timestamp = get_nepal_time()
+    st.session_state.messages.append({
+        "role": "user", 
+        "content": message,
+        "timestamp": timestamp
+    })
+    
+    with st.chat_message("user", avatar="👤"):
+        content, timestamp = format_message(st.session_state.messages[-1])
+        st.markdown(content)
+        if timestamp:
+            st.caption(f"sent at {timestamp}")
+    
+    st.session_state.is_typing = True
+    st.rerun()
 
-    # Generate and display assistant's response
-    with st.chat_message("assistant", avatar="🤖"):
+def on_response_ready():
+    st.session_state.is_typing = False
+    
+def generate_response(message: str):
+    try:
         response = st.session_state.bedrock_chat.generate_response(message)
+        
+        timestamp = get_nepal_time()
         if response:
-            st.markdown(response)
-            st.session_state.messages.append({"role": "assistant", "content": response})
+            st.session_state.messages.append({
+                "role": "assistant", 
+                "content": response,
+                "timestamp": timestamp
+            })
+        else:
+            st.session_state.messages.append({
+                "role": "assistant", 
+                "content": "I'm sorry, I couldn't generate a response at this time.",
+                "timestamp": timestamp
+            })
+    finally:
+        st.session_state.is_typing = False
 
 def count_characters(text):
-    """Count Nepali and total characters in text"""
     if not text:
         return 0, 0
         
@@ -294,19 +230,14 @@ def count_characters(text):
     np_chars = sum(1 for char in text if is_nepali(char))
     return np_chars, len(text)
 
-
-
 def render_transcript_stage():
-    """Render the raw transcript stage"""
     st.header("Raw Transcript Processing")
     
-    # URL input
     url = st.text_input(
         "YouTube URL",
         placeholder="Enter a Heritage site educational video YouTube URL"
     )
     
-     # Download button and processing
     if url:
         if st.button("Download Transcript"):
             try:
@@ -315,15 +246,12 @@ def render_transcript_stage():
                     transcript = downloader.get_transcript(url)
                     video_id = downloader.extract_video_id(url)
                     
-                    # Create a directory for storing transcripts if it doesn't exist
                     transcript_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "backend", "data", "transcripts")
                     os.makedirs(transcript_dir, exist_ok=True)
                     
-                    # Save the transcript with a proper name and extension
                     file_path = os.path.join(transcript_dir, f"{video_id}")
                     downloader.save_transcript(transcript, file_path)
                     if transcript:
-                        # Store the raw transcript text in session state
                         transcript_text = "\n".join([entry['text'] for entry in transcript])
                         st.session_state.transcript = transcript_text
                         st.success("Transcript downloaded successfully!")
@@ -351,11 +279,9 @@ def render_transcript_stage():
         if st.session_state.transcript:
             st.metric("Characters", len(st.session_state.transcript))
             st.metric("Lines", len(st.session_state.transcript.split('\n')))
-            # Calculate stats
             np_chars, total_chars = count_characters(st.session_state.transcript)
             total_lines = len(st.session_state.transcript.split('\n'))
             
-            # Display stats
             st.metric("Total Characters", total_chars)
             st.metric("Nepalese Characters", np_chars)
             st.metric("Total Lines", total_lines)
@@ -363,84 +289,91 @@ def render_transcript_stage():
             st.info("Load a transcript to see statistics")
 
 def render_structured_stage():
-    """Render the structured data stage"""
     st.header("Structured Data Processing")
     
     col1, col2 = st.columns(2)
     
     with col1:
         st.subheader("Dialogue Extraction")
-        # Placeholder for dialogue processing
         st.info("Dialogue extraction will be implemented here")
         
     with col2:
         st.subheader("Data Structure")
-        # Placeholder for structured data view
         st.info("Structured data view will be implemented here")
 
 def render_rag_stage():
-    """Render the RAG implementation stage with comparison to base LLM"""
     st.header("RAG System")
     
-    # Initialize both chat systems if not in session state
     if 'rag_chat' not in st.session_state:
         st.session_state.rag_chat = HeritageRAGChat(collection_name=COLLECTION_NAME, model_id=DEFAULT_MODEL)
     
     if 'bedrock_chat' not in st.session_state:
         st.session_state.bedrock_chat = LiteLLMChat(model_id=DEFAULT_MODEL)
     
-    # Initialize RAG messages if not exists
     if "rag_messages" not in st.session_state:
         st.session_state.rag_messages = []
     
-    # Initialize comparison messages if not exists
     if "comparison_messages" not in st.session_state:
         st.session_state.comparison_messages = []
     
-    # Introduction text for RAG
+    if "rag_typing" not in st.session_state:
+        st.session_state.rag_typing = False
+    if "standard_typing" not in st.session_state:
+        st.session_state.standard_typing = False
+    
     st.markdown("""
     Compare responses between a RAG-enhanced system and standard LLM. Ask questions about Nepali heritage sites to see the difference.
     """)
     
-    # Query input using chat input for consistency
-    query = st.chat_input("Ask about Nepali heritage sites...")
+    query = st.chat_input("Ask about Nepali heritage sites...", 
+                         disabled=st.session_state.rag_typing or st.session_state.standard_typing)
     
-    # Process query when submitted
     if query:
-        # Add user message to both chat histories
-        st.session_state.rag_messages.append({"role": "user", "content": query})
-        st.session_state.comparison_messages.append({"role": "user", "content": query})
+        timestamp = get_nepal_time()
         
-        # Generate and store RAG response
-        rag_response = st.session_state.rag_chat.generate_rag_response(query)
-        if rag_response:
-            st.session_state.rag_messages.append({"role": "assistant", "content": rag_response})
-        else:
-            st.session_state.rag_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a RAG-enhanced response."})
+        st.session_state.rag_messages.append({
+            "role": "user", 
+            "content": query,
+            "timestamp": timestamp
+        })
+        st.session_state.comparison_messages.append({
+            "role": "user", 
+            "content": query,
+            "timestamp": timestamp
+        })
         
-        # Generate and store standard LLM response
-        standard_response = st.session_state.bedrock_chat.generate_response(query)
-        if standard_response:
-            st.session_state.comparison_messages.append({"role": "assistant", "content": standard_response})
-        else:
-            st.session_state.comparison_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a response."})
+        st.session_state.rag_typing = True
+        st.session_state.standard_typing = True
+        st.rerun()
     
-    # Create tabs for better comparison view
     rag_tab, standard_tab = st.tabs(["RAG-Enhanced Response", "Standard LLM Response"])
     
     with rag_tab:
-        # Display RAG chat messages in the same style as the chat section
         for message in st.session_state.rag_messages:
-            with st.chat_message(message["role"], avatar="🧑‍💻" if message["role"] == "user" else "🔍"):
-                st.markdown(message["content"])
+            avatar = "👤" if message["role"] == "user" else "🔍"
+            with st.chat_message(message["role"], avatar=avatar):
+                content, timestamp = format_message(message)
+                st.markdown(content)
+                if timestamp:
+                    st.caption(f"sent at {timestamp}")
+        
+        if st.session_state.rag_typing:
+            with st.chat_message("assistant", avatar="🔍"):
+                st.markdown("_Thinking with RAG enhancement..._")
         
     with standard_tab:
-        # Display comparison chat messages
         for message in st.session_state.comparison_messages:
-            with st.chat_message(message["role"], avatar="🧑‍💻" if message["role"] == "user" else "🤖"):
-                st.markdown(message["content"])
+            avatar = "👤" if message["role"] == "user" else "🤖"
+            with st.chat_message(message["role"], avatar=avatar):
+                content, timestamp = format_message(message)
+                st.markdown(content)
+                if timestamp:
+                    st.caption(f"sent at {timestamp}")
+                
+        if st.session_state.standard_typing:
+            with st.chat_message("assistant", avatar="🤖"):
+                st.markdown("_Thinking with standard LLM..._")
     
-    # Example questions in a clean card
     with st.sidebar:
         st.markdown("### Try These Examples")
         example_questions = [
@@ -454,38 +387,32 @@ def render_rag_stage():
         
         for q in example_questions:
             if st.button(q, key=f"rag_{q}", use_container_width=True, type="secondary"):
-                # Add user message to both chat histories
-                st.session_state.rag_messages.append({"role": "user", "content": q})
-                st.session_state.comparison_messages.append({"role": "user", "content": q})
+                timestamp = get_nepal_time()
                 
-                # Generate and store RAG response
-                rag_response = st.session_state.rag_chat.generate_rag_response(q)
-                if rag_response:
-                    st.session_state.rag_messages.append({"role": "assistant", "content": rag_response})
-                else:
-                    st.session_state.rag_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a RAG-enhanced response."})
+                st.session_state.rag_messages.append({
+                    "role": "user", 
+                    "content": q,
+                    "timestamp": timestamp
+                })
+                st.session_state.comparison_messages.append({
+                    "role": "user", 
+                    "content": q,
+                    "timestamp": timestamp
+                })
                 
-                # Generate and store standard LLM response
-                standard_response = st.session_state.bedrock_chat.generate_response(q)
-                if standard_response:
-                    st.session_state.comparison_messages.append({"role": "assistant", "content": standard_response})
-                else:
-                    st.session_state.comparison_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a response."})
-                
+                st.session_state.rag_typing = True
+                st.session_state.standard_typing = True
                 st.rerun()
 
-    # Add a clear chat button
-    if st.session_state.rag_messages:  # Only show if there are messages
+    if st.session_state.rag_messages:
         if st.button("Clear Conversation", type="primary"):
             st.session_state.rag_messages = []
             st.session_state.comparison_messages = []
             st.rerun()
 
 def render_interactive_stage():
-    """Render the interactive learning stage"""
     st.header("Interactive Learning")
     
-    # Practice type selection
     practice_type = st.selectbox(
         "Select Practice Type",
         ["Dialogue Practice", "Vocabulary Quiz", "Listening Exercise"]
@@ -495,46 +422,95 @@ def render_interactive_stage():
     
     with col1:
         st.subheader("Practice Scenario")
-        # Placeholder for scenario
         st.info("Practice scenario will appear here")
         
-        # Placeholder for multiple choice
         options = ["Option 1", "Option 2", "Option 3", "Option 4"]
         selected = st.radio("Choose your answer:", options)
         
     with col2:
         st.subheader("Audio")
-        # Placeholder for audio player
         st.info("Audio will appear here")
         
         st.subheader("Feedback")
-        # Placeholder for feedback
         st.info("Feedback will appear here")
 
 def main():
     render_header()
     selected_stage = render_sidebar()
     
-    # Render appropriate stage
     if selected_stage == "1. Chat with OpenAI":
         render_chat_stage()
+        
+        if st.session_state.is_typing:
+            user_messages = [msg for msg in st.session_state.messages if msg["role"] == "user"]
+            if user_messages:
+                last_user_message = user_messages[-1]["content"]
+                generate_response(last_user_message)
+                st.rerun()
+                
     elif selected_stage == "2. Raw Transcript":
         render_transcript_stage()
     elif selected_stage == "3. Structured Data":
         render_structured_stage()
     elif selected_stage == "4. RAG Implementation":
         render_rag_stage()
+        
+        if st.session_state.rag_typing or st.session_state.standard_typing:
+            user_messages = [msg for msg in st.session_state.rag_messages if msg["role"] == "user"]
+            if user_messages:
+                last_user_message = user_messages[-1]["content"]
+                
+                if st.session_state.rag_typing:
+                    timestamp = get_nepal_time()
+                    rag_response = st.session_state.rag_chat.generate_rag_response(last_user_message)
+                    if rag_response:
+                        st.session_state.rag_messages.append({
+                            "role": "assistant", 
+                            "content": rag_response,
+                            "timestamp": timestamp
+                        })
+                    else:
+                        st.session_state.rag_messages.append({
+                            "role": "assistant", 
+                            "content": "Sorry, I couldn't generate a RAG-enhanced response.",
+                            "timestamp": timestamp
+                        })
+                    st.session_state.rag_typing = False
+                
+                if st.session_state.standard_typing:
+                    timestamp = get_nepal_time()
+                    standard_response = st.session_state.bedrock_chat.generate_response(last_user_message)
+                    if standard_response:
+                        st.session_state.comparison_messages.append({
+                            "role": "assistant", 
+                            "content": standard_response,
+                            "timestamp": timestamp
+                        })
+                    else:
+                        st.session_state.comparison_messages.append({
+                            "role": "assistant", 
+                            "content": "Sorry, I couldn't generate a response.",
+                            "timestamp": timestamp
+                        })
+                    st.session_state.standard_typing = False
+                
+                st.rerun()
+                
     elif selected_stage == "5. Interactive Learning":
         render_interactive_stage()
     
-    # Debug section at the bottom
     with st.expander("Debug Information"):
         st.json({
             "selected_stage": selected_stage,
             "transcript_loaded": st.session_state.transcript is not None,
             "chat_messages": len(st.session_state.messages),
             "rag_messages": len(st.session_state.rag_messages) if "rag_messages" in st.session_state else 0,
-            "comparison_messages": len(st.session_state.comparison_messages) if "comparison_messages" in st.session_state else 0
+            "comparison_messages": len(st.session_state.comparison_messages) if "comparison_messages" in st.session_state else 0,
+            "typing_status": {
+                "main_chat": st.session_state.is_typing,
+                "rag": st.session_state.rag_typing if "rag_typing" in st.session_state else False,
+                "standard": st.session_state.standard_typing if "standard_typing" in st.session_state else False
+            }
         })
 
 if __name__ == "__main__":
