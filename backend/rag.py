@@ -4,7 +4,6 @@ import os
 import json
 from typing import List, Dict, Optional, Any
 from dotenv import load_dotenv
-from litellm import completion
 
 # Load environment variables
 load_dotenv()
@@ -14,10 +13,9 @@ if not OPENAI_API_KEY:
     print("WARNING: OPENAI_API_KEY not found in the .env file")
 
 class HeritageRAG:
-    def __init__(self, collection_name: str = "cultural-heritage-information", model_id: str = "gpt-4o-mini"):
-        """Initialize RAG system with ChromaDB and LiteLLM"""
+    def __init__(self, collection_name: str = "cultural-heritage-information"):
+        """Initialize RAG system with ChromaDB"""
         self.collection_name = collection_name
-        self.model_id = model_id
         
         # Setup Chroma persistent client
         self.chroma_client = chromadb.PersistentClient()
@@ -142,31 +140,6 @@ class HeritageRAG:
         )
         return results
     
-    def generate_rag_response(self, user_query: str, n_results: int = 3, temperature: float = 0.7) -> Optional[str]:
-        """
-        Generate a response using RAG with LiteLLM
-        
-        Args:
-            user_query: User's question
-            n_results: Number of context results to retrieve
-            temperature: Temperature for LLM generation
-            
-        Returns:
-            Generated response based on retrieved context
-        """
-        # Get relevant context from the collection
-        results = self.query(user_query, n_results=n_results)
-        
-        if not results['documents'][0]:
-            # Fall back to regular LLM response if no context is found
-            return self._generate_llm_response(user_query, context="", temperature=temperature)
-        
-        # Prepare context from retrieved documents
-        context = self._prepare_context_from_results(results)
-        
-        # Generate response with context
-        return self._generate_llm_response(user_query, context, temperature)
-    
     def _prepare_context_from_results(self, results: Dict[str, Any]) -> str:
         """
         Prepare context from query results
@@ -185,46 +158,6 @@ class HeritageRAG:
         
         return "\n".join(context_parts)
     
-    def _generate_llm_response(self, user_query: str, context: str, temperature: float = 0.7) -> Optional[str]:
-        """
-        Generate a response using LiteLLM with provided context
-        
-        Args:
-            user_query: User's question
-            context: Context from retrieved documents
-            temperature: Temperature for generation
-            
-        Returns:
-            Generated response text
-        """
-        system_prompt = """You are a Nepalese cultural heritage expert. 
-Answer questions about Nepalese monuments and heritage sites based on the context provided.
-If the context doesn't contain relevant information, say so and provide general information about Nepalese heritage.
-Always be informative, engaging, and respectful of Nepalese culture and history."""
-
-        user_prompt = f"""Question: {user_query}
-        
-Context information:
-{context}
-
-Please provide a helpful and accurate response based on the above context."""
-
-        try:
-            response = completion(
-                model=self.model_id,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt}
-                ],
-                temperature=temperature
-            )
-            
-            return response.choices[0].message.content
-            
-        except Exception as e:
-            print(f"Error generating RAG response: {str(e)}")
-            return None
-
     def print_query_results(self, results: Dict[str, Any], query_text: str = None) -> None:
         """
         Print the results of a query in a readable format
@@ -247,25 +180,34 @@ Please provide a helpful and accurate response based on the above context."""
 
 
 def main():
-    """Example usage of the HeritageRAG class with RAG-enhanced chat"""
+    """Main function focused on updating the database"""
+    import argparse
+    
+    # Set up argument parser
+    parser = argparse.ArgumentParser(description='Heritage RAG System - Database Operations')
+    parser.add_argument('--data-dir', type=str, default='data/heritage_sites',
+                      help='Directory containing heritage site JSON files (default: data/heritage_sites)')
+    parser.add_argument('--query', type=str, default=None,
+                      help='Optional: Run a test query against the database')
+    parser.add_argument('--results', type=int, default=3,
+                      help='Number of results to return for test query (default: 3)')
+    
+    # Parse arguments
+    args = parser.parse_args()
+    
     # Initialize RAG system
     rag = HeritageRAG()
     
-    # Load documents (only needed once or when adding new documents)
-    rag.load_documents()
+    # Update the database
+    print(f"Updating database with documents from {args.data_dir}...")
+    count = rag.load_documents(args.data_dir)
+    print(f"Database update complete. Added {count} document chunks.")
     
-    print("Nepali Heritage RAG Assistant (type '/exit' to quit)")
-    while True:
-        user_input = input("You: ")
-        if user_input.lower() == '/exit':
-            break
-            
-        # Generate RAG-enhanced response
-        response = rag.generate_rag_response(user_input)
-        if response:
-            print("\nBot:", response)
-        else:
-            print("\nBot: I'm sorry, I couldn't generate a response. Please try again.")
+    # Run test query if provided
+    if args.query:
+        print(f"\nRunning test query: '{args.query}'")
+        results = rag.query(args.query, n_results=args.results)
+        rag.print_query_results(results, args.query)
 
 
 if __name__ == "__main__":

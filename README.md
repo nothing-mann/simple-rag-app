@@ -35,11 +35,13 @@ This project creates a language learning and cultural heritage assistant focused
 ```
 language-learning-assistant/
 ├── backend/
-│   ├── chat.py             # AI chat interface using LiteLLM
+│   ├── chat.py             # Basic AI chat interface using LiteLLM
 │   ├── get_transcript.py   # YouTube transcript extraction and processing
+│   ├── rag.py              # Vector database management for heritage sites
+│   ├── rag_chat.py         # RAG-enhanced chat interface
 │   └── structured_data.py  # Data structuring for heritage site information
 ├── data/
-│   ├── heritage_sites/     # Structured information about heritage sites
+│   ├── heritage_sites/     # Structured JSON information about heritage sites
 │   └── transcripts/        # Raw and processed YouTube transcripts
 └── README.md
 ```
@@ -80,6 +82,38 @@ language-learning-assistant/
    cd into the frontend
    streamlit run app.py
    ```
+
+## Usage
+
+### Processing YouTube Transcripts
+```bash
+# Download and process a transcript
+python backend/get_transcript.py https://www.youtube.com/watch?v=VIDEO_ID
+```
+
+### Structuring Data
+```bash
+# Structure transcript data into heritage site information
+python backend/structured_data.py
+```
+
+### Managing the Vector Database
+```bash
+# Update the database with new heritage site information
+python backend/rag.py --data-dir data/heritage_sites
+
+# Run a test query against the database
+python backend/rag.py --query "Tell me about temples in Kathmandu" --results 3
+```
+
+### Interacting with the RAG Chat
+```bash
+# Start the RAG-enhanced chat interface
+python backend/rag_chat.py
+
+# Use a different LLM model
+python backend/rag_chat.py --model gpt-4
+```
 
 ## Dependencies
 
