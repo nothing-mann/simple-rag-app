@@ -20,3 +20,14 @@ os.makedirs(TRANSCRIPTS_DIR, exist_ok=True)
 # Model settings
 DEFAULT_MODEL = "gpt-4o-mini"
 EMBEDDING_MODEL = "text-embedding-ada-002"
+
+# Print configuration for debugging
+if __name__ == "__main__":
+    print(f"PROJECT_ROOT: {PROJECT_ROOT}")
+    print(f"DATA_DIR: {DATA_DIR}")
+    print(f"CHROMA_DB_DIR: {CHROMA_DB_DIR}")
+    print(f"HERITAGE_SITES_DIR: {HERITAGE_SITES_DIR}")
+    print(f"TRANSCRIPTS_DIR: {TRANSCRIPTS_DIR}")
+    print(f"COLLECTION_NAME: {COLLECTION_NAME}")
+    print(f"DEFAULT_MODEL: {DEFAULT_MODEL}")
+    print(f"EMBEDDING_MODEL: {EMBEDDING_MODEL}")

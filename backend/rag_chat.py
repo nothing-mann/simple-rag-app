@@ -36,18 +36,31 @@ class HeritageRAGChat:
         Returns:
             Generated response based on retrieved context
         """
-        # Get relevant context from the collection
-        results = self.rag.query(user_query, n_results=n_results)
-        
-        if not results['documents'][0]:
-            # Fall back to regular LLM response if no context is found
-            return self._generate_llm_response(user_query, context="", temperature=temperature)
-        
-        # Prepare context from retrieved documents
-        context = self.rag._prepare_context_from_results(results)
-        
-        # Generate response with context
-        return self._generate_llm_response(user_query, context, temperature)
+        try:
+            # Get relevant context from the collection
+            print(f"Querying for: '{user_query}' with n_results={n_results}")
+            results = self.rag.query(user_query, n_results=n_results)
+            
+            # Check if we got any results
+            if not results['documents'] or len(results['documents']) == 0 or len(results['documents'][0]) == 0:
+                print("No documents found in RAG query results")
+                # Fall back to regular LLM response if no context is found
+                return self._generate_llm_response(user_query, context="No specific information found on this topic.", temperature=temperature)
+            
+            # Prepare context from retrieved documents
+            context = self.rag._prepare_context_from_results(results)
+            print(f"Context length: {len(context)} characters")
+            
+            # Generate response with context
+            response = self._generate_llm_response(user_query, context, temperature)
+            return response
+            
+        except Exception as e:
+            print(f"Exception in generate_rag_response: {str(e)}")
+            import traceback
+            print(traceback.format_exc())
+            # Return a generic response instead of None so the API doesn't fail
+            return f"I apologize, but I encountered an error retrieving information about that topic. Please try again or ask a different question. (Error: {str(e)})"
     
     def _generate_llm_response(self, user_query: str, context: str, temperature: float = 0.7) -> Optional[str]:
         """

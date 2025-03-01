@@ -140,6 +140,86 @@ language-learning-assistant/
    streamlit run frontend/main.py
    ```
 
+## API Usage
+
+The project includes an API server that allows you to access the heritage information and chat features from other applications.
+
+### Starting the API Server
+
+```bash
+# Install Flask and other requirements if needed
+pip install -r requirements.txt
+
+# Start the API server
+python backend/api_server.py
+```
+
+By default, the server runs on port 5000. You can change this by setting the PORT environment variable.
+
+### API Endpoints
+
+1. **Health Check**
+   ```
+   GET /api/health
+   ```
+
+2. **Standard LLM Chat**
+   ```
+   POST /api/chat
+   {
+     "message": "Your question about heritage sites",
+     "json_format": false,
+     "temperature": 0.7,
+     "model_id": "gpt-4o-mini" (optional)
+   }
+   ```
+
+3. **RAG-Enhanced Chat**
+   ```
+   POST /api/rag-chat
+   {
+     "message": "Your question about heritage sites",
+     "n_results": 3,
+     "temperature": 0.7,
+     "model_id": "gpt-4o-mini" (optional),
+     "include_sources": false (optional)
+   }
+   ```
+
+4. **List Available Monuments**
+   ```
+   GET /api/monuments
+   ```
+
+### Example API Usage
+
+Here's how to use the API from Python:
+
+```python
+import requests
+
+# Example: Query RAG-enhanced chat
+response = requests.post(
+    "http://localhost:5000/api/rag-chat",
+    json={
+        "message": "Tell me about Krishna Mandir",
+        "include_sources": True
+    }
+)
+
+if response.status_code == 200:
+    data = response.json()
+    print(data["response"])
+    
+    # Print sources if available
+    if "sources" in data:
+        print("\nSources:")
+        for source in data["sources"]:
+            print(f"- {source['monument']} ({source['source']})")
+```
+
+See `api_example.py` for more detailed usage examples.
+
 ## Troubleshooting
 
 ### Database Synchronization Issues

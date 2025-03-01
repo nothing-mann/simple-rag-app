@@ -1,0 +1,14 @@
+# Flask for API server
+flask==2.3.3
+gunicorn==21.2.0
+
+# Core dependencies with specific versions
+litellm
+openai  
+chromadb
+youtube_transcript_api
+python-dotenv
+streamlit
+
+# Request library for API example
+requests==2.31.0
