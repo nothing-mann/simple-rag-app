@@ -24,6 +24,116 @@ st.set_page_config(
     layout="wide"
 )
 
+# Consolidated and cleaned CSS for dark theme chat bubbles
+st.markdown("""
+<style>
+    /* --- Chat Message Container Styling --- */
+    [data-testid="stChatMessageContainer"] {
+        padding: 0.5rem 0;
+    }
+    
+    [data-testid="stChatMessage"] {
+        background-color: transparent !important;
+        padding: 0 !important;
+    }
+    
+    /* --- Avatar Styling --- */
+    [data-testid="stChatMessage"] .stAvatar {
+        background-color: #383838;
+        height: 32px !important;
+        width: 32px !important;
+        margin: 0 8px !important;
+    }
+    
+    /* --- User Message Styling --- */
+    [data-testid="stChatMessage"][data-chat-message-role="user"] {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    [data-testid="stChatMessage"][data-chat-message-role="user"] .stAvatar {
+        order: 2;
+        background-color: #1E88E5 !important;
+    }
+    
+    [data-testid="stChatMessage"][data-chat-message-role="user"] [data-testid="stMarkdownContainer"] {
+        background-color: #1E88E5 !important;
+        color: white !important;
+        border-bottom-right-radius: 5px !important;
+    }
+    
+    /* --- Message Content Common Styling --- */
+    [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] {
+        border-radius: 18px !important;
+        padding: 10px 14px !important;
+        max-width: 80% !important;
+        display: inline-block !important;
+        margin: 0 !important;
+        word-wrap: break-word !important;
+        white-space: normal !important;
+    }
+    
+    /* --- Assistant Message Styling --- */
+    [data-testid="stChatMessage"]:not([data-chat-message-role="user"]) [data-testid="stMarkdownContainer"] {
+        background-color: #383838 !important;
+        color: #E0E0E0 !important;
+        border-bottom-left-radius: 5px !important;
+    }
+    
+    /* --- Link Styling --- */
+    [data-testid="stChatMessage"]:not([data-chat-message-role="user"]) [data-testid="stMarkdownContainer"] a {
+        color: #90CAF9;
+    }
+    
+    [data-testid="stChatMessage"][data-chat-message-role="user"] [data-testid="stMarkdownContainer"] a {
+        color: #ffffff;
+        text-decoration: underline;
+    }
+    
+    /* --- Code Block Styling --- */
+    [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] code {
+        background-color: rgba(255,255,255,0.1) !important;
+        padding: 2px 4px !important;
+        border-radius: 4px !important;
+        color: #E0E0E0 !important;
+    }
+    
+    [data-testid="stChatMessage"][data-chat-message-role="user"] [data-testid="stMarkdownContainer"] code {
+        background-color: rgba(255,255,255,0.2) !important;
+        color: white !important;
+    }
+    
+    [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] pre {
+        white-space: pre-wrap !important;
+        word-break: break-word;
+        background-color: #2D2D2D !important;
+        border-radius: 6px;
+        padding: 10px;
+        margin: 8px 0;
+    }
+    
+    /* --- Text Wrapping for Long Content --- */
+    [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] * {
+        overflow-wrap: break-word;
+        word-break: break-word;
+    }
+    
+    [data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] > p {
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* --- Other UI Elements --- */
+    button[kind="primary"] {
+        margin-top: 10px;
+    }
+    
+    .stChatContainer {
+        padding-bottom: 5px !important;
+    }
+</style>
+""", unsafe_allow_html=True)
+
 # Initialize session state
 if 'transcript' not in st.session_state:
     st.session_state.transcript = None
@@ -39,7 +149,7 @@ def render_header():
     This tool demonstrates:
     - Base LLM Capabilities
     - RAG (Retrieval Augmented Generation)
-    - Amazon Bedrock Integration
+    - LiteLLM OpenAI Integration
     - Agent-based Learning Systems
     """)
 
@@ -85,7 +195,7 @@ def render_sidebar():
             
             "4. RAG Implementation": """
             **Current Focus:**
-            - Bedrock embeddings
+            - OpenAI Embedding (text-embedding-ada-002)
             - Vector storage
             - Context retrieval
             """,
@@ -127,18 +237,6 @@ def render_chat_stage():
 
     # Chat input area
     if prompt := st.chat_input("Ask about Nepali heritage sites..."):
-        # # Add user message to state and display
-        # st.session_state.messages.append({"role": "user", "content": prompt})
-        # with st.chat_message("user", avatar="🧑‍💻"):
-        #     st.markdown(prompt)
-
-        # # Add OpenAI's response to state and display
-        # response = "This is where OpenAI's response will go. We'll integrate the actual Bedrock call here."
-        # st.session_state.messages.append({"role": "assistant", "content": response})
-        # with st.chat_message("assistant", avatar="🤖"):
-        #     st.markdown(response)
-        
-        # Process the user input
         process_message(prompt)
 
     # Example questions in a clean sidebar card
@@ -299,29 +397,44 @@ def render_rag_stage():
     if "comparison_messages" not in st.session_state:
         st.session_state.comparison_messages = []
     
-    # Query input
-    query = st.text_input(
-        "Ask a Question",
-        placeholder="Enter a question about a Nepali heritage site..."
-    )
+    # Introduction text for RAG
+    st.markdown("""
+    Compare responses between a RAG-enhanced system and standard LLM. Ask questions about Nepali heritage sites to see the difference.
+    """)
+    
+    # Query input using chat input for consistency
+    query = st.chat_input("Ask about Nepali heritage sites...")
     
     # Process query when submitted
     if query:
-        process_rag_query(query)
-    
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        st.subheader("RAG-Enhanced Response")
+        # Add user message to both chat histories
+        st.session_state.rag_messages.append({"role": "user", "content": query})
+        st.session_state.comparison_messages.append({"role": "user", "content": query})
         
-        # Display RAG chat messages
+        # Generate and store RAG response
+        rag_response = st.session_state.rag_chat.generate_rag_response(query)
+        if rag_response:
+            st.session_state.rag_messages.append({"role": "assistant", "content": rag_response})
+        else:
+            st.session_state.rag_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a RAG-enhanced response."})
+        
+        # Generate and store standard LLM response
+        standard_response = st.session_state.bedrock_chat.generate_response(query)
+        if standard_response:
+            st.session_state.comparison_messages.append({"role": "assistant", "content": standard_response})
+        else:
+            st.session_state.comparison_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a response."})
+    
+    # Create tabs for better comparison view
+    rag_tab, standard_tab = st.tabs(["RAG-Enhanced Response", "Standard LLM Response"])
+    
+    with rag_tab:
+        # Display RAG chat messages in the same style as the chat section
         for message in st.session_state.rag_messages:
-            with st.chat_message(message["role"], avatar="🧑‍💻" if message["role"] == "user" else "🤖"):
+            with st.chat_message(message["role"], avatar="🧑‍💻" if message["role"] == "user" else "🔍"):
                 st.markdown(message["content"])
         
-    with col2:
-        st.subheader("Standard LLM Response")
-        
+    with standard_tab:
         # Display comparison chat messages
         for message in st.session_state.comparison_messages:
             with st.chat_message(message["role"], avatar="🧑‍💻" if message["role"] == "user" else "🤖"):
@@ -341,35 +454,32 @@ def render_rag_stage():
         
         for q in example_questions:
             if st.button(q, key=f"rag_{q}", use_container_width=True, type="secondary"):
-                process_rag_query(q)
+                # Add user message to both chat histories
+                st.session_state.rag_messages.append({"role": "user", "content": q})
+                st.session_state.comparison_messages.append({"role": "user", "content": q})
+                
+                # Generate and store RAG response
+                rag_response = st.session_state.rag_chat.generate_rag_response(q)
+                if rag_response:
+                    st.session_state.rag_messages.append({"role": "assistant", "content": rag_response})
+                else:
+                    st.session_state.rag_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a RAG-enhanced response."})
+                
+                # Generate and store standard LLM response
+                standard_response = st.session_state.bedrock_chat.generate_response(q)
+                if standard_response:
+                    st.session_state.comparison_messages.append({"role": "assistant", "content": standard_response})
+                else:
+                    st.session_state.comparison_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a response."})
+                
                 st.rerun()
 
     # Add a clear chat button
     if st.session_state.rag_messages:  # Only show if there are messages
-        if st.button("Clear Comparison", type="primary"):
+        if st.button("Clear Conversation", type="primary"):
             st.session_state.rag_messages = []
             st.session_state.comparison_messages = []
             st.rerun()
-
-def process_rag_query(query: str):
-    """Process a query for both RAG and standard LLM responses"""
-    # Add user message to both chat histories
-    st.session_state.rag_messages.append({"role": "user", "content": query})
-    st.session_state.comparison_messages.append({"role": "user", "content": query})
-    
-    # Generate and store RAG response
-    rag_response = st.session_state.rag_chat.generate_rag_response(query)
-    if rag_response:
-        st.session_state.rag_messages.append({"role": "assistant", "content": rag_response})
-    else:
-        st.session_state.rag_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a RAG-enhanced response."})
-    
-    # Generate and store standard LLM response
-    standard_response = st.session_state.bedrock_chat.generate_response(query)
-    if standard_response:
-        st.session_state.comparison_messages.append({"role": "assistant", "content": standard_response})
-    else:
-        st.session_state.comparison_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a response."})
 
 def render_interactive_stage():
     """Render the interactive learning stage"""
