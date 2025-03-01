@@ -2,8 +2,15 @@ import chromadb
 from chromadb.utils import embedding_functions
 import os
 import json
+import sys
 from typing import List, Dict, Optional, Any
 from dotenv import load_dotenv
+
+# Add project root to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# After adding project root to path, now we can import from backend
+from backend.config import CHROMA_DB_DIR, COLLECTION_NAME, HERITAGE_SITES_DIR, EMBEDDING_MODEL
 
 # Load environment variables
 load_dotenv()
@@ -13,17 +20,17 @@ if not OPENAI_API_KEY:
     print("WARNING: OPENAI_API_KEY not found in the .env file")
 
 class HeritageRAG:
-    def __init__(self, collection_name: str = "cultural-heritage-information"):
+    def __init__(self, collection_name: str = COLLECTION_NAME):
         """Initialize RAG system with ChromaDB"""
         self.collection_name = collection_name
         
-        # Setup Chroma persistent client
-        self.chroma_client = chromadb.PersistentClient()
+        # Setup Chroma persistent client with explicit path
+        self.chroma_client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
         self.chroma_client.heartbeat()
         
         # Setup embedding function
         self.embedding_function = embedding_functions.OpenAIEmbeddingFunction(
-            model_name="text-embedding-ada-002", 
+            model_name=EMBEDDING_MODEL, 
             api_key=OPENAI_API_KEY
         )
         
@@ -33,7 +40,7 @@ class HeritageRAG:
             embedding_function=self.embedding_function
         )
     
-    def load_documents(self, documents_dir: str = "data/heritage_sites") -> int:
+    def load_documents(self, documents_dir: str = HERITAGE_SITES_DIR) -> int:
         """
         Load and embed documents from JSON files in the specified directory
         
@@ -185,8 +192,8 @@ def main():
     
     # Set up argument parser
     parser = argparse.ArgumentParser(description='Heritage RAG System - Database Operations')
-    parser.add_argument('--data-dir', type=str, default='data/heritage_sites',
-                      help='Directory containing heritage site JSON files (default: data/heritage_sites)')
+    parser.add_argument('--data-dir', type=str, default=HERITAGE_SITES_DIR,
+                      help=f'Directory containing heritage site JSON files (default: {HERITAGE_SITES_DIR})')
     parser.add_argument('--query', type=str, default=None,
                       help='Optional: Run a test query against the database')
     parser.add_argument('--results', type=int, default=3,

@@ -1,6 +1,13 @@
 from youtube_transcript_api import YouTubeTranscriptApi
 from typing import Optional, List, Dict
+import os
+import sys
 
+# Add the project root to Python path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# Import configuration
+from backend.config import TRANSCRIPTS_DIR
 
 class YouTubeTranscriptDownloader:
     def __init__(self, languages: List[str] = ["ne", "en", "en-US", "hi"]):
@@ -118,39 +125,60 @@ class YouTubeTranscriptDownloader:
         Returns:
             bool: True if successful, False otherwise
         """
-        filename = f"{filename}.txt"
+        # Make sure we're saving to the configured transcript directory
+        if not os.path.dirname(filename):
+            filename = os.path.join(TRANSCRIPTS_DIR, os.path.basename(filename))
+        
+        # Ensure directory exists
+        os.makedirs(os.path.dirname(filename), exist_ok=True)
+        
+        # Add .txt extension if not present
+        if not filename.endswith('.txt'):
+            filename = f"{filename}.txt"
         
         try:
             with open(filename, 'w', encoding='utf-8') as f:
                 for entry in transcript:
                     f.write(f"{entry['text']}\n")
+            print(f"Transcript saved to: {filename}")
             return True
         except Exception as e:
             print(f"Error saving transcript: {str(e)}")
             return False
 
 def main(video_url, print_transcript=False):
+    """Process and save a transcript from a YouTube URL"""
     # Initialize downloader
     downloader = YouTubeTranscriptDownloader()
     
     # Get transcript
     transcript = downloader.get_transcript(video_url)
     if transcript:
-        # Save transcript
+        # Save transcript to configured directory
         video_id = downloader.extract_video_id(video_url)
-        if downloader.save_transcript(transcript, f"./data/transcripts/{video_id}"):
-            print(f"Transcript saved successfully to {video_id}.txt")
-            #Print transcript if True
+        file_path = os.path.join(TRANSCRIPTS_DIR, video_id)
+        
+        if downloader.save_transcript(transcript, file_path):
+            print(f"Transcript saved successfully to {file_path}.txt")
+            
+            # Print transcript if requested
             if print_transcript:
-                # Print transcript
+                print("\nTranscript content:")
                 for entry in transcript:
                     print(f"{entry['text']}")
         else:
             print("Failed to save transcript")
-        
     else:
         print("Failed to get transcript")
 
 if __name__ == "__main__":
-    video_id = "https://www.youtube.com/watch?v=qUV3Gsy9mjw"
-    transcript = main(video_id, print_transcript=True)
+    # If run directly, get video from command line argument or use default
+    if len(sys.argv) > 1:
+        video_url = sys.argv[1]
+    else:
+        video_url = "https://www.youtube.com/watch?v=qUV3Gsy9mjw"  # Default video
+    
+    # Use second argument as flag for printing transcript (if provided)
+    print_transcript = len(sys.argv) > 2 and sys.argv[2].lower() in ['true', 'yes', 'y', '1']
+    
+    main(video_url, print_transcript=print_transcript)

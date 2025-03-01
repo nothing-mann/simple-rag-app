@@ -1,9 +1,19 @@
-from typing import Optional, Dict, Any
+from typing import Optional, Dict, Any, List
 from litellm import completion
 import os
+import sys
 import json
+import argparse
 from dotenv import load_dotenv
+from pathlib import Path
 
+# Add the project root to Python path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# Import configuration
+from backend.config import HERITAGE_SITES_DIR, TRANSCRIPTS_DIR, DEFAULT_MODEL
+
+# Load environment variables
 load_dotenv()
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
@@ -11,7 +21,7 @@ if not openai_api_key:
     print("WARNING: OPENAI_API_KEY not found in the .env file")
 
 class HeritageDataStructurer:
-    def __init__(self, model_id: str = "gpt-4o-mini"):
+    def __init__(self, model_id: str = DEFAULT_MODEL):
         """Initialize with LiteLLM model"""
         self.model_id = model_id
 
@@ -62,9 +72,13 @@ Heritage site to structure: {heritage_site}
             print(f"Error extracting monument name from JSON: {str(e)}")
             return None
 
-    def save_to_file(self, structured_data: str, directory: str = "data/heritage_sites") -> bool:
+    def save_to_file(self, structured_data: str, directory: str = None) -> bool:
         """Save structured heritage data to a JSON file named after the monument"""
         try:
+            # Use configured directory if none provided
+            if directory is None:
+                directory = HERITAGE_SITES_DIR
+                
             # Create directory if it doesn't exist
             os.makedirs(directory, exist_ok=True)
             
@@ -74,6 +88,7 @@ Heritage site to structure: {heritage_site}
                 raise ValueError("Could not extract monument name from structured data")
             
             filename = os.path.join(directory, f"{monument_name}.json")
+            print(f"Saving to file: {filename}")
             
             # Parse the JSON data
             try:
@@ -127,20 +142,105 @@ Heritage site to structure: {heritage_site}
             return False
 
     def load_transcript(self, filename: str) -> Optional[str]:
-        """Load heritage data from a file"""
+        """Load transcript from a file"""
         try:
+            # If filename doesn't have a directory part, use TRANSCRIPTS_DIR
+            if not os.path.dirname(filename):
+                filename = os.path.join(TRANSCRIPTS_DIR, os.path.basename(filename))
+            
             with open(filename, 'r', encoding='utf-8') as f:
                 return f.read()
         except Exception as e:
-            print(f"Error loading data: {str(e)}")
+            print(f"Error loading transcript: {str(e)}")
             return None
+            
+    def process_transcript_file(self, transcript_file: str, output_dir: str = None) -> bool:
+        """Process a single transcript file into structured data"""
+        print(f"Processing transcript file: {transcript_file}")
+        transcript = self.load_transcript(transcript_file)
+        
+        if not transcript:
+            print(f"Failed to load transcript from {transcript_file}")
+            return False
+            
+        print(f"Structuring data from transcript...")
+        site_data = self.structure_heritage_data(transcript)
+        
+        if not site_data:
+            print(f"Failed to structure transcript data from {transcript_file}")
+            return False
+            
+        print("Transcript structured successfully")
+        if self.save_to_file(site_data, output_dir):
+            print(f"Structured data saved to {output_dir or HERITAGE_SITES_DIR}")
+            return True
+        else:
+            print(f"Failed to save structured data for {transcript_file}")
+            return False
+    
+    def process_all_transcripts(self, transcripts_dir: str = TRANSCRIPTS_DIR, output_dir: str = None) -> Dict[str, bool]:
+        """Process all transcript files in the directory"""
+        results = {}
+        
+        # List all transcript files
+        if not os.path.exists(transcripts_dir):
+            print(f"Transcripts directory not found: {transcripts_dir}")
+            return results
+            
+        transcript_files = [os.path.join(transcripts_dir, f) for f in os.listdir(transcripts_dir) 
+                          if f.endswith('.txt') and os.path.isfile(os.path.join(transcripts_dir, f))]
+        
+        if not transcript_files:
+            print(f"No transcript files found in {transcripts_dir}")
+            return results
+            
+        print(f"Found {len(transcript_files)} transcript files to process")
+        
+        # Process each file
+        for i, file_path in enumerate(transcript_files, 1):
+            file_name = Path(file_path).name
+            print(f"Processing file {i}/{len(transcript_files)}: {file_name}")
+            
+            success = self.process_transcript_file(file_path, output_dir)
+            results[file_path] = success
+            print("-" * 40)
+            
+        # Print summary
+        successful = sum(1 for success in results.values() if success)
+        print(f"\nProcessing complete: {successful}/{len(results)} files processed successfully")
+        
+        return results
+
+def main():
+    """Process transcripts into structured data"""
+    parser = argparse.ArgumentParser(description="Structure Heritage Site Transcripts")
+    parser.add_argument('--transcript', type=str, help="Path to specific transcript file")
+    parser.add_argument('--output-dir', type=str, default=HERITAGE_SITES_DIR, 
+                        help="Directory to save structured data")
+    parser.add_argument('--all', action='store_true', 
+                        help="Process all transcript files in the transcripts directory")
+    
+    args = parser.parse_args()
+    structurer = HeritageDataStructurer()
+    
+    if args.all:
+        # Process all transcript files
+        structurer.process_all_transcripts(TRANSCRIPTS_DIR, args.output_dir)
+    elif args.transcript:
+        # Process specific transcript file
+        structurer.process_transcript_file(args.transcript, args.output_dir)
+    else:
+        # Default: Find the most recent transcript
+        transcript_files = [os.path.join(TRANSCRIPTS_DIR, f) for f in os.listdir(TRANSCRIPTS_DIR) 
+                          if f.endswith('.txt') and os.path.isfile(os.path.join(TRANSCRIPTS_DIR, f))]
+        
+        if not transcript_files:
+            print(f"No transcript files found in {TRANSCRIPTS_DIR}")
+            return
+            
+        transcript_file = max(transcript_files, key=os.path.getmtime)
+        print(f"Using most recent transcript: {transcript_file}")
+        structurer.process_transcript_file(transcript_file, args.output_dir)
 
 if __name__ == "__main__":
-    structurer = HeritageDataStructurer()
-    # Example usage
-    transcript = structurer.load_transcript("data/transcripts/ypoB6S5mrts.txt")
-    site_data = structurer.structure_heritage_data(transcript)
-    if site_data:
-        print(site_data)
-        # Now just pass the directory, filename will be created automatically
-        structurer.save_to_file(site_data, "data/heritage_sites")
+    main()

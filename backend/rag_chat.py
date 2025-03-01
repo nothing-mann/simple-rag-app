@@ -1,8 +1,15 @@
 import os
+import sys
 from typing import Dict, Any, Optional
 from dotenv import load_dotenv
 from litellm import completion
-from rag import HeritageRAG
+
+# Add project root to path
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# Import from backend
+from backend.config import COLLECTION_NAME, DEFAULT_MODEL
+from backend.rag import HeritageRAG
 
 # Load environment variables
 load_dotenv()
@@ -12,7 +19,7 @@ if not OPENAI_API_KEY:
     print("WARNING: OPENAI_API_KEY not found in the .env file")
 
 class HeritageRAGChat:
-    def __init__(self, collection_name: str = "cultural-heritage-information", model_id: str = "gpt-4o-mini"):
+    def __init__(self, collection_name: str = COLLECTION_NAME, model_id: str = DEFAULT_MODEL):
         """Initialize RAG Chat system"""
         self.model_id = model_id
         self.rag = HeritageRAG(collection_name=collection_name)

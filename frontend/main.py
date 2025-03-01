@@ -6,11 +6,15 @@ import re
 import sys
 import os
 
-# Add parent directory to Python path
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add project root to Python path
+project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, project_root)
 
+# Now imports should work correctly
+from backend.config import COLLECTION_NAME, DEFAULT_MODEL
 from backend.get_transcript import YouTubeTranscriptDownloader
 from backend.chat import LiteLLMChat
+from backend.rag_chat import HeritageRAGChat
 
 
 # Page config
@@ -277,26 +281,95 @@ def render_structured_stage():
         st.info("Structured data view will be implemented here")
 
 def render_rag_stage():
-    """Render the RAG implementation stage"""
+    """Render the RAG implementation stage with comparison to base LLM"""
     st.header("RAG System")
+    
+    # Initialize both chat systems if not in session state
+    if 'rag_chat' not in st.session_state:
+        st.session_state.rag_chat = HeritageRAGChat(collection_name=COLLECTION_NAME, model_id=DEFAULT_MODEL)
+    
+    if 'bedrock_chat' not in st.session_state:
+        st.session_state.bedrock_chat = LiteLLMChat(model_id=DEFAULT_MODEL)
+    
+    # Initialize RAG messages if not exists
+    if "rag_messages" not in st.session_state:
+        st.session_state.rag_messages = []
+    
+    # Initialize comparison messages if not exists
+    if "comparison_messages" not in st.session_state:
+        st.session_state.comparison_messages = []
     
     # Query input
     query = st.text_input(
-        "Test Query",
+        "Ask a Question",
         placeholder="Enter a question about a Nepali heritage site..."
     )
+    
+    # Process query when submitted
+    if query:
+        process_rag_query(query)
     
     col1, col2 = st.columns(2)
     
     with col1:
-        st.subheader("Retrieved Context")
-        # Placeholder for retrieved contexts
-        st.info("Retrieved contexts will appear here")
+        st.subheader("RAG-Enhanced Response")
+        
+        # Display RAG chat messages
+        for message in st.session_state.rag_messages:
+            with st.chat_message(message["role"], avatar="🧑‍💻" if message["role"] == "user" else "🤖"):
+                st.markdown(message["content"])
         
     with col2:
-        st.subheader("Generated Response")
-        # Placeholder for LLM response
-        st.info("Generated response will appear here")
+        st.subheader("Standard LLM Response")
+        
+        # Display comparison chat messages
+        for message in st.session_state.comparison_messages:
+            with st.chat_message(message["role"], avatar="🧑‍💻" if message["role"] == "user" else "🤖"):
+                st.markdown(message["content"])
+    
+    # Example questions in a clean card
+    with st.sidebar:
+        st.markdown("### Try These Examples")
+        example_questions = [
+            "Tell me about Krishna Mandir in Patan Durbar Square",
+            "What is the historical significance of Bouddhanath Stupa?",
+            "When was Krishna Mandir built and by whom?",
+            "What are the architectural features of Pashupatinath Temple?",
+            "How did Nyatapola Temple survive the 2015 earthquake?",
+            "What makes Bhaktapur Durbar Square unique?"
+        ]
+        
+        for q in example_questions:
+            if st.button(q, key=f"rag_{q}", use_container_width=True, type="secondary"):
+                process_rag_query(q)
+                st.rerun()
+
+    # Add a clear chat button
+    if st.session_state.rag_messages:  # Only show if there are messages
+        if st.button("Clear Comparison", type="primary"):
+            st.session_state.rag_messages = []
+            st.session_state.comparison_messages = []
+            st.rerun()
+
+def process_rag_query(query: str):
+    """Process a query for both RAG and standard LLM responses"""
+    # Add user message to both chat histories
+    st.session_state.rag_messages.append({"role": "user", "content": query})
+    st.session_state.comparison_messages.append({"role": "user", "content": query})
+    
+    # Generate and store RAG response
+    rag_response = st.session_state.rag_chat.generate_rag_response(query)
+    if rag_response:
+        st.session_state.rag_messages.append({"role": "assistant", "content": rag_response})
+    else:
+        st.session_state.rag_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a RAG-enhanced response."})
+    
+    # Generate and store standard LLM response
+    standard_response = st.session_state.bedrock_chat.generate_response(query)
+    if standard_response:
+        st.session_state.comparison_messages.append({"role": "assistant", "content": standard_response})
+    else:
+        st.session_state.comparison_messages.append({"role": "assistant", "content": "Sorry, I couldn't generate a response."})
 
 def render_interactive_stage():
     """Render the interactive learning stage"""
@@ -349,7 +422,9 @@ def main():
         st.json({
             "selected_stage": selected_stage,
             "transcript_loaded": st.session_state.transcript is not None,
-            "chat_messages": len(st.session_state.messages)
+            "chat_messages": len(st.session_state.messages),
+            "rag_messages": len(st.session_state.rag_messages) if "rag_messages" in st.session_state else 0,
+            "comparison_messages": len(st.session_state.comparison_messages) if "comparison_messages" in st.session_state else 0
         })
 
 if __name__ == "__main__":

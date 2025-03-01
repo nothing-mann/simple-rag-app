@@ -36,83 +36,162 @@ This project creates a language learning and cultural heritage assistant focused
 language-learning-assistant/
 ├── backend/
 │   ├── chat.py             # Basic AI chat interface using LiteLLM
+│   ├── config.py           # Central configuration settings
 │   ├── get_transcript.py   # YouTube transcript extraction and processing
+│   ├── init_db.py          # Database initialization script 
 │   ├── rag.py              # Vector database management for heritage sites
 │   ├── rag_chat.py         # RAG-enhanced chat interface
 │   └── structured_data.py  # Data structuring for heritage site information
 ├── data/
 │   ├── heritage_sites/     # Structured JSON information about heritage sites
 │   └── transcripts/        # Raw and processed YouTube transcripts
+├── frontend/
+│   └── main.py             # Streamlit user interface
+├── chroma_db/              # Vector database storage
 └── README.md
 ```
 
-## How It Works
+## Complete Setup Guide
 
-1. **Data Collection**: The system downloads transcripts from YouTube videos about Nepalese heritage sites
-2. **Language Processing**: 
-   - Identifies the best available transcript (manual > automatic)
-   - Translates non-English content to English when needed
-3. **Information Structuring**:
-   - Processes raw transcript data using AI
-   - Formats into consistent sections: Monument Name, Fun Fact, and Description
-4. **User Interaction**:
-   - Provides a chat interface for inquiries about heritage sites
-   - Generates responses based on processed information
+### 1. Environment Setup
 
-## Getting Started
-
-1. Clone this repository
-2. Install dependencies:
+1. **Clone the repository**:
+   ```bash
+   git clone <repository-url>
+   cd language-learning-assistant
    ```
-   cd into backend folder
-   # Create Virtual environment
+
+2. **Create and activate a virtual environment**:
+   ```bash
    python -m venv venv
-   # Activate the virtual environment
+   # On Windows
+   venv\Scripts\activate
+   # On macOS/Linux
    source venv/bin/activate
-   # Install the dependencies listed in requirements.txt
+   ```
+
+3. **Install dependencies**:
+   ```bash
    pip install -r requirements.txt
    ```
-3. Set up environment variables:
-   - Create a `.env` file with your OpenAI API key:
+
+4. **Set up environment variables**:
+   - Create a `.env` file in the project root with your OpenAI API key:
      ```
      OPENAI_API_KEY=your_api_key_here
      ```
-4. Run the application:
+
+### 2. Data Collection and Processing
+
+1. **Download transcripts from YouTube**:
+   ```bash
+   # Download a single transcript
+   python backend/get_transcript.py https://www.youtube.com/watch?v=VIDEO_ID
+   
+   # Print transcript content while downloading
+   python backend/get_transcript.py https://www.youtube.com/watch?v=VIDEO_ID true
    ```
-   cd into the frontend
-   streamlit run app.py
+
+2. **Structure the transcript data**:
+   ```bash
+   # Process most recent transcript
+   python backend/structured_data.py
+   
+   # Process a specific transcript
+   python backend/structured_data.py --transcript data/transcripts/VIDEO_ID.txt
+   
+   # Process all transcripts
+   python backend/structured_data.py --all
+   
+   # Specify a custom output directory
+   python backend/structured_data.py --all --output-dir path/to/output
    ```
 
-## Usage
+### 3. Database Initialization and Management
 
-### Processing YouTube Transcripts
-```bash
-# Download and process a transcript
-python backend/get_transcript.py https://www.youtube.com/watch?v=VIDEO_ID
-```
+1. **Initialize the vector database**:
+   ```bash
+   # This will process all heritage site data and create the vector database
+   python backend/init_db.py
+   ```
 
-### Structuring Data
+2. **Update the database with new content**:
+   ```bash
+   # Update database with all heritage site data
+   python backend/rag.py
+   
+   # Test query against the database
+   python backend/rag.py --query "Tell me about Krishna Mandir" --results 3
+   ```
+
+### 4. Running the Chat Interface
+
+1. **Use the command line RAG chat interface**:
+   ```bash
+   python backend/rag_chat.py
+   
+   # Use a different model
+   python backend/rag_chat.py --model gpt-4
+   ```
+
+2. **Run the web application**:
+   ```bash
+   # Start the Streamlit web interface
+   streamlit run frontend/main.py
+   ```
+
+## Troubleshooting
+
+### Database Synchronization Issues
+
+If the RAG responses aren't using your latest data:
+
+1. Make sure JSON files are in the correct format in the `data/heritage_sites` directory
+2. Re-initialize the database:
+   ```bash
+   python backend/init_db.py
+   ```
+3. If problems persist, try clearing the database:
+   ```bash
+   rm -rf chroma_db
+   python backend/init_db.py
+   ```
+
+### Import Errors
+
+If you encounter import errors:
+
+1. Make sure you're running commands from the project root directory
+2. Verify that the virtual environment is activated
+3. Check that all dependencies are installed correctly
+
+### API Key Issues
+
+If you get authentication errors:
+
+1. Verify your OpenAI API key is correctly set in the `.env` file
+2. Ensure the `.env` file is in the correct location (project root)
+3. Check if your API key has sufficient quota/credits
+
+## Complete Workflow Example
+
+Here's a complete example of processing a new heritage site video:
+
 ```bash
-# Structure transcript data into heritage site information
+# 1. Activate the environment
+source venv/bin/activate
+
+# 2. Download a transcript from a YouTube video
+python backend/get_transcript.py https://www.youtube.com/watch?v=EXAMPLE_ID
+
+# 3. Convert the transcript to structured data
 python backend/structured_data.py
-```
 
-### Managing the Vector Database
-```bash
-# Update the database with new heritage site information
-python backend/rag.py --data-dir data/heritage_sites
+# 4. Update the vector database with the new data
+python backend/init_db.py
 
-# Run a test query against the database
-python backend/rag.py --query "Tell me about temples in Kathmandu" --results 3
-```
-
-### Interacting with the RAG Chat
-```bash
-# Start the RAG-enhanced chat interface
-python backend/rag_chat.py
-
-# Use a different LLM model
-python backend/rag_chat.py --model gpt-4
+# 5. Start the web application
+streamlit run frontend/main.py
 ```
 
 ## Dependencies
@@ -121,6 +200,8 @@ python backend/rag_chat.py --model gpt-4
 - youtube_transcript_api
 - python-dotenv
 - streamlit
+- chromadb
+- openai
 
 ## Future Enhancements
 
