@@ -171,4 +171,11 @@ cython_debug/
 .pypirc
 
 # Transcripts
-transcripts/
+**/transcripts/*.txt
+**/transcripts/*.json
+**/transcripts/*.srt
+backend/data/transcripts/*.txt
+frontend/transcripts/*
+
+# Chromadb files
+chroma/
