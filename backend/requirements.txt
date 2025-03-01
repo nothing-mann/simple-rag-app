@@ -1,5 +1,0 @@
-chromadb
-streamlit
-litellm
-python-dotenv
-youtube_transcript_api
