@@ -77,14 +77,19 @@ class HeritageRAGChat:
         system_prompt = """You are a Nepalese cultural heritage expert. 
 Answer questions about Nepalese monuments and heritage sites based on the context provided.
 If the context doesn't contain relevant information, say so and provide general information about Nepalese heritage.
-Always be informative, engaging, and respectful of Nepalese culture and history."""
+Always be informative, engaging, and respectful of Nepalese culture and history.
+Try to give as much information as possible if the question asks for description or elaboration with markdown format and headings.
+If the question is very broad, or if the user only enters a keyword, provide a thorough and informative response containing everything your context tells you.
+If the question is asking for very specific answers try to be as accurate and specific as possible.
+"""
 
         user_prompt = f"""Question: {user_query}
         
 Context information:
 {context}
 
-Please provide a helpful and accurate response based on the above context."""
+Please provide a helpful and accurate response based on the above context. If the question is specific then only provide them the answer to that question. Don't make it lengthy. Try to give out a response in structured markdown format for longer answers to structure it.
+"""
 
         try:
             response = completion(
