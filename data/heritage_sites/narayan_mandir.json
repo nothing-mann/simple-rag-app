@@ -1,0 +1,54 @@
+{
+  "monument_name": "Narayan Mandir",
+  "alternative_names": [
+    "Nārāyaṇa Mandira (ca. 17th cent. CE)",
+    "Narayan Temple"
+  ],
+  "typology": {
+    "monument_type": "Tiered temple",
+    "main_deity": "Nārāyaṇa",
+    "religion": "Vaishnava"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur",
+    "heritage_area": null,
+    "tola": "Mangal Bazar"
+  },
+  "description": "The Nārāyaṇa Temple, the smallest pagoda-styled temple of the area, is located between Narasiṃha Temple (LAL1290) and Cāranārāyaṇa Temple (LAL1320) at the Patan Darbar Square. The east-facing temple is built on a square stepped base and has a carved wooden door with a small carved image of Nārāyaṇa above it. Photos printed in Pruscha (1975, 164) and Sanday (1982, 72) show a toraṇa on top of the door, though this is now missing. The struts supporting the roof of the temple display images of Viṣṇu at the middle and images of Garuḍa below him. Inside the sanctum, one can find a four-handed standing image of Viṣṇu. Although Pruscha (1975, 164) and Sanday (1982, 72) mention that this temple is guarded by a pair of lions and dvārapālas, the lions are currently missing (May 2019). Pruscha (1975, 164) and Gutschow (vol. II, 2011, 317) date the temple to the 17th century and 1652 respectively, though neither refers to any documented evidence in doing so. The daily ritual worship used to be performed by a Brahmin priest (Pruscha 1975, 164), however this seems to have ended since long.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Square",
+    "storeys": 2,
+    "dimensions": {
+      "length": 260,
+      "depth": 260,
+      "height": 920,
+      "diameter": 0
+    },
+    "construction_materials": [
+      "Jhĩgaṭī/pvala apā tiles",
+      "dāciaḥpā (veneer brick)"
+    ]
+  },
+  "condition": {
+    "status": "Slightly damaged (minor damages such as minor cracks, plants, missing stones in plinths)",
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "date": "17th century",
+      "description": "Pruscha (1975, 164) and Gutschow (vol. II, 2011, 317) date the temple to the 17th century."
+    },
+    {
+      "date": "1652",
+      "description": "Gutschow (vol. II, 2011, 317) dates the temple to 1652."
+    },
+    {
+      "date": "May 2019",
+      "description": "The lions are currently missing."
+    }
+  ]
+}

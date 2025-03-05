@@ -1,0 +1,56 @@
+{
+  "monument_name": "Fountain of Baḍā Mahārāṇī",
+  "alternative_names": [
+    "Mahārāṇī Pokharī",
+    "Mahārānī Pukhū (1908 CE)"
+  ],
+  "typology": {
+    "monument_type": "Water architecture",
+    "main_deity": null,
+    "religion": "Unspecified"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur",
+    "heritage_area": null,
+    "tola": "Maṅgal Bazār"
+  },
+  "description": "Mahārānī Pukhū or the Fountain of Mahārānī, was commissioned in 1908 CE by prime minister Candra Śamśera in memory of his late wife Mahārāṇī Candrabhakta Lokarājyalakṣmī Devī. Mahārānī Pukhū or the Fountain of Mahārānī is located at Patan Darbar Square. It is a newer addition of the Rana regime to the Malla Palace architecture. The Pond is located to the west of Mula Coka, between the Big Bell and the Bhāi Degaḥ Temple.\n\nThe pond has a unique shape of eight petal circular arches in a rosette form. The walls of the pond are clad with dāciapā and topped with stone slabs. At the centre of the pond, one can see a raised platform 3.5 × 3.5 m in size. This can be accessed by climbing four steps placed on opposite sides in an east-west axis and following a pathway 1 m in width. The platform is paved with flagstone and is supported by five arches underneath, with one at the centre and two on either side. The pond is about 1 m deep. A bust of Baḍā Mahārānī (80 cm high) has been placed on a granite square pillar (155 cm high) at the centre of the platform. The bust is made in such a way that the index finger of the Baḍā Mahārānī points downwards and sprinkles water.\n\nThis Pond was commissioned in 1908 by Candra Śamśera, a Rana prime minister, in memory of his late wife Mahārāṇī Candrabhakta Lokarājyalakṣmī Devī. The inscription mentions that the Queen had helped provide access to drinking water in Patan and passed away on 11 February 1905. Rāṇā (2047, 55) informs that she died due to tuberculosis, and Landon (1928, 117-118) mentions that she funded the project from her own pocket. Her waterways channelled water through pipes from a source to the south of the city, but she died just before the work was finished. Vajrācārya (1099, 104) mentions that the area around the Pond was decorated with banners during its inaugural ceremony, and gambling was allowed for four days.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Circular",
+    "storeys": 1,
+    "dimensions": {
+      "diameter": 1065,
+      "depth": null,
+      "height": null,
+      "length": null
+    },
+    "construction_materials": [
+      "dāciaḥpā (veneer brick)",
+      "stone"
+    ]
+  },
+  "condition": {
+    "status": "Repaired",
+    "threats": [
+      "Erosion"
+    ]
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Inaguration of the pond",
+      "description": "Candra Śamśera, the Rāṇā prime minister, commissioned this pond in memory of his late wife Mahārānī Candrabhakta Lokarājyalakṣmī Devī.",
+      "date": {
+        "date": "1908 CE",
+        "period": "Shumsher Rana Period (1885-1951)",
+        "year": "NS 1029",
+        "nepali_month": "Mārgaśīrṣa (Maṅsira)",
+        "pakṣa": "Dark fortnight",
+        "tithi": "3"
+      }
+    }
+  ]
+}

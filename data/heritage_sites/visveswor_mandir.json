@@ -1,0 +1,81 @@
+{
+  "monument_name": "Visveswor mandir",
+  "alternative_names": [
+    "Viśvanātha Mandira",
+    "Viśveśvara Mandira (1627 CE)"
+  ],
+  "typology": {
+    "monument_type": "Tiered temple",
+    "main_deity": "Viśveśvara (Śivaliṅga)",
+    "religion": "Shaiva"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur",
+    "heritage_area": null,
+    "tola": "Patan Durbar Square"
+  },
+  "description": "Viśveśvara temple is located in front of the Maṇi Hiṭī, to the west of the main street of the Patan Darbar Square and to the north of the famous Kṛṣṇa Temple (LAL1340). The colonnaded temple's main structural columns stand on the periphery of the top plinth, and a toraṇa thā̃ supports the arched tympanum. 20 stone bases have been intricately carved in the forms of lions and serve to hold up the timber posts. The stone panels in between the stone bases feature images of celestial spirits and different plant symbols and foliage. The overhanging pitched roof is covered with jhĩgaṭī tiles and supported by beautifully carved struts that display images of different deities. The finial of the temple is a brass pinnacle. A trident (triśūla) has been installed alongside the pinnacle and resembles the weapon of Lord Śiva.\n\nThe two-tiered temple is based on three plinths, consisting of two high base plinths and a top plinth with an ambulatory path. The temple can be accessed from two directions; the east side is furnished with a series of steps flanked by two stone statues of the royal family riding on elephants, whilst the western side is marked by a stone nandī. The western side is also guarded by two stone lions and flanked by images of Yama and Kubera. The doors, columns and toraṇas of the temple exhibit excellent wood-carvings. All the doors, and even the bays over the columns, have intricately carved toraṇas.\n\nThe main sanctum is surrounded by a colonnaded structure with five bays. A stone śivaliṅga can be found at the center of the sanctum, and is furnished with four intricately carved doors facing in all four directions. Stone images of Viṣṇu (north-east), Umāmaheśvara (north-east), Sūrya (south-east), Bhairava (south-east), a Yogin (south-west), Gaṇeśa (south-west), Mahālakṣmī (north-west) and Annapūrṇā (north-west) have been attached to the exterior wall of the first floor. Images of the Eight Dikpālas have been carved on the small wooden windows which flank each door. The struts of the temple contain images of a dancing Bhairava, Gaṇeśa, and Śiva with many faces and hands. The lower parts of the struts that support the lower roof of the temple also contain images; when these are combined with one another, they tell a story of someone showing various worlds to Śivaśarman. At the bottom of each of the struts, one can find inscriptions that act as the captions of each specific image.\n\nThis temple was constructed by King Siddhinarasiṃha Malla in 1627 CE. Vajrācārya (VS 2056, 69) surmises that this was the first temple the King had built. The stone inscription placed at the plinth of the temple informs its readers that the King also made a golden spout to the west of the temple. However, the spout can no longer be located.\n\nThe upper roof of the temple collapsed in 1989 and was renovated by UNESCO in 1990. The temple was severely damaged during the 2015 earthquake. It was recently (2019) renovated by the KVPT. No guṭhī related to this temple could be found; it seems that none exists at this time.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Square",
+    "storeys": 3,
+    "dimensions": {
+      "length": 805,
+      "depth": 805,
+      "height": 1714,
+      "diameter": 0
+    },
+    "construction_materials": [
+      "jhĩgaṭī tiles",
+      "dāciaḥpā (veneer brick)",
+      "māaḥpāḥ (traditional brick)"
+    ]
+  },
+  "condition": {
+    "status": "Rebuilt, Heavily damaged (collapsed, demolished, major cracks and structural damages)",
+    "threats": []
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Restoration by KVPT",
+      "description": "The temple was renovated by the Kathmandu Valley Preservation Trust.",
+      "event_date": "2019 CE",
+      "period": "Democratic Period (1990-)"
+    },
+    {
+      "event_name": "Story of Śivaśarman",
+      "description": "Story of Śivaśarman inscribed on struts",
+      "event_date": "0000",
+      "year": "unknown"
+    },
+    {
+      "event_name": "Initial construction",
+      "description": "The temple was constructed by King Siddhinarasiṃha Malla. He performed homa and installed Viśveśvara (Śivaliṅga) in the temple. He also made a sunadhāra on the west side of the temple and organised a feast for jogīs.",
+      "event_date": "1627 CE",
+      "period": "Late Malla period (1482-1768/69)",
+      "nepali_month": "Māgha",
+      "pakṣa": "Bright fortnight",
+      "tithi": 5
+    },
+    {
+      "event_name": "Damage of the temple",
+      "description": "The temple was badly damaged during the earthquake of 2015.",
+      "event_date": "2015 CE",
+      "period": "Democratic Period (1990-)",
+      "year": "VS 2072",
+      "nepali_month": "Vaiśākha (Vaisākha)",
+      "pakṣa": "Gate"
+    },
+    {
+      "event_name": "Collapse of the upper roof",
+      "event_date": "1989-08-06"
+    },
+    {
+      "event_name": "Restoration by UNESCO",
+      "description": "The temple was renovated with UNESCO's emergency fund."
+    }
+  ]
+}

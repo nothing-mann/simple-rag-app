@@ -1,0 +1,46 @@
+{
+  "monument_name": "Changunarayan",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": "temple",
+    "main_deity": "Vishnu",
+    "religion": "Hinduism"
+  },
+  "location": {
+    "province": null,
+    "district": "Bhaktapur",
+    "municipality": null,
+    "heritage_area": null,
+    "tola": "Changu Village"
+  },
+  "description": "The Changunarayan temple is situated in Changu Village in North of Bhaktapur on a hilltop. It is one of the finest as well as oldest specimens of pagoda architecture, which is dedicated to the Hindu god Vishnu. Stone, metal and woodcrafts embellish the temple with great historical, archeological and religious importance. This temple is believed to be the oldest shrines in the Kathmandu valley. The oldest chronicle of the country, “The Gopal Raj Vamsavali”, which is believed to be compiled during 14th century AD, has credited a King named Hari Dutta Verma as its consecrator who built this temple along with three other temples at the four cardinal directions of the Kathmandu valley, dedicated to the Hindu God Narayan. The other Vaisnavait temples that he built were the temples of Sesh Narayan, Bishankhu Narayan and Ichangu Narayan. A huge stone pillar erected on the north-western corner of the Changunarayan temple, actually a commemorative installed by King Mana Deva in 464 AD, intending to immortalize the great victories made by him during his lifetime. The lower parts of this pillar, which is partially buried underground, have very beautifully composed verses dealing with the references of his great victories and been inscribed in popular Lichhavi script. This is also taken as to be the most authentic historical evidence of the country. It also has details of the charities that he had made to the Brahmins at that occasion after performing a grand yogic ceremony. He also has given the names of his ancestors along with the names of his parents. But unfortunately, he did not mention anything about the person responsible to erect this temple. All these indicates that the temple must have been built somewhere before the time of the Mana Deva. Except these, the temple complex with its surrounding abounds with other evidences in the form of sculptures and some other inscriptions of the times representing the kings followed by Mana Deva and others. Such evidences are found here so profusely that this place also can be taken as an open air Museum of Arts, Architecture culture and history. Apart from the pillar inscription of Mana Deva, the stone slab inscription of Niripechha, Siva Deva-Amsuvarma, Abhaya Malla, Jaya Rudra Malla, Jayasthiti Malla and others that have helped our historians to write the authentic history of those times. The three storied and two-roofed temple of Changunarayan is the finest example of the Nepalese temple architectural design built in the “popular Nepalese style” on a one tired brick stone platform. Its top roof is made out of gilded copper sheets while the lower one is having a traditional tiled roof. The overhanging roofs of it have been supported by very beautifully carved wooden components used in it. The temple and its complex abound other contemporary art objects done in stone, bricks, metal, terracotta and wood. In its complex, apart from the main shrine of Changu Narayan, there are other similar architectural edifices that can also be taken as a fine specimen of Nepalese architectural designs evolved in different periods of time in the past. For example, the temple of Goddess Chhinnamasta, Kileswor Mahadeva, Laxmi Narayan, Natyeswor, Yatu Maju, Kanti Bhairava and several Sattal (public rest houses) are some that were built in different historical times by different persons. Barring a few examples, most of the aforesaid edifices were constructed either by the royalties from different dynasties that reigned Nepal in different historical epochs or by some prominent personages in the past. Such architectural works, though not of similar quality and reputation, are also found in the adjoining traditional settlement on its close vicinity. Along with these religious and public architectural edifices, there are also other secular architectural works like residential buildings, shelter house, waterspouts and ponds. These always have been a source of attraction for both the pilgrims and the tourists. Beside these architectural works, the temple complex is filled with beautiful and exquisite artworks executed in stone and represent different historical ages. Among them, the sculpture of the seated Garuda in Anjali mudra, now placed beside a broken base of a stone pillar is considered to be the oldest one. It is believed that the remaining part of the pillar, which is now found being erected on the northern corner of the main shrine, was shifted here from its original place after it was broken. The sculpture of Garuda was originally mounted on that pillar which also contains the inscription engraved by King Mana Deva in 464 AD using the Lichhavi script. Apart from this, the stone sculptures of Garuda Narayan, Vishworupa, Trivikram, Shreedhara and Narasingha are the other available finest specimens of sculptural arts executed in different times of the Lichhavi period. The Lichhavi period is recognized as the golden age in the history of Nepal which excels other historic periods in producing excellent masterpiece of art works done in all available mediums. Most of the art historians of the world have praised these artworks and taken them as the finest examples of the Nepalese artistic geniuses. Besides, the temple complex also abounds similar artworks with highest artistic values created by the Nepalese artisans in different successive historic periods such as Malla, Shah and Rana. It is also said that the secret vault of the temple, which is not accessible to all, has excellent pieces of artworks done in stone, metal and terracotta along with other riches. Along with these precious artworks, the temple possesses other valuable objects such as the dated inscriptions dome either in stone or metal that has immense historical values. For examples the dated stone slab inscription of the time of King Amsuverma, the stone pillar inscription of King Mana Deva, the stone inscription of an individual named Niripechha and the inscriptions of several Malla kings from Kathmandu and Bhaktapur are some examples which have been very helpful in reconstructing the history of those times. The Changunarayan temple has been a religious center since the very early days of the country’s history. This is a very holy and a sacred site for pilgrimages, especially for the followers of the Vaisnavait sect of the Hinduism. It is equally a sacred religious site for followers of the Buddhism as well from the very beginning. The Buddhists take this temple as of their God Lokeswora, the Hari Vahana Lokeswora. This unique tradition found prevalent only in Nepal, has also made it distinct. This is the rare temple found in Nepal where both Hindus and Buddhists alike offer their reverences. This can be taken as an example of a unique tradition of religious tolerance and harmony that is rare elsewhere. Recognizing its age long historic and cultural values, the world Heritage Committee of UNESCO has declared it as a world heritage site in 1979.",
+  "fun_fact": "This is the rare temple found in Nepal where both Hindus and Buddhists alike offer their reverences.",
+  "architecture": {
+    "shape": "pagoda",
+    "storeys": 3,
+    "dimensions": null,
+    "construction_materials": ["stone", "metal", "wood"]
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event": "Construction of the temple",
+      "date": "14th century AD",
+      "description": "Credited to King Hari Dutta Verma who built this temple along with three other temples at the four cardinal directions of the Kathmandu valley."
+    },
+    {
+      "event": "Erection of the stone pillar",
+      "date": "464 AD",
+      "description": "Commemorative installed by King Mana Deva to immortalize his great victories."
+    },
+    {
+      "event": "UNESCO World Heritage Site designation",
+      "date": "1979",
+      "description": "Recognizing its age long historic and cultural values."
+    }
+  ]
+}

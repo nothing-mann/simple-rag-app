@@ -1,0 +1,64 @@
+{
+  "monument_name": "Maṇimaṇḍapa, North",
+  "alternative_names": [
+    "Manimandapa"
+  ],
+  "typology": {
+    "monument_type": "Phalcā, Freestanding building",
+    "main_deity": null,
+    "religion": "Unspecified"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur",
+    "heritage_area": null,
+    "tola": "Patan Darbar Square"
+  },
+  "description": "One of two Maṇḍapas located on Patan Darbar Square, the rectangular Maṇimaṇḍapa North measures 427 x 560 cm and is open at all four directions. The tiled roof is supported by 16 wooden pillars. A throne (lion-seat) made of stone is placed in the center. The stone inscription on the back of the throne faces north, and records that King Yoganarendra Malla (1685-1750) issued an order to renovate the Maṇimanḍapa in NS 821 (1701), as the existing one was very old. Yoganarendra Malla installed the throne and a statue of bhairva and śakti in the same year. The inscription also records the gūṭhī and land endowed to it who were responsible for carrying out daily, annual and occasional worships in the Maṇimaṇḍapa. However, neither the guṭhī nor the land can now be traced. Following an ancient custom, four astrologers from Patan sit together in the Maṇimaṇdapa to decide upon the auspicious date and time on which the statue of Matsyendranātha should be brought from Buṅgamatī to Patan. The astrologers also determine the date for the bhoṭojātrā and inform the public of this. The Maṇimaṇḍapa North collapsed in the 2015 earthquake, but was restored by the Kathmandu Valley Preservation Trust in 2018. According to the Nepālikabhūpavaṃśāvalī (19.3.189) the monument was built by Yoganarendra Malla (1685-1705) who placed a lion-throne in it and used it as a court of justice. He appointed Dharmarāja Paṇḍita for the recitation of the Kāraṇḍavyūha text, “which contains the greatness of glorious Matsyendranātha Āryāvalokiteśvara.” According to Katharina Weiler (KVPT 2016, 317), Daniel Wright quotes a source who names Bīra Deva as the Licchavi King who built the maṇḍapas, along with the tank and watercourses.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Rectangular",
+    "storeys": 1.5,
+    "dimensions": {
+      "length": 560,
+      "depth": 420,
+      "height": 650
+    },
+    "construction_materials": [
+      "Jhĩgaṭī/pvala apā tiles",
+      "dāciaḥpā (veneer brick)",
+      "māaḥpāḥ (traditional brick)",
+      "stone"
+    ]
+  },
+  "condition": {
+    "status": "Good (very few light surface damages, renovated or repaired)",
+    "threats": null
+  },
+  "cultural_activities": [
+    {
+      "activity": "Matsyendranāthajātrā",
+      "description": "An ancient custom dictates that four astrologers of Patan sit in the Maṇimaṇdapa to find an auspicious date and time to bring the statue of Matsyendranātha from Buṅgamatī to Patan. They also decide upon a date for the bhoṭojātrā and inform the public of their decision."
+    }
+  ],
+  "historical_events": [
+    {
+      "event_name": "Renovation of the Maṇimaṇḍapa",
+      "description": "The inscription records that King Yoganarendra Malla (1685-1750) issued an order to renovate the Maṇimanḍapa in NS 821 (CE 1701).",
+      "date": "1701",
+      "period": "Late Malla period (1482-1768/69)",
+      "year": "NS 821",
+      "sources": "Inscription of NS 821"
+    },
+    {
+      "event_name": "Coronation of King Mahīndrasiṃha",
+      "description": "The coronation ceremony of King Mahīndrasiṃha (Bhāskara Malla) took place in the Maṇimaṇḍapa.",
+      "date": "1717 CE",
+      "period": "Late Malla period (1482-1768/69)",
+      "year": "NS 837",
+      "pakṣa": "Unknown",
+      "sources": "Pant VS 2037, 20"
+    }
+  ]
+}

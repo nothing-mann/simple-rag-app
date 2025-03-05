@@ -1,0 +1,85 @@
+{
+  "monument_name": "Char Narayan Mandir",
+  "alternative_names": [
+    "Jagannārāyaṇa Mandira",
+    "Cāra Nārāyaṇa Mandira (1566 CE)"
+  ],
+  "typology": {
+    "monument_type": "Tiered temple",
+    "main_deity": "Caturvyūha Viṣṇu",
+    "religion": "Vaishnava"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur",
+    "heritage_area": null,
+    "tola": "Mangal Bazar"
+  },
+  "description": "Cāra Nārāyaṇa Mandira is the oldest temple on Patan Darbar Square located between Kṛṣṇa Mandira (LAL1340) and Nārāyaṇa Mandira (LAL1310). It is a copy of the Cāra Nārāyaṇa Temple (a.k.a. Jagannātha) in Kathmandu. This two-tiered temple is built on a double plinth and faces east, towards the Royal Palace. Behind the temple the famous alley known as Mvaḥ Maru Galli leads to the west.\n\nThe temple is attached to a wide platform to the east which is known as Kārtik Dabu. It can be accessed by climbing a flight of stairs guarded by two stone lions. The top plinth once housed two stone images of Jaya and Vijaya, who also guarded the carved main entry door (Bernier 1978, 66). However, these images have now been placed inside the Keśavanārāyaṇa courtyard. The door is built as a tripartite portal. It is based on a stone threshold, and each wall contains such doors, all of which are flanked by two aedicules on either side. Each of these doors is surmounted by tympanums carved with various deities. The main door's torana shows Naṭarāja dancing on top of the seven heads of a nāga (Jośī 2065, 44). Eight Dikpālas have been placed on the small niches made on the walls of the outer wall. Agni and Indra are located to the east, Niṛti and Yama are to the south, Vāyu and Varuṇa are on the western wall, and Īśāna and Kubera are to the north.\n\nThe floors are separated by bands of carved timber cornices. The first floor has three small beautifully carved windows on each of its four walls. The overhanging first roof is supported by slanting struts that display wonderfully carved images of different forms of Vaishnava. Out of the 24 incarnations of Viṣṇu, 20 various forms have been depicted on the struts which have been supporting the lower roof. Besides these images one can also spot images of lions in erotic actions and men helping them (Jośī 2065, 44). Such images are uncommon in Vaishnava temples. Gutschow (2011, vol. II, 395) suggests that these struts were probably added at a later date. The top floor has a central window flanked with two aedicules, one on each side. The upper roof is also supported by carved struts showing images of female deities, the consorts of Viṣṇu in his various incarnations. The roofs were covered with traditional j­­­hĩgaṭī tiles. The pinnacle had a gilded finial and a single layer of āmalaka.\n\nA circumambulatory passage inside the exterior wall leads around the main sanctum, in which a stone image of Cāra Nārāyaṇa is enshrined on a pedestal. Four Vyūhas of Nārāyaṇa, namely Vāsudeva, Saṅkarṣaṇa, Pradyumna and Aniruddha have been placed respectively at the east, south, west and north sides of the sanctum. The essence of these gods, Nārāyaṇa, the eternal Braman who appears as the whole universe, is in the middle. The four faces of the Caturvyūha symbolise different creatures and powers. Vāsudeva, Saṅkarṣaṇa, Pradyumna and Aniruddha are the symbols of human, lion, boar and a terrifying face respectively, and they in turn represent strength, knowledge, prosperity and power. Vāsudeva is holding a conch, a wheel, a club and a lotus in his four hands. Similarly, Saṅkarṣaṇa is holding a plough, a pestle, a lotus and a conch. Pradyumna is holding a bow, an arrow, a conch and a lotus. Aniruddha is holding a shield, a sword, a lotus and a conch. Devotees believe that visiting Cāra Nārāyaṇa will fulfil their desires and make them prosperous and healthy. Four manifestations (vyūha) of Lord Viṣṇu have been incorporated in one stone statue of the sanctum of the temple, giving the temple the name Cāra Nārāyaṇa.\n\nThis is the oldest temple in the Square (Pruscha 2015, 164). There are four other famous Nārāyaṇa temples in the valley: Icaṅgu, Viśaṅkhu, Śeṣa and Cā̃gu. It is believed that this temple represents these four famous Nārāyaṇa temples.\n\nThis temple collapsed completely in the 2015 earthquake and is under reconstruction as of 2019.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Square",
+    "storeys": 3,
+    "dimensions": {
+      "length": 662,
+      "depth": 662,
+      "height": 1309,
+      "diameter": 0
+    },
+    "construction_materials": [
+      "māaḥpāḥ (traditional brick)",
+      "dāciaḥpā (veneer brick)"
+    ]
+  },
+  "condition": {
+    "status": "Collapsed, Rebuilt",
+    "threats": [
+      "Earthquake"
+    ]
+  },
+  "cultural_activities": [
+    {
+      "activity": "Daily worship",
+      "description": "Nitya pūja (daily worship) used to be performed every morning by a Miśra Brāhmaṇa who received one thousand rupees per month from Guṭhī Saṃsthāna for his services. The daily worship has been suspended following the temple's collapse in the 2015 earthquake."
+    },
+    {
+      "activity": "Yearly fair",
+      "description": "A fair is held on the 11th day of the bright half of Kārtika (haribodhanī ekādaśī). Devotees flock to the temple during this event."
+    }
+  ],
+  "historical_events": [
+    {
+      "event_name": "Initial construction of the temple",
+      "description": "Purandara Siṃha Deva, a Mahāpātra of Lalitpur, built this temple in memory of his father Viṣṇu Siṃha. The inscription states that Purandara Siṃha Deva declared his son Purushottama as the prince and was preparing to make him king.",
+      "date": {
+        "date": "1566 CE",
+        "period": "Late Malla period (1482-1768/69)",
+        "year": "NS 686",
+        "nepali_month": "Māgha",
+        "pakṣa": "Dark fortnight",
+        "tithi": "13"
+      }
+    },
+    {
+      "event_name": "Renovation of the temple",
+      "description": "Guṭhi Saṃsthāna repaired the temple.",
+      "date": {
+        "date": "1968 CE",
+        "period": "Late Shaha Period (1951-1990)",
+        "year": "VS 2024"
+      }
+    },
+    {
+      "event_name": "Destruction by earthquake",
+      "description": "The temple was completely destroyed by the earthquake. However, the main deity is safe and is still in its original place. Many of the struts have been stored safely inside the Patan Museum. KVPT is rebuilding the temple.",
+      "date": {
+        "date": "2015 CE",
+        "period": "Democratic Period (1990-)",
+        "year": "VS 2072",
+        "nepali_month": "Vaiśākha",
+        "gate": "12"
+      }
+    }
+  ]
+}

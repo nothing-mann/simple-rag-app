@@ -1,0 +1,62 @@
+{
+  "monument_name": "Garuda Pillar",
+  "alternative_names": [
+    "Garuḍa Stambha (1637 CE)",
+    "गरुड स्तम्भ || LAL1341"
+  ],
+  "typology": {
+    "monument_type": "Pillar",
+    "main_deity": null,
+    "religion": "Vaishnava"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur",
+    "heritage_area": null,
+    "tola": "Patan Darbar Square"
+  },
+  "description": "In 1637, King Siddhinarasiṃha Malla built this pillar in collaboration with the Kṛṣṇa Temple (LAL1340). The gilded Garuḍa statue stands on an almost 7 meter tall rectangular pillar, measuring 55 x 55 cm. The 171 cm tall statue is greeting Kṛṣṇa in namaskāra gesture, and sits on a pedestal decorated with lotus petals. Whenever Kṛṣṇa is worshipped in the temple, the statue also receives some of the pūjā material, as Garuḍa is the vehicle of Viṣṇu. The image is therianthropic; half of it is in the shape of a bird, while the other half has a human appearance. Garuḍa appears in a benign posture; he is kneeling with his right knee upwards and his left knee on the pedestal as he prays to Kṛṣṇa. He is wearing a crown, and has a red ṭīkā on his forehead. Snakes adorn his neck and ears as ornaments, and he wears armlets on his wrists and arms. He has dhotī on his lower body and a girdle on his waist. Two wings and a tail can be found on his back.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Square",
+    "storeys": 0,
+    "dimensions": {
+      "length": 55,
+      "depth": 55,
+      "height": 863,
+      "diameter": 0
+    },
+    "construction_materials": [
+      "Stone"
+    ]
+  },
+  "condition": {
+    "status": "Heavily damaged (collapsed, demolished, major cracks and structural damages), Good (very few light surface damages, renovated or repaired)",
+    "threats": null
+  },
+  "cultural_activities": [
+    {
+      "activity": "Legend of King Yoganarendra Malla",
+      "description": "According to a legend, King Yoganarendra Malla imagined and proclaimed eight impossible things. One of the most prominent is follows: When the golden winged Garuḍa seated on the big stone pillar in front of the Kriṣṇa temple lays two pearls as big as the hen's egg, let my countrymen know that their beloved King Yoganarendra Malla is no longer on earth. However, until this happens, let every countryman know that King Yoganarendra Malla is alive in his Royal Palace (Joshi 2003, 34).",
+      "reference_source": "Joshi 2003, 34"
+    }
+  ],
+  "historical_events": [
+    {
+      "event_name": "Erection of the pillar",
+      "description": "King Siddhinarasiṃha Malla (1619-61) erected the pillar.",
+      "event_date": {
+        "date": "1637",
+        "period": "Late Malla period (1482-1768/69)",
+        "year": "NS 757",
+        "nepali_month": "Phālguna (Phāguna)",
+        "pakṣa": "Bright fortnight",
+        "tithi": "10"
+      },
+      "sources_and_references": [
+        "Dh. Vajrācārya 2000: 74"
+      ]
+    }
+  ]
+}

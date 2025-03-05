@@ -1,0 +1,70 @@
+{
+  "monument_name": "Harisankara Mandir",
+  "alternative_names": [
+    "Hariśaṅkara Mandira (1706 CE)",
+    "Harishankara Temple"
+  ],
+  "typology": {
+    "monument_type": "Tiered temple",
+    "main_deity": "Hariśaṅkara",
+    "religion": "Vaishnava, Shaiva"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur Municipal City",
+    "heritage_area": "Patan Darbar Square Monument Zone",
+    "tola": "Mangal Bazar"
+  },
+  "description": "This three-tiered Hariśaṅkara Temple is situated between the Big Bell (LAL1250) and the Narasiṃha Temple (LAL1290). This temple is an exemplary combination of Vaishnavism and Shaivism. Many details of this temple have been designed following the standards set by the Viśveśvara Temple, which was the first temple of its type on Patan Darbar Square. The Hariśaṅkara Temple stands on top of three plinths and can be accessed from the east by climbing a three-levelled staircase inset into the plinths. Two guardian stone statues of elephants flank the first flight of stairs.\n\nAn east-facing stone statue of a standing Hariśaṅkara is enshrined in the sanctum. The right-half of the statue shows Śaṅkara, whilst the left half depicts Hari, so this temple is unique in that it combines Vaishnavism and Shaivism. Śaṅkara is holding a triśūla (trident), a ḍamaru, a japamālā (rosary) and a kamaṇḍalu (gourd) in his four hands, while Hari holds a śaṇkha (conch), a cakra (wheel), a gadā (club) and a padma (lotus). Śaṅkara's Pārvatī stands to his left, and Viṣṇu's consort Lakṣmī stands to the right. Both are made in the same stone.\n\nThe 24 struts of the lower roof exhibit both six- and eight-armed representations of Viśṇu, Gaṇeśa and Hanumān. An inscription at the bottom of these struts explains what will happen to evildoers when they arrive in hell (for an edition of these inscriptions, see Gail 1984: 74-76, and Gutschow 2019). For example, those who commit adultery will be fried in oil, while those who visit prostitutes will end up in hell. Representations of Śiva can be found in the 16 struts on the second roof and eight on the third roof.\n\nThe columns of the colonnade are decorated with a toraṇa thā̃ to support the tympanum. 20 stone bases have been intricately carved with the bodies of lions, and hold the timber posts which form the arcaded outer circumambulatory path. The stone panel between the base stones features celestial spirits holding shields and swords on a lotus throne. They are flanked by mythical birds with foliated tails.\n\nNo inscription could be found that recounts the initial construction of the temple. Based on the architectural similarities between this temple and the Viśveśvara Temple, it can be hypothesised that Hariśaṅkara Mandira was also built by Siddhinarasiṃha Malla around NS 747 (Śākya 2031, 14). However, the Nepālikabhūpavaṃśāvalī (19.3.198) states that in NS 826 (1706 CE) Rudramatī Maiyā, a daughter of king Yoganarendra Malla, built a three-storied temple to the south of the pillar in her father's name. She established the deity Hariśaṅkara inside the temple. The Vaṃśāvalī mentions that Rudramatī was the daughter of Yoganarendra Malla, which seems to be incorrect; the inscription of Buṅmatī (dated NS 801) mentions Rudramatī as the daughter of Śrīnivāsa Malla (Vajrācārya 2056, 206-207). Similarly, another inscription of Kṛṣṇa Mandira, Saugala, Lalitpur dated NS 825 suggests that Rudramatī is the daughter of Śrīnivāsa Malla and the elder sister of Yoganarendra Malla (Vajrācārya 2056, 346-348).\n\nThe temple collapsed in the April 2015 earthquake, leaving only the plinths intact. The main stone image of Hariśaṅkara broke into two pieces in an almost diagonal crack. The monument is currently under reconstruction (2019). For the documentation of its reconstruction see Gutschow 2019.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Square",
+    "storeys": 5,
+    "dimensions": {
+      "length": 703,
+      "depth": 703,
+      "height": 1781,
+      "diameter": 0
+    },
+    "construction_materials": [
+      "Jhĩgaṭī/pvala apā tiles",
+      "māaḥpāḥ (traditional brick)"
+    ]
+  },
+  "condition": {
+    "status": "Repaired, Collapsed",
+    "threats": []
+  },
+  "cultural_activities": [
+    {
+      "activity": "Daily ritual worship",
+      "description": "Prior to the 2015 earthquake, Miśra Brāhmaṇas used to perform daily ritual worship (nitya pūjā) in the temple. The earthquake damaged the temple and the main statue. The statue has now been removed from the temple and the worship has been stopped."
+    }
+  ],
+  "historical_events": [
+    {
+      "event_name": "Construction of temple",
+      "description": "Rudramatī, the daughter of King Śrīnivāsa Malla and elder sister of Yoganarendra Malla, built a three-storied temple to the south of Narasiṃha Temple.",
+      "date": {
+        "BCE/CE": "1706 CE",
+        "period": "Late Malla period (1482-1768/69)",
+        "year": "NS 826"
+      },
+      "sources": [
+        "Nepālikabhūpavaṃśāvalī 19.3.198"
+      ]
+    },
+    {
+      "event_name": "Reconstruction of the temple",
+      "description": "Aside from its plinths, the temple was completely destroyed by the earthquake of 2015. Almost all identifiable columns, windows, doors, carnes, tympanum, door wings, struts etc. were inventoried and are being reused in the present restoration of the temple. As the foundation of the temple remained intact and was found by the archaeological investigation to be strong enough to be reused, the temple is being reconstructed upon its original foundation. The restoration work of the temple is currently ongoing (2019).",
+      "date": {
+        "BCE/CE": "2015 CE",
+        "period": "Democratic Period (1990-)",
+        "year": "VS 2072",
+        "nepali_month": "Vaiśākha (Vaisākha)",
+        "pakṣa": "Gate"
+      }
+    }
+  ]
+}

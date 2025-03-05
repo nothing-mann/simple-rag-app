@@ -1,0 +1,57 @@
+{
+  "monument_name": "Maṇimaṇḍapa South",
+  "alternative_names": [
+    "Maḍu",
+    "Manimandap"
+  ],
+  "typology": {
+    "monument_type": "Freestanding building, Phalcā",
+    "main_deity": null,
+    "religion": "Unspecified"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur",
+    "heritage_area": null,
+    "tola": "Patan Darbar Square"
+  },
+  "description": "The Maṇimaṇḍapa (“pavilion of jewels”) is a roofed and arcaded communal platform that serves as a place for relaxation, social gatherings and festivals. It is publicly accessible, and together with the similar northern Maṇimaṇḍapa it delineates the entrance to the Maṅgahiṭī step well at the northern end of the Patan palace. The South Maṇimaṇḍapa seems to be older, dated 1701 according to an inscription in the northern Maṇimaṇḍapa (LAL1361). According to the Nepālikabhūpavaṃśāvalī (19.3:189) the monument was built by Yoganarendra Malla (1685-1705), who also placed a lion-throne in it and used it both as a court of justice and for the recitation of the Kāraṇḍavyūha text, “which contains the greatness of glorious Matsyendranātha Āryāvalokiteśvara.” The Maṇimaṇḍapas collapsed completely during the earthquake of 2015. The monument consists of a square platform protected by a roof that is clad with terracotta tiles and supported by 16 columns. Weiler writes that both Maṇimaṇḍapas “were built on a rectangular brick plinth, measuring approximately 4 x 5 meters, equipped with wooden floor boards. In each case, a multi-layered decorative timber cornice was borne by 12 intricately carved outer wooden pillars resting on timber base beams. The hipped roofs of the one-storey buildings – clad with terracotta tiles – were borne by knee[-high] walls rising above the cornices and supported by 20 wooden struts. In addition, four pillars inside the halls supported the cross-beams. Carved wooden god-windows and blind windows punctuated the upper level masonry.” (Weiler 2016). In a photo by Clarence Comyn Taylor taken in 1910, one can see that two of the three western bays were once walled off by bricks. The Maṇimaṇḍapa was also furnished with a grill for a while in the early 1970s (see Weiler 2016 for references and photos).",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Rectangular",
+    "storeys": 1,
+    "dimensions": {
+      "length": 514,
+      "depth": 380,
+      "height": 663,
+      "diameter": 0
+    },
+    "construction_materials": [
+      "Terracotta tiles",
+      "Wood",
+      "Brick"
+    ]
+  },
+  "condition": {
+    "status": "Good (very few light surface damages, renovated or repaired), Rebuilt",
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Restoration",
+      "description": "Renewal of the Maṇimaṇḍapa",
+      "event_date": "1701",
+      "period": "Late Malla period (1482-1768/69)",
+      "sources": "Gutschow 2011, 662"
+    },
+    {
+      "event_name": "Restoration",
+      "description": "Restoration during the coronation of King Birendra",
+      "event_date": "1975",
+      "period": "Late Shaha Period (1951-1990)",
+      "sources": "Weiler 2016, 258"
+    }
+  ]
+}

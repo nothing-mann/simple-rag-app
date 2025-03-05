@@ -1,0 +1,55 @@
+{
+  "monument_name": "Yoganarendra Pillar",
+  "alternative_names": [
+    "Yoganarendra Stambha (1690s CE)",
+    "योगनरेन्द्र स्तम्भ"
+  ],
+  "typology": {
+    "monument_type": "Pillar",
+    "main_deity": null,
+    "religion": "Unspecified"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur Metropolitan City",
+    "heritage_area": "Patan Darbar Square",
+    "tola": "Mangal Bazar"
+  },
+  "description": "The 8-meter-tall stone pillar supports statues of King Yoganarendra Malla (r. 1685-1705) and his two wives. Similar pillars exist at the Darbar squares in Kathmandu and Bhaktapur. The king is depicted seated on a lotus, his hands folded in the añjali gesture. He is clad in elegant clothes, wears a Newar hat and carries a sword and a shield on his left side. A cobra (nāga) rises protectively behind him, with a small bird perched atop the cobra’s head. The queen on his left is also protected by a five-headed nāga. The pillar and statues were restored by a team from the University of Applied Arts, Vienna in 2016-17 (Krist 2017).",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Square",
+    "storeys": 0,
+    "dimensions": {
+      "length": 160,
+      "depth": 160,
+      "height": 1313,
+      "diameter": 0
+    },
+    "construction_materials": [
+      "Stone"
+    ]
+  },
+  "condition": {
+    "status": "Repaired, Good (very few light surface damages, renovated or repaired)",
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Establishment of the Yoganarendra Pillar",
+      "description": "The pillar was erected some time between 1693 and 1700 (Gutschow 2011, 317)",
+      "date": "1693-1700",
+      "period": "Late Malla period (1482-1768/69)",
+      "sources": "Gutschow 2011, 317"
+    },
+    {
+      "event_name": "Restoration of the stambha and statues",
+      "description": "The pillar and statues were restored by a team from the University of Applied Arts, Vienna in 2016-17.",
+      "date": "2016/2017",
+      "period": "Democratic Period (1990-)",
+      "sources": "“The Pillar of King Yoganarendra Malla at the Patan Darbar Square – Conservation of the Stone Pillar and the Fire-Gilded Sculpture and Re-Erection.” Vienna: University of Applied Arts, 2017. (Krist 2017)"
+    }
+  ]
+}

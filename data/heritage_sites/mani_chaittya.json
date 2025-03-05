@@ -1,0 +1,45 @@
+{
+  "monument_name": "Mani Chaittya",
+  "alternative_names": [
+    "Maṇicaitya",
+    "Maṇi Caitya (16th century CE)"
+  ],
+  "typology": {
+    "monument_type": "Stūpa or Caitya",
+    "main_deity": "Five transcendent Buddhas",
+    "religion": "Buddhist"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur",
+    "heritage_area": null,
+    "tola": "Mangal Bazar"
+  },
+  "description": "Maṇi Caitya was built during the establishment of Lalitpur city. Excavations made in this area suggest that it was a place of historical importance. Maṇi Caitya is located to the west of Bahādura Śāha Bhavana (LAL1333) and to the east of Maṅgaḥ Hiti (LAL1360). Based on a square vimaśatikoṇa plan (370 cm x 370 cm), the caitya contains Buddha statues from the 16th century which have been placed in its four niches, one in each of the cardinal directions. The multi-layered squat base storey contains two layers of lotus rings. Four angels adorned with garlands are located at each corner of the lower lotus base. The dome above the drum (105 cm in diameter, 47 cm high) carries a harmikā with a pair of vajradṛṣṭi eyes and the curl of hair known as ūrṇā painted on all four sides. Above this, four halaṃpau (shields) point in each of the cardinal directions. Thirteen tiers (cakrāvali) and a yaḥsĩ constitute the top of the caitya. The yaḥsĩ is not topped with a parasol; instead, a metal ilā̃ has been fixed over it. This caitya does not have any unique properties; rather, it appears to be very similar to other vajradhātu caityas. It stands on a rectangular plinth and it is painted in white lime. The symbols of Four Buddhas: the vajra of Akṣobhya, the ratna of Ratnasambhava, the padma of Amitābha, and the viṣvavajra of Amoghasiddhi have also been placed towards the east, south, west, and north directions respectively. With regards to the history of the monument, the lack of a foundation inscription means that we must rely on indications and references made in some literary sources. The Nepālikabhūpavaṃśāvalī (2016, 13.23-24) mentions that King Vīradeva made a Maṇi-pond, a Maṇi-caitya, a Maṇi-spout, a Maṇi-liṅga, a Maṇi-kumāra, a Maṇi-maṇḍapa, and a Maṇi-galabhaṭṭa whilst he was establishing Lalitpur as a city. We can assume that this Maṇi-caitya is the one mentioned in the chronicle. However, the entire story of King Vīradeva is not corroborated by any other source material and no inscription found in Nepal mentions his name. The physical appearance of the caitya suggests that the monument is not an archaic construction. It is thus possible that it was reconstructed many times until it got its present shape. In 1998, an excavation took place in the courtyard of the caitya. Some larger bricks (teliyā ĩṭā) were found that were similar to the bricks found in the Keśavanārāyaṇa Coka (LAL1330), an archaic monument site (Jośī 2065, 14). During the reconstruction of the Bahādura Śāha Bhavana, an old remnant of a water drain leading towards this caitya was found underneath the entrance of the building. This underlines the historical importance of the site. According to local information, Maṇi Caitya was constructed over these foundations after a pond was filled in (Jośī 2065, 15).",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Square",
+    "storeys": 0,
+    "dimensions": {
+      "length": 381,
+      "depth": 381,
+      "height": 396,
+      "diameter": 0
+    },
+    "construction_materials": [
+      "Stone"
+    ]
+  },
+  "condition": {
+    "status": "Good (very few light surface damages, renovated or repaired)",
+    "threats": null
+  },
+  "cultural_activities": [
+    {
+      "activity": "Gathering on Matayāḥ festival",
+      "description": "Every year on the 2nd day of the dark fortnight of Bhādra, a Matayāḥ procession (Śṛṅgabherī yātrā) is organised in Lalitpur. The responsibility for organising this passes down in turn through different ṭolas; the Mangal Bazar's ṭola is responsible for this every 10 years. When the Mangal Bazar ṭola organises the procession, people gather in the Maṇi Caitya courtyard to wait for it to begin."
+    }
+  ],
+  "historical_events": []
+}

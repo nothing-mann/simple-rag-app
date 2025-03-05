@@ -1,0 +1,68 @@
+{
+  "monument_name": "Narasiṃha Mandira (1590 CE)",
+  "alternative_names": [
+    "Narasimha Temple",
+    "नरसिंह मन्दिर"
+  ],
+  "typology": {
+    "monument_type": "Śikhara temple",
+    "main_deity": "Narasiṃha",
+    "religion": "Vaishnava"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur Metropolitan City",
+    "heritage_area": "Patan Darbar Square",
+    "tola": "Mangal Bazar"
+  },
+  "description": "Narasiṃha Mandira was built by Purandara Siṃha, a mahāpātra of Lalitpur in NS 710 (1590 CE) in memory of his elder brother Narasiṃha Deva. It is one of the few early śikhara towers in the Valley. Although Śaiva mortuary temples are found in many places, this is said to be the first mortuary temple with a Vaiṣṇava image (Tiwari 2013, 113). Two stone lions guard the temple and two guarding deities are installed on the top plinth. The left deity is a four-handed Garuḍa using two hands to pray and the others to hold a flower and a water vessel. The deity sitting on the right-hand side is holding a cakra (wheel), aṅkuśa (hook), gadā and pāśa (noose). Inside the sanctum, an eight-handed stone image of Narasiṃha, the fourth incarnation of Viṣṇu, stands on a pedestal holding khaḍga, cakra, vajra and gadā with his right hands and śaṅkha, pāśa, padma and aṅkuśa with his left hands. Garuḍa sits to his left and Lakṣmī is located to his right. Unlike other commonly found Narasiṃha images, this Narasiṃha is standing but is not pictured tearing apart Hiraṇyakaśipu's abdomen. The temple sits on two lower plinths and an upper plinth with porches extending in all four directions. The sanctum tapers upwards towards the śikhara. Located on the ground floor, the main sanctum can be accessed from the east side by a series of steps. Stone pillars rest on either side of the porch, though the columns attached to the walls of the sanctum are made of timber. The lintel beam is also made from timber and has layers of brick cornice above it. Four doorways can be found on each of the sanctum's walls, but the main entrance is on the eastern side. Four porches have been built to form turrets above the sanctum, and are attached to the main śikhara tower. These turrets have small openings on three of their side walls, as well as terracotta toraṇa capped by decorative brick work and a stone finial. Their walls have been plastered with lime. The main brick tower is at the centre and contains seven bands known as saptaratha. The topmost crown of the śikhara is embellished with layers of floral patterned cornices and an āmalaka plastered with lime. The pinnacle is made from stone.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Square",
+    "storeys": 1,
+    "dimensions": {
+      "monument_length": 340,
+      "monument_depth": 340,
+      "monument_height": 1105,
+      "monument_diameter": 0
+    },
+    "construction_materials": [
+      "māaḥpāḥ (traditional brick)",
+      "timber"
+    ]
+  },
+  "condition": {
+    "status": "Heavily damaged (collapsed, demolished, major cracks and structural damages)",
+    "threats": [
+      "Wall cracks",
+      "Water damages",
+      "Erosion"
+    ]
+  },
+  "cultural_activities": [
+    {
+      "activity": "Daily ritual worship",
+      "description": "The daily ritual worship of the temple is performed in the morning by a Miśra family."
+    },
+    {
+      "activity": "Narasiṃha mask",
+      "description": "A legend tells that a mask depicting the face of Narasiṃha was worn during the Kāttika dance and was buried inside the temple. The dancer performing Narasiṃha would wear this mask, which was made of white alum, during the Kāttika dance. Once, a man from the Citrakāra family took on the role of a demon in the dance. However, he died upon seeing Narasiṃha's furious face. The mask was therefore buried. After it was buried, all of the birds that flew over the temple started to die. It was therefore buried once more in the hope of overturning the bad omen (Jośī 2015, 48)."
+    }
+  ],
+  "historical_events": [
+    {
+      "event_name": "Construction of the temple",
+      "description": "Purandara Siṃha built this temple in memory of his brother Narasiṃhadeva. He established a guṭhī to conduct the daily and annual worships.",
+      "date": {
+        "date": "1590",
+        "period": "Late Malla period (1482-1768/69)",
+        "year": "NS 710",
+        "nepali_month": "Kārttika (Kārtika)",
+        "pakṣa": "Bright fortnight",
+        "tithi": "2"
+      },
+      "sources": "According to inscription from NS 710"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "monument_name": "Sundari Chok",
+  "alternative_names": [
+    "Sundaricuk",
+    "Sundarī Coka (1647 CE)",
+    "Sundari Chowk"
+  ],
+  "typology": {
+    "monument_type": "Palace, Courtyard building",
+    "main_deity": "Lakṣmī Nārāyaṇa",
+    "religion": "Shaiva, Vaishnava, Shakta"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur Metropolitan City",
+    "heritage_area": "Patan Darbar Square",
+    "tola": "Mangal Bazar"
+  },
+  "description": "Sundarī Coka (\"beautiful courtyard\") built by King Siddhinarasiṃha Malla in NS 767 (1647 CE) is one of the three royal palaces of Patan Darbar. The three-storey quadrangle is an outstanding example of seventeenth-century Nepalese architecture. Sundarī Coka's courtyard is particularly attractive, featuring exquisite wood-carved elements such as colonnaded bays, ornamental windows, doors and toraṇas. A screened gallery overlooks the Tusā Hiti from the top floor with two stone pillars on either side of the steps that lead down to the spout.\n\nThe principal western façade is symmetrical with the main entrance flanked by a statue of Ganeśa to the left and statues of Narasiṃha and Hanumān to the right. The statues rest on raised pedestals. These three sculptures signify Siddhi, Narasiṃha and Malla, and each forms a component of the name of King Siddhinarasiṃha Malla. On the first floor, a central latticed window is decorated with an image of Sūrya riding on a horse-drawn chariot. This central window is flanked by two smaller lattice windows and two slightly larger lattice windows with a unique eight cornered lattice opening. A triple-bayed window on the second floor features a central opening covered with gilt repoussé. The flanking openings used to be decorated with carved ivory elements. Today, the original ivory carvings are kept in the museum and the windows were restored using a composite material resembling the original ivory. A corner lattice window can be found on the south-west corner on the first floor with a projecting three-bay corner window above.\n\nOne enters the courtyard from the west through the main door with its richly carved jambs and elaborately embellished lintel ends. Its threshold is made of stone, and the arcaded platform of the entry porch is paved with flagstone.\n\nThe courtyard has arcaded spaces (phalcā) on three sides. The ground and the first floors are separated by a finely carved timber cornice featuring carved śivaliṅga.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Square",
+    "storeys": 3,
+    "dimensions": {
+      "length": 1965,
+      "depth": 1964,
+      "height": 870,
+      "diameter": 0
+    },
+    "construction_materials": [
+      "Jhĩgaṭī/pvala apā tiles",
+      "dāciaḥpā (veneer brick)",
+      "māaḥpāḥ (traditional brick)"
+    ]
+  },
+  "condition": {
+    "status": "Restored, Good (very few light surface damages, renovated or repaired)",
+    "threats": [
+      "Water damages"
+    ]
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Construction of the palace",
+      "description": "King Siddinarasiṃha Malla built the palace including a hiti with a golden spout and many tantric statues. He also established the statues of Pañcamukhī Gaṇeśa and Narasiṃha.",
+      "date": {
+        "BCE/CE": "1647 CE",
+        "period": "Late Malla period (1482-1768/69)",
+        "year": "NS 767",
+        "nepali_month": "Vaiśākha (Vaisākha)",
+        "pakṣa": "Dark fortnight",
+        "tithi": 5
+      },
+      "sources": [
+        "Nepālikabhūpavaṃśāvalī (13.275 and 19.3.10-11)",
+        "Lamsāla 2023, 62"
+      ]
+    },
+    {
+      "event_name": "Renovation of the palace building",
+      "description": "The Government of Nepal renovated the palace during the reign of King Mahendra and established a police post with a small jail in the building. In 1993, the police was moved to the former municipal building on the south side of the square. Sundarī Coka was closed to the public till 2007.",
+      "date": {
+        "BCE/CE": "1958",
+        "period": "Late Shaha Period (1951-1990)"
+      },
+      "sources": [
+        "Pruscha 1975, 161"
+      ]
+    },
+    {
+      "event_name": "Replacement of the Mahiṣāsuramardinī statue",
+      "description": "The metal image of Mahiṣāsuramardinī on the eastern façade was added to replace one that had long been lost. The image of Mahiṣāsuramardinī placed in the spout was also lost, though this one was later found. However, a new image was installed after it went missing, and the original one is now kept in the museum.",
+      "date": {
+        "BCE/CE": "2009-2011 CE"
+      }
+    }
+  ]
+}

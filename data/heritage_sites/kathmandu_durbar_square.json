@@ -7,8 +7,8 @@
     ],
     "typology": {
       "monument_type": "UNESCO World Heritage Site",
-      "main_deity": "Lord Hanuman",
-      "religion": "Hinduism"
+      "main_deity": null,
+      "religion": null
     },
     "location": {
       "province": null,
@@ -17,8 +17,8 @@
       "heritage_area": null,
       "tola": null
     },
-    "description": "Kathmandu Durbar Square is a UNESCO World Heritage Site located about two kilometers from the thermal area and a 10 to 15 minutes drive depending on the traffic. The entire area is dotted with temples, palaces, and towers that are very beautiful. Some are seriously damaged by the recent earthquake and are being restored, but few temples are functional. The square features an open-air souvenir marketplace called person portable e-square. The area has access to several hotels and restaurants.",
-    "fun_fact": "The Kumari girl is the home of the Kumari or living goddess who is considered to be an incarnation of the goddess Taleju.",
+    "description": "Kathmandu Durbar Square is a UNESCO World Heritage Site located about two kilometers from the thermal area and a 10 to 15 minutes drive depending on the traffic. The entire area is dotted with temples, palaces, and towers that are very beautiful. Some are seriously damaged by the recent earthquake and are being restored, but few temples are functional. The square has access to several hotels and restaurants.",
+    "fun_fact": "The Kumari, or living goddess, who is considered to be an incarnation of the goddess Taleju, resides in the Kumari Ghar built in 1757 by King Jayaprakash Malla.",
     "architecture": {
       "shape": null,
       "storeys": 3,
@@ -31,44 +31,31 @@
     "condition": {
       "status": "Partly destroyed during the earthquake",
       "threats": [
-        "Earthquake damage"
+        "Earthquake damage",
+        "Renovation"
       ]
     },
-    "cultural_activities": [
-      {
-        "activity": "Viewing the Kumari",
-        "details": "The Kumari appears from time to time in the company of her guardian Priestess to see and to be seen by her admirers."
-      },
-      {
-        "activity": "Visiting temples",
-        "details": "Visitors can explore various temples including the Shiva Parvati Temple, Indra Put Temple, and Taleju Temple."
-      }
-    ],
+    "cultural_activities": null,
     "historical_events": [
       {
-        "event": "Construction of Kumari Car",
-        "date": "1757",
-        "details": "Built by King Jayaprakash Malla."
+        "event": "Kumari Ghar built",
+        "date": "1757"
       },
       {
-        "event": "Construction of Hanuman Dhoka",
-        "date": "1680",
-        "details": "Built by King Prithvi Narayan Shah."
+        "event": "Hanuman Dhoka built",
+        "date": "1680"
       },
       {
-        "event": "Construction of Taleju Temple",
-        "date": "15th century",
-        "details": "Built by King Mahindra Malla."
+        "event": "Taleju Temple built",
+        "date": "15th century"
       },
       {
-        "event": "Construction of Jagannath Temple",
-        "date": "15th century",
-        "details": "Built by Malla King."
+        "event": "Jagannath Temple built",
+        "date": "15th century"
       },
       {
-        "event": "Construction of Shiva Parvati Temple",
-        "date": null,
-        "details": "Built by King Rama Bahadur Shah."
+        "event": "Smash whare temple built",
+        "date": "15th century"
       }
     ]
   },
@@ -84,14 +71,14 @@
       "religion": "Hinduism and Buddhism"
     },
     "location": {
-      "province": null,
-      "district": null,
-      "municipality": "Kathmandu",
+      "province": "Bagmati",
+      "district": "Kathmandu",
+      "municipality": "Kathmandu Metropolitan City",
       "heritage_area": null,
       "tola": null
     },
-    "description": "Kathmandu Durbar Square is located in the heart of capital Kathmandu. It is one of the three durbar squares in the capital, the other being Patan Durbar Square and Bhaktapur Durbar Square. Unlike the other two durbar squares, this one served as the home for the kings of our country Nepal. After the unification, a big palace was built within the area for the kings to live in, but as of now it serves as a museum. Kathmandu Durbar Square is often known as a place where different kings ruled our country for generations. It is also a home to the living goddess Kumari. The area is a host to a lot of interesting local festivals throughout the year, with Indra Jatra being one of the very well-known festivals that goes on for a week straight. The temples and monuments are mostly made up of woods, bricks, and adobe clay, and most of them date back to the 17th century. Being an open place in the middle of a busy city, it is considered a good place for the locals to hang out.",
-    "fun_fact": "The current Kumari is just about 6 years of age now.",
+    "description": "Kathmandu Durbar Square is located in the heart of capital Kathmandu. It is one of the three durbar squares in the capital, the other being Patan Durbar Square and Bhaktapur Durbar Square. Unlike the other two durbar squares, this one served as the home for the kings of our country Nepal. After the unification, a big palace was built within the area for the kings to live in, but as of now it serves as a museum. Kathmandu Durbar Square is often known as a place where different kings ruled our country for generations. It is also a home to the living goddess Kumari. The area is a host to a lot of interesting local festivals throughout the year, with Indra Jatra being one of the very well-known festivals that goes on for a week straight.",
+    "fun_fact": "The current Kumari is just about 6 years of age.",
     "architecture": {
       "shape": null,
       "storeys": null,
@@ -105,27 +92,24 @@
     "condition": {
       "status": "Under reconstruction",
       "threats": [
-        "Damage from the 2015 earthquake"
+        "Earthquake damage",
+        "COVID-19 pandemic restrictions"
       ]
     },
     "cultural_activities": [
       {
-        "activity": "Indra Jatra",
+        "activity": "Indra Jatra Festival",
         "description": "A well-known festival that goes on for a week straight."
       }
     ],
     "historical_events": [
       {
         "event": "2015 Earthquake",
-        "description": "Most of the temples were partially or completely damaged during the earthquake."
+        "description": "Most of the temples and monuments were partially or completely damaged during the earthquake."
       },
       {
         "event": "Unification of Nepal",
-        "description": "A big palace was built within the area for the kings to live in."
-      },
-      {
-        "event": "Continuation of Kumari Worship",
-        "description": "The tradition of worshipping the Kumari continued even after the Malas were defeated by the new king."
+        "description": "A significant historical event after which a big palace was built for the kings."
       }
     ]
   }

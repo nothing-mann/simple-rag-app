@@ -1,0 +1,51 @@
+{
+  "monument_name": "Narasimha",
+  "alternative_names": [],
+  "typology": {
+    "monument_type": "stone idol",
+    "main_deity": "Vishnu",
+    "religion": "Hinduism"
+  },
+  "location": {
+    "province": null,
+    "district": null,
+    "municipality": null,
+    "heritage_area": "Kathmandu valley",
+    "tola": null
+  },
+  "description": "One of the most prominent stone idols at the entrance to the three Malla period palaces of Kathmandu valley is that of Narasimha. A closer look at these magnificent pieces of art makes it clear that they are idols of a “creature” that is half man and half lion. Clearly in Nepali, nara means man and simha means lion. These statues of Narasimha are found all over Kathmandu valley and one of them is the masterpiece at the Changu Narayan temple complex at the eastern end of the valley above Bhaktapur. One of the largest and well-known statues of Narasimha is at the entrance to the Hanuman Dhoka Palace. In order to understand Narasimha and its significance for people, we have to first understand Vishnu and his incarnations. People all over Nepal grow up with the ‘stories and beliefs” that Vishnu is the source of all beings and is the ultimate form of benevolence. Vishnu works relentlessly for the welfare of all beings and in doing so takes various forms or incarnations (avatars). The general belief is that Vishnu has so far taken nine avatars, which in chronological order are Matsya, Kurma, Varaha, Narasimha, Vamana, Parasuram, Rama, Krishna and Buddha. The tenth that is yet to come is Kalki. The Narasimha (man-lion) incarnation is based on the legend that “once upon a time” there was a demon king by the name of Hiranya Kashaypu. The king was granted a boon by the gods in return for his long and hard penance. It ensured that he could not be killed during the day or at night, neither on land nor in the air, nor with the use of any weapons. Furthermore, no man or beast could kill him. Protected by this amazing gift of invincibility, he began a reign of terror in the “heavens and on earth.” Prahlad, the king’s son, happened to be a devotee of Vishnu and with deep faith and prayers, began to challenge his father. The arrogant king asked his son where Vishnu was, so he could fight him as well. The son waited till the sun was about to set to the west and took the opportunity to reply that Vishnu was everywhere and in everything. The furious king saw no limits to his pride and anger and struck a nearby stone pillar with his sword to show his displeasure. Vishnu leapt out of the pillar in the form that was partially god, man and lion - Narasimha. He took the king on his knee, halfway between earth and sky, and disemboweled the demon king with his lion claws, just when it was twilight, neither day nor night. This is the legend and incarnation of Vishnu that is captured in the stone idols at the entrance of all the three Malla period palaces of the valley. The one at Hanuman Dhoka was installed by King Pratap Malla in 1673. Historians tell us that the inscription at the bottom of the statue by the king mentions that he had the statue made and installed to ask forgiveness for daring to impersonate Vishnu in a dance-drama. A small image of King Pratap Malla can be seen next to the inscription. In the Bhaktapur palace, the Narasimha image is located at the entrance to the National Art Gallery and was placed there by King Bhupatindra Malla in 1698. At Patan Durbar Square there is a sikhara style Narasimha temple just behind the stone pillar of King Yog Narendra Malla. A large statue of Narasimha is located at the main entrance to the Sundari Chowk and the palace building of Patan. This courtyard, which houses the famous Tusha Hiti and related idols are attributed to King Siddhi Narasimha Malla and the year was 1647. Notice how the King uses the same name. The general belief that Vishnu and the various incarnations can be invoked at times of crisis are strongly embedded in the Nepali mind. It is given much importance and depicted in simple everyday things like the coins and currency we use. If you look at the ten rupee Nepali currency note carefully, you will see Vishnu on a Garuda. The original statue can be seen at the Changu Narayan Temple complex. The stone image is in the open whereas the gilded one is in the temple itself. The inscription on the gilt metal sheet is that of Amshuvarman who ruled Nepal in the 5th and 6th century and is dated 605 AD. Clearly, the faith in and worship of Vishnu goes back a long way in Nepal. On the coins that we use, one can see the four attributes of Vishnu in the form of a discus, mace, lotus and conch shell. As the battle between good and evil continues in the world around us, it is important to learn a bit more about how similar challenges were faced and overcome in the past.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": []
+  },
+  "condition": {
+    "status": null,
+    "threats": []
+  },
+  "cultural_activities": [],
+  "historical_events": [
+    {
+      "event": "Installation of Narasimha statue at Hanuman Dhoka",
+      "date": "1673",
+      "king": "Pratap Malla"
+    },
+    {
+      "event": "Placement of Narasimha image at National Art Gallery in Bhaktapur",
+      "date": "1698",
+      "king": "Bhupatindra Malla"
+    },
+    {
+      "event": "Attribution of courtyard with Tusha Hiti and related idols",
+      "date": "1647",
+      "king": "Siddhi Narasimha Malla"
+    },
+    {
+      "event": "Inscription on gilt metal sheet",
+      "date": "605 AD",
+      "ruler": "Amshuvarman"
+    }
+  ]
+}

@@ -2,7 +2,7 @@
   "monument_name": "Swayambhunath",
   "alternative_names": ["Monkey Temple"],
   "typology": {
-    "monument_type": "stupa",
+    "monument_type": "Stupa",
     "main_deity": "Buddha",
     "religion": "Buddhism and Hinduism"
   },
@@ -13,8 +13,8 @@
     "heritage_area": null,
     "tola": null
   },
-  "description": "Swayambhunath is an ancient religious architecture situated atop a hill in the cabin and divine. According to Swayambhu Purana, the entire valley was an enormous lake out of which for your lotus, the valley came to be known as Swayambhu meaning self-created. It is probably the most sacred among Buddhist pilgrimage sites and also revered by Hindu. The complex consists of a stupa, shrines, and temples, some dating back to the LaCava period. The stupa has Buddha's eyes and eyebrows painted on, looking in all four directions.",
-  "fun_fact": "It is also known as Monkey Temple for the living of holy monkeys, which are considered holy as they are the head lice of Manjushri, the bodhisattva of wisdom and learning.",
+  "description": "Swayambhunath is an ancient religious architecture situated atop a hill in the valley. According to Swayambhu Purana, the entire valley was an enormous lake out of which the valley came to be known as Swayambhu, meaning self-created. It is probably the most sacred among Buddhist pilgrimage sites and also revered by Hindus. The complex consists of a stupa, shrines, and temples, some dating back to the Licchavi period. The stupa has Buddha's eyes and eyebrows painted on, looking in all four directions.",
+  "fun_fact": "It is also known as Monkey Temple for the living of holy monkeys, which are considered holy as they are the head lice of Manjushri, the Bodhisattva of wisdom and learning.",
   "architecture": {
     "shape": null,
     "storeys": null,
@@ -28,20 +28,16 @@
   "cultural_activities": null,
   "historical_events": [
     {
-      "event": "Founded by King Rosa Deva",
-      "date": "beginning of the fifth century CE"
+      "event": "Founded by King Roder Deva",
+      "date": "about the beginning of the fifth century CE"
     },
     {
       "event": "Work done indicated by a damaged stone inscription",
       "date": "640 CE"
     },
     {
-      "event": "Visited by a figure in the third century BCE",
+      "event": "Visited by a notable figure who developed a temple on the hill",
       "date": "third century BCE"
-    },
-    {
-      "event": "Stupa renovated",
-      "date": "2010"
     }
   ]
 }

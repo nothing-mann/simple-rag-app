@@ -1,7 +1,8 @@
 {
-  "monument_name": "Chyasin Dega or Kṛiṣhṇa Cyāsĩdegaḥ",
+  "monument_name": "Chyasin Dega",
   "alternative_names": [
-    "Kṛṣṇa Temple south"
+    "Kṛṣṇa Temple south",
+    "Kṛiṣhṇa Cyāsĩdegaḥ"
   ],
   "typology": {
     "monument_type": "Śikhara temple",
@@ -48,12 +49,12 @@
       "event_name": "Original construction",
       "description": "Yogamatī, the daughter of King Yoganarendra Malla donated this temple in memory of her father. The inscription mentions that the 31 queens of King Yoganarendra Malla performed satī (self-immolation) after his death.",
       "event_date": {
-        "date": 1723,
+        "date": "1723",
         "period": "Late Malla period (1482-1768/69)",
         "year": "NS 843",
         "nepali_month": "Māgha",
         "pakṣa": "Dark fortnight",
-        "tithi": 2
+        "tithi": "2"
       },
       "sources": [
         "Regmi 1966, 271-274",
@@ -64,7 +65,7 @@
       "event_name": "Collapse during the Great Earthquake",
       "description": "The temple collapsed completely. The central tower was shortened when it was rebuilt.",
       "event_date": {
-        "date": 1934,
+        "date": "1934",
         "period": "Shumsher Rana Period (1885-1951)",
         "year": "VS 1990"
       },
@@ -76,7 +77,7 @@
       "event_name": "Damage suffered during the 2015 earthquake",
       "description": "The temple suffered severe damage with large cracks showing in the stone masonry. Parts of the first floor balcony level show movement outward.",
       "event_date": {
-        "date": 2015,
+        "date": "2015",
         "period": "Democratic Period (1990-)"
       }
     },
@@ -84,7 +85,7 @@
       "event_name": "Stabilization and emergency consolidation work",
       "description": "Two bands of stainless steel collars were installed around the first floor balcony to counteract any outward movement.",
       "event_date": {
-        "date": 2016,
+        "date": "2016",
         "period": "Democratic Period (1990-)",
         "year": "VS 2073"
       }

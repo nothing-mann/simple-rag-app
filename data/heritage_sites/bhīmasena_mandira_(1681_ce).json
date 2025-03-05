@@ -49,8 +49,8 @@
     {
       "event_name": "Repair of the capāḥ",
       "description": "During the reign of King Siddhinarsimha Malla, Hari Bhāro undertook the renovation of the capāḥ. This marks the earliest reference to the Bhīmasena Mandira, originally built as a capāḥ, before being transformed into a temple in 1681.",
-      "date": {
-        "date": 1627,
+      "event_date": {
+        "date": "1627",
         "period": "Late Malla period (1482-1768/69)",
         "year": "NS 747",
         "nepali_month": "Bhādra (Bhadau)",
@@ -60,43 +60,43 @@
     {
       "event_name": "Pavement of the ground floor",
       "description": "The ground floor was paved with teliyā bricks by Vajrācārya Cintāmaṇi and Laghunātha Bhāro. In this inscription, Bhīmasena is referred to as Mahābhīma Māṇeśvara.",
-      "date": {
-        "date": 1679,
+      "event_date": {
+        "date": "1679",
         "period": "Late Malla period (1482-1768/69)",
         "year": "NS 799",
         "nepali_month": "Vaiśākha (Vaisākha)",
         "pakṣa": "Bright fortnight",
-        "tithi": 3
+        "tithi": "3"
       }
     },
     {
       "event_name": "Reconstruction as a temple",
       "description": "The stone stele inscription confirms that in 1681 CE (NS 801), King Śrīnivāsa Malla reconstructed the single floor capāḥ into its present temple form by adding two additional stories. (Regmi 1960, 287). The inscription refers to Śrīnivāsa Malla as Nepaleswara and mentions that the temple was built following the recommendations of Bhagīratha Bhaiyā. An offering of two pinnacles was made.",
-      "date": {
-        "date": 1681,
+      "event_date": {
+        "date": "1681",
         "period": "Late Malla period (1482-1768/69)",
         "year": "NS 801",
         "nepali_month": "Māgha",
         "pakṣa": "Bright fortnight",
-        "tithi": 6
+        "tithi": "6"
       }
     },
     {
       "event_name": "Donation of a strut",
       "description": "Viseśvara Bhāro donated a strut.",
-      "date": {
-        "date": 1682,
+      "event_date": {
+        "date": "1682",
         "year": "NS 802",
         "nepali_month": "Śrāvaṇa (Sāuna)",
         "pakṣa": "Bright fortnight",
-        "tithi": 7
+        "tithi": "7"
       }
     },
     {
       "event_name": "Donation of a bell",
       "description": "The inscription notes that Yoganarendra Malla assumed the title of Saṅgītārṇṇva Pāragata. Dogs start howling when the bell is rung (Jośī 2065, 25).",
-      "date": {
-        "date": 1697,
+      "event_date": {
+        "date": "1697",
         "period": "Late Malla period (1482-1768/69)",
         "year": "NS 817",
         "nepali_month": "Śrāvaṇa (Sāuna)",
@@ -106,20 +106,20 @@
     {
       "event_name": "Installation of a new statue",
       "description": "The ancient clay statue of Bhīmasena was substituted with a new bronze statue, followed by a ceremonial installation ritual.",
-      "date": {
-        "date": 1701,
+      "event_date": {
+        "date": "1701",
         "period": "Late Malla period (1482-1768/69)",
         "year": "NS 821",
         "nepali_month": "Māgha",
         "pakṣa": "Bright fortnight",
-        "tithi": 11
+        "tithi": "11"
       }
     },
     {
       "event_name": "Inaugural Bhīmasena Jātra",
       "description": "The inaugural Bhīmasena jātrā was orchestrated in Lalitpur by Yoganarendra Malla. Buffaloes, goats, and ducks were offered as sacrifices during the event.",
-      "date": {
-        "date": 1702,
+      "event_date": {
+        "date": "1702",
         "period": "Late Malla period (1482-1768/69)",
         "year": "NS 822",
         "nepali_month": "Bhādra (Bhadau)"
@@ -128,8 +128,8 @@
     {
       "event_name": "Donation of the stone pillar",
       "description": "In NS 827, a group of guṭhī members contributed to the donation of the stone pillar. The inscription on the brass collar also indicates that originally, in NS 777 during the rule of King Indra Malla, a wooden pillar was donated by Bhīmasena, Sunādevaju, Hākuju, Maṅgaladevaju, and others. The stone pillar replaced the wooden pillar. The inscription etched into the stone lists the names of the donors.",
-      "date": {
-        "date": 1709,
+      "event_date": {
+        "date": "1709",
         "period": "Late Malla period (1482-1768/69)",
         "year": "NS 827",
         "pakṣa": "Bright fortnight"
@@ -138,61 +138,58 @@
     {
       "event_name": "Donation of stone lions",
       "description": "Bhīma Bhāro of Nakapasala donated the two stone lions flanking the main entrance.",
-      "date": {
-        "date": 1861,
+      "event_date": {
+        "date": "1861",
         "period": "Early Rana Period (1846-1885)",
         "year": "NS 981",
         "nepali_month": "Māgha",
         "pakṣa": "Bright fortnight",
-        "tithi": 10
+        "tithi": "10"
       }
     },
     {
       "event_name": "Offering of a patāḥ",
       "description": "Offering of the gilt patāḥ by Tīrtharāja Śreṣṭha, residing in Patan, to please Bhīmasena.",
-      "date": {
-        "date": 1932,
+      "event_date": {
+        "date": "1932",
         "period": "Shumsher Rana Period (1885-1951)",
         "year": "VS 1889"
       }
     },
     {
       "event_name": "Collapse of the stone pillar",
-      "description": "The earthquake on April 26, 2015, resulted in the collapse of the stone pillar. The upper half of the shaft fractured into two pieces upon impact with the brick pavement.",
-      "date": {
-        "date": 2015
-      }
+      "description": "The earthquake on April 26, 2015, resulted in the collapse of the stone pillar. The upper half of the shaft fractured into two pieces upon impact with the brick pavement."
     },
     {
       "event_name": "Stabilisation of the temple",
       "description": "Following the damage suffered from the 2015 earthquake, the temple was braced on all four sides.",
-      "date": {
-        "date": 2015,
+      "event_date": {
+        "date": "2015",
+        "period": "Democratic Period (1990-)",
         "year": "VS 2072",
         "nepali_month": "Vaiśākha (Vaisākha)",
-        "gate": 12
+        "gate": "12"
       }
     },
     {
       "event_name": "Restoration of the stone stambha and lion statue",
-      "description": "The stone pillar, which supported a gilt metal lion, crumbled in the 2015 CE earthquakes, and the upper stone shaft fractured into two pieces. In the period spanning 2015-2016, a team from the University of Applied Arts, Vienna, meticulously carried out the restoration of the pillar and the lion statue.",
-      "date": {
-        "date": "2015/2016"
-      }
+      "description": "The stone pillar, which supported a gilt metal lion, crumbled in the 2015 CE earthquakes, and the upper stone shaft fractured into two pieces. In the period spanning 2015-2016, a team from the University of Applied Arts, Vienna, meticulously carried out the restoration of the pillar and the lion statue."
     },
     {
       "event_name": "Offering of a patāḥ",
       "description": "Offering of the patāḥ by Lakṣmīmāyā and her family members in memory of Nāyacā Maharjana, a resident of Lilitpur, Baliphal, to please Bhīmasena.",
-      "date": {
-        "date": 2021,
+      "event_date": {
+        "date": "2021",
+        "period": "Democratic Period (1990-)",
         "year": "VS 2078"
       }
     },
     {
       "event_name": "Restoration and partial rebuilding",
       "description": "The restoration of the temple was executed by the Lalitpur Chamber of Commerce and the Mangal Tole Sudhar Sangh with technical support from KVPT. The inscription lists various donors to the restoration project.",
-      "date": {
-        "date": "2019/2022"
+      "event_date": {
+        "date": "2019/2022",
+        "period": "Democratic Period (1990-)"
       }
     }
   ]
