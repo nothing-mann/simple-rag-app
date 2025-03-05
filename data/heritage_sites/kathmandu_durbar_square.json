@@ -1,12 +1,132 @@
 [
   {
     "monument_name": "Kathmandu Durbar Square",
-    "fun_fact": "The entire palace complex is named after Lord Hanuman, who is regarded as a powerful protector of the entire Durbar Square.",
-    "description": "Kathmandu Durbar Square, also known as Hanuman Dhoka Durbar Square, is a UNESCO World Heritage Site located about two kilometers from the thermal area, accessible by a 10 to 15 minutes drive depending on traffic. The square is filled with temples, palaces, and towers, many of which were seriously damaged by the recent earthquake and are currently being restored. At the entrance, visitors can see the Busan Preserve, with the back side of the palace visible. Many countries have contributed to the rebuilding of this great World Heritage Site. The open-air souvenir marketplace is called Person Portable E-Square. The square has access to several hotels and restaurants, making it a vibrant area for visitors. One of the notable structures is the Kumari Ghar, built in 1757 by King Jayaprakash Malla, which is the home of the Kumari or living goddess, considered to be an incarnation of the goddess Taleju. The building features intricate carvings of the goddess Taleju, and the inner courtyard is lavishly decorated with fine wood carvings reflecting Newar art. The Kumari appears from time to time in the company of her guardian priestess, and while photography of the Kumari is strictly prohibited, visitors can photograph the inner courtyard. The Shiva Parvati Temple, built on three-step brick platforms, houses a Shiva Linga and figures of Mahadev and Parvati. The temple was constructed by King Rama Bahadur Shah. The King Pratap Malla's column, which is partly destroyed due to the earthquake, stands next to the Indra Put Temple and Vishnu Temple. The Kootenay Temple, enshrining a mystic goddess of tantric origin, has restricted access only from the palace. Hanuman Dhoka, meaning 'door' or 'gate' in Nepali, is named after Lord Hanuman, built by King Pratap Malla in 1680 to strengthen his army and protect his home. The Person Putra Bar, also known as the Nine-Storeyed Palace, was one of the tallest towers in Nepal before the April earthquake, which destroyed two of its top floors. The palace, built by King Prithvi Narayan Shah in the mid-18th century, is decorated with elaborately carved wooden windows and panels and served as the Royal Nepalese residence until the 19th century, hosting important ceremonies such as the coronation of the Nepalese monarch. Inside the royal complex, the Pancha Machi Hanuman Temple, dedicated to Lord Hanuman, features a unique design of five circular roofs, with the temple priest being the only person allowed to enter the sanctum. The stunning Jagannath Temple, the oldest structure in Durbar Square, was built by Malla and houses an idol of Lord Jagannatha dating back to the 15th century. The huge stone image of Kal Bhairav represents Lord Shiva in his destructive form and was set in its current location by King Pratap Malla after being found in a field north of the city. The famous Smash Whare Temple, dating back to the 15th century, is dedicated to Lord Shiva and features a Shiva Linga. The Taleju Temple, one of the most sacred temples in Nepal, was built in the 15th century by King Mahindra Malla and is dedicated to the goddess Taleju Bhavani, the protective deity of Nepal and its former royal family. The temple, standing 36.6 meters high on a twelve-stage platform, is three floors high and was considered inauspicious to build a house higher than it until very recently. The temple is open only once a year during the festival of Dashain and is strictly for Hindus, although it was closed for renovation during the visit. The area surrounding the temple offers delicious street food, and a visit to Durbar Square transports visitors back a few hundred years with its rich heritage buildings."
+    "alternative_names": [
+      "Hanuman Dhoka",
+      "Tov R-Square"
+    ],
+    "typology": {
+      "monument_type": "UNESCO World Heritage Site",
+      "main_deity": "Lord Hanuman",
+      "religion": "Hinduism"
+    },
+    "location": {
+      "province": null,
+      "district": null,
+      "municipality": null,
+      "heritage_area": null,
+      "tola": null
+    },
+    "description": "Kathmandu Durbar Square is a UNESCO World Heritage Site located about two kilometers from the thermal area and a 10 to 15 minutes drive depending on the traffic. The entire area is dotted with temples, palaces, and towers that are very beautiful. Some are seriously damaged by the recent earthquake and are being restored, but few temples are functional. The square features an open-air souvenir marketplace called person portable e-square. The area has access to several hotels and restaurants.",
+    "fun_fact": "The Kumari girl is the home of the Kumari or living goddess who is considered to be an incarnation of the goddess Taleju.",
+    "architecture": {
+      "shape": null,
+      "storeys": 3,
+      "dimensions": null,
+      "construction_materials": [
+        "brick",
+        "wood"
+      ]
+    },
+    "condition": {
+      "status": "Partly destroyed during the earthquake",
+      "threats": [
+        "Earthquake damage"
+      ]
+    },
+    "cultural_activities": [
+      {
+        "activity": "Viewing the Kumari",
+        "details": "The Kumari appears from time to time in the company of her guardian Priestess to see and to be seen by her admirers."
+      },
+      {
+        "activity": "Visiting temples",
+        "details": "Visitors can explore various temples including the Shiva Parvati Temple, Indra Put Temple, and Taleju Temple."
+      }
+    ],
+    "historical_events": [
+      {
+        "event": "Construction of Kumari Car",
+        "date": "1757",
+        "details": "Built by King Jayaprakash Malla."
+      },
+      {
+        "event": "Construction of Hanuman Dhoka",
+        "date": "1680",
+        "details": "Built by King Prithvi Narayan Shah."
+      },
+      {
+        "event": "Construction of Taleju Temple",
+        "date": "15th century",
+        "details": "Built by King Mahindra Malla."
+      },
+      {
+        "event": "Construction of Jagannath Temple",
+        "date": "15th century",
+        "details": "Built by Malla King."
+      },
+      {
+        "event": "Construction of Shiva Parvati Temple",
+        "date": null,
+        "details": "Built by King Rama Bahadur Shah."
+      }
+    ]
   },
   {
     "monument_name": "Kathmandu Durbar Square",
-    "fun_fact": "Kathmandu Durbar Square is home to the living goddess, Kumari.",
-    "description": "Kathmandu Durbar Square is located in the heart of capital Kathmandu. It is also known as Basantipur and Hanumandoka, and it's just about a 15-minute walk from Thamel, a place which is very well known among tourists. It is one of the three Durbar Squares in the capital, the others being Patan Durbar Square and Bhaktapur Durbar Square. Unlike the other two Durbar Squares, this one served as the home for the kings of our country, Nepal. After the unification, a big palace was built within the area for the kings to live in, but as of now, it serves as a museum. Kathmandu Durbar Square is often known as a place where different kings ruled our country for generations. It is also a home to the living goddess, Kumari. The area is inhabited by the Newars, an ethnic group that has been living in the Kathmandu Valley before the unification of Nepal. They speak their own language among each other, but of course, they speak the national language, Nepali, as well. This area hosts a lot of interesting local festivals throughout the year, with Indra Jatra being one of the most well-known festivals, lasting for a week straight. The temples and monuments are mostly made up of wood, bricks, and adobe clay, and most of them date back to the 17th century. Being an open place in the middle of a busy city, it is considered a good place for locals to hang out. Most of the temples and monuments in this area date back all the way to more than the 17th century. Unfortunately, all of the temples were partially or completely damaged during the earthquake that we had in 2015. Most of the temples are either already rebuilt or are still under construction. The devastating earthquake took out most of the temples and monuments, and Kathmandu Durbar Square was the worst in terms of damage. This is why most of the temples are still under construction, even after five years from the earthquake. These temples have to be made in exactly the same style as they were before. The Kumari Temple, also known as the living goddess of Kathmandu Durbar Square, is where the current Kumari resides. Unfortunately, due to the pandemic, visitors are not allowed to go into the temple. All we are allowed to do is appreciate the artwork of the temple, which was built during the 18th century. Kumari is the incarnation of the fierce goddess, Talaiju, and is the family goddess of the Malla kings who ruled the valley before the unification in the 18th century. Even though the Mallas were defeated by the new king, the tradition of worshipping the Kumari continued and still continues to this day. Kumaris are often selected at a very young age for their purity, and the current one is just about 6 years of age now."
+    "alternative_names": [
+      "Basantipur",
+      "Hanumandoka"
+    ],
+    "typology": {
+      "monument_type": "Durbar Square",
+      "main_deity": "Kumari",
+      "religion": "Hinduism and Buddhism"
+    },
+    "location": {
+      "province": null,
+      "district": null,
+      "municipality": "Kathmandu",
+      "heritage_area": null,
+      "tola": null
+    },
+    "description": "Kathmandu Durbar Square is located in the heart of capital Kathmandu. It is one of the three durbar squares in the capital, the other being Patan Durbar Square and Bhaktapur Durbar Square. Unlike the other two durbar squares, this one served as the home for the kings of our country Nepal. After the unification, a big palace was built within the area for the kings to live in, but as of now it serves as a museum. Kathmandu Durbar Square is often known as a place where different kings ruled our country for generations. It is also a home to the living goddess Kumari. The area is a host to a lot of interesting local festivals throughout the year, with Indra Jatra being one of the very well-known festivals that goes on for a week straight. The temples and monuments are mostly made up of woods, bricks, and adobe clay, and most of them date back to the 17th century. Being an open place in the middle of a busy city, it is considered a good place for the locals to hang out.",
+    "fun_fact": "The current Kumari is just about 6 years of age now.",
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": [
+        "Wood",
+        "Bricks",
+        "Adobe Clay"
+      ]
+    },
+    "condition": {
+      "status": "Under reconstruction",
+      "threats": [
+        "Damage from the 2015 earthquake"
+      ]
+    },
+    "cultural_activities": [
+      {
+        "activity": "Indra Jatra",
+        "description": "A well-known festival that goes on for a week straight."
+      }
+    ],
+    "historical_events": [
+      {
+        "event": "2015 Earthquake",
+        "description": "Most of the temples were partially or completely damaged during the earthquake."
+      },
+      {
+        "event": "Unification of Nepal",
+        "description": "A big palace was built within the area for the kings to live in."
+      },
+      {
+        "event": "Continuation of Kumari Worship",
+        "description": "The tradition of worshipping the Kumari continued even after the Malas were defeated by the new king."
+      }
+    ]
   }
 ]

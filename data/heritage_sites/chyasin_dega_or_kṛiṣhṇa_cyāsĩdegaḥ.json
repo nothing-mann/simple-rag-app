@@ -1,0 +1,93 @@
+{
+  "monument_name": "Chyasin Dega or Kṛiṣhṇa Cyāsĩdegaḥ",
+  "alternative_names": [
+    "Kṛṣṇa Temple south"
+  ],
+  "typology": {
+    "monument_type": "Śikhara temple",
+    "main_deity": "Kṛṣṇa",
+    "religion": "Vaishnava"
+  },
+  "location": {
+    "province": "3",
+    "district": "Lalitpur",
+    "municipality": "Lalitpur",
+    "heritage_area": "Patan Darbar Square",
+    "tola": "Mangal Bazar, Patan Darbar Square"
+  },
+  "description": "This octagonal stone Śhikara temple was built in NS 843 (CE 1723) by Yogamatī, the daughter of Yoganarendra Malla. The main entrance faces east and is guarded by two lions as well as statues of Jaya and Vijaya. A second door faces west, and the six remaining sides feature blind doors. Kṛṣṇa, the principal deity, is installed on the first floor alongside his two consorts Satyabhāmā and Rukminī. The first floor balcony is decorated with an intricately carved stone balustrade featuring 32 deities in stone relief.\n\nThe stone inscription placed at the blind door on the southern side of the temple informs the reader that this octagonal stone Śhikara temple was built in NS 843 (CE 1723) by Yogamatī, the daughter of Yoganarendra Malla. The temple collapsed completely in the 1934 earthquake and was rebuilt from the ground up in the late 1930s. The overall quality of reconstruction was relatively poor, with parts of the stone balcony showing severe defects. The temple was severely damaged again in the 2015 earthquake and has been temporarily reinforced by two stainless steel collar bands. There are many cracks in the stone masonry, resulting in severe water leakage into the structure.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Octagonal",
+    "storeys": 3,
+    "dimensions": {
+      "length": 622,
+      "depth": 622,
+      "height": 1658,
+      "diameter": 0
+    },
+    "construction_materials": [
+      "stone"
+    ]
+  },
+  "condition": {
+    "status": "Heavily damaged (collapsed, demolished, major cracks and structural damages)",
+    "threats": [
+      "Water damages",
+      "Wall cracks"
+    ]
+  },
+  "cultural_activities": [
+    {
+      "activity": "Daily worship",
+      "description": "The daily worship is performed by Miśra Brahmaṇa. The guṭhī Saṃsthāna provides him with Rs. 500 per month to spend on worship expenses and Rs. 540 annually as his salary."
+    }
+  ],
+  "historical_events": [
+    {
+      "event_name": "Original construction",
+      "description": "Yogamatī, the daughter of King Yoganarendra Malla donated this temple in memory of her father. The inscription mentions that the 31 queens of King Yoganarendra Malla performed satī (self-immolation) after his death.",
+      "event_date": {
+        "date": 1723,
+        "period": "Late Malla period (1482-1768/69)",
+        "year": "NS 843",
+        "nepali_month": "Māgha",
+        "pakṣa": "Dark fortnight",
+        "tithi": 2
+      },
+      "sources": [
+        "Regmi 1966, 271-274",
+        "Vajrācārya 2056, 425-427"
+      ]
+    },
+    {
+      "event_name": "Collapse during the Great Earthquake",
+      "description": "The temple collapsed completely. The central tower was shortened when it was rebuilt.",
+      "event_date": {
+        "date": 1934,
+        "period": "Shumsher Rana Period (1885-1951)",
+        "year": "VS 1990"
+      },
+      "sources": [
+        "Cf. Korn 2014, 49."
+      ]
+    },
+    {
+      "event_name": "Damage suffered during the 2015 earthquake",
+      "description": "The temple suffered severe damage with large cracks showing in the stone masonry. Parts of the first floor balcony level show movement outward.",
+      "event_date": {
+        "date": 2015,
+        "period": "Democratic Period (1990-)"
+      }
+    },
+    {
+      "event_name": "Stabilization and emergency consolidation work",
+      "description": "Two bands of stainless steel collars were installed around the first floor balcony to counteract any outward movement.",
+      "event_date": {
+        "date": 2016,
+        "period": "Democratic Period (1990-)",
+        "year": "VS 2073"
+      }
+    }
+  ]
+}

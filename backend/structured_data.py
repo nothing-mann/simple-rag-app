@@ -27,20 +27,58 @@ class HeritageDataStructurer:
 
     def structure_heritage_data(self, heritage_site: str) -> Optional[str]:
         """Structure the heritage site data using LiteLLM"""
-        prompt = f"""For the following heritage site, extract and structure information in JSON format with these fields:
-- monument_name: The name of the monument
-- fun_fact: An interesting fact about the monument
-- description: A detailed description of the monument with historical significance
-
-Use the information provided in the input text. Don't generate information on your own.
-Focus on structuring the existing content with proper English spelling corrections.
-Don't cut or crop out the information passed to you. 
-Make sure the information structured is not changed and it flows as is like passed.
-There is no character limit in the description key so pass all the information. Don't leave out anything.
-You can skip the parts that seem like self promotion of the channels
-Return valid JSON format. 
-
-Heritage site to structure: {heritage_site}
+        prompt = f"""Extract information about the Nepalese cultural heritage site from the following text. 
+        Format your response as a JSON object with the structure shown below.
+        
+        # IMPORTANT INSTRUCTIONS:
+        1. Use the information provided in the input text. 2. Don't generate information on your own.
+3.Focus on structuring the existing content with proper English spelling corrections.
+4. Don't cut or crop out the information passed to you. 
+5. Make sure the information structured is not changed and it flows as is like passed.
+6. There is no character limit in the description key so pass all the information. Don't leave out anything.
+7. You can skip the parts that seem like self promotion of the channels
+8. Return valid JSON format.
+        9. ONLY include fields where information is explicitly available in the text
+        10. Leave fields empty (null) if no information is provided
+        11. DO NOT make up or hallucinate any information not present in the text
+        12. Use exact measurements, dates, and names as they appear in the text
+        13. If there are multiple entries (e.g., historical_events), create an array of objects
+        14. For any dates mentioned, preserve the original date format and calendar system
+        
+        JSON STRUCTURE:
+        {{
+          "monument_name": string or null,
+          "alternative_names": [array of strings] or null,
+          "typology": {{
+            "monument_type": string or null,
+            "main_deity": string or null,
+            "religion": string or null
+          }},
+          "location": {{
+            "province": string or null,
+            "district": string or null,
+            "municipality": string or null,
+            "heritage_area": string or null,
+            "tola": string or null
+          }},
+          "description": string or null,
+          "fun_fact": string or null,
+          "architecture": {{
+            "shape": string or null,
+            "storeys": number or null,
+            "dimensions": object or null,
+            "construction_materials": [array of strings] or null
+          }},
+          "condition": {{
+            "status": string or null,
+            "threats": [array of strings] or null
+          }},
+          "cultural_activities": [array of objects] or null,
+          "historical_events": [array of objects] or null
+        }}
+        
+        HERITAGE SITE TEXT:
+        {heritage_site} 
 """
 
         try:
