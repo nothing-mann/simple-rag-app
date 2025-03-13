@@ -1,6 +1,6 @@
 # Nepalese Heritage Learning Assistant
 
-An AI-powered tool for learning about Nepalese cultural heritage sites using modern NLP techniques and YouTube content.
+An AI-powered tool for learning about Nepalese cultural heritage sites using modern NLP techniques and YouTube content along with manually added raw text files.
 
 ## Project Overview
 
@@ -58,7 +58,7 @@ language-learning-assistant/
 1. **Clone the repository**:
    ```bash
    git clone <repository-url>
-   cd language-learning-assistant
+   cd simple-rag-app
    ```
 
 2. **Create and activate a virtual environment**:
