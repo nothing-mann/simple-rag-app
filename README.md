@@ -16,16 +16,19 @@ This project creates a language learning and cultural heritage assistant focused
 ## Technical Components
 
 ### 1. Transcript Acquisition
+
 - YouTube API integration for retrieving video transcripts
 - Prioritization of manually created transcripts over automated ones
 - Automatic language detection and translation to English
 
 ### 2. Data Structuring
+
 - Processing raw transcript data into meaningful, structured information
 - Information extraction for monument names, facts, and descriptions
 - Dynamic file organization based on monument names
 
 ### 3. AI Interaction
+
 - GPT-4o-mini integration via LiteLLM
 - Contextual understanding of heritage site information
 - Natural language responses to user queries
@@ -38,7 +41,7 @@ language-learning-assistant/
 │   ├── chat.py             # Basic AI chat interface using LiteLLM
 │   ├── config.py           # Central configuration settings
 │   ├── get_transcript.py   # YouTube transcript extraction and processing
-│   ├── init_db.py          # Database initialization script 
+│   ├── init_db.py          # Database initialization script
 │   ├── rag.py              # Vector database management for heritage sites
 │   ├── rag_chat.py         # RAG-enhanced chat interface
 │   └── structured_data.py  # Data structuring for heritage site information
@@ -56,12 +59,14 @@ language-learning-assistant/
 ### 1. Environment Setup
 
 1. **Clone the repository**:
+
    ```bash
    git clone <repository-url>
    cd simple-rag-app
    ```
 
 2. **Create and activate a virtual environment**:
+
    ```bash
    python -m venv venv
    # On Windows
@@ -71,38 +76,41 @@ language-learning-assistant/
    ```
 
 3. **Install dependencies**:
+
    ```bash
    pip install -r requirements.txt
    ```
 
 4. **Set up environment variables**:
-   - Create a `.env` file in the project root with your OpenAI API key:
+   - Create a `.env` file in the project root with your MistralLarge API key:
      ```
-     OPENAI_API_KEY=your_api_key_here
+     MistralLarge_API_KEY=your_api_key_here
      ```
 
 ### 2. Data Collection and Processing
 
 1. **Download transcripts from YouTube**:
+
    ```bash
    # Download a single transcript
    python backend/get_transcript.py https://www.youtube.com/watch?v=VIDEO_ID
-   
+
    # Print transcript content while downloading
    python backend/get_transcript.py https://www.youtube.com/watch?v=VIDEO_ID true
    ```
 
 2. **Structure the transcript data**:
+
    ```bash
    # Process most recent transcript
    python backend/structured_data.py
-   
+
    # Process a specific transcript
    python backend/structured_data.py --transcript data/transcripts/VIDEO_ID.txt
-   
+
    # Process all transcripts
    python backend/structured_data.py --all
-   
+
    # Specify a custom output directory
    python backend/structured_data.py --all --output-dir path/to/output
    ```
@@ -110,16 +118,18 @@ language-learning-assistant/
 ### 3. Database Initialization and Management
 
 1. **Initialize the vector database**:
+
    ```bash
    # This will process all heritage site data and create the vector database
    python backend/init_db.py
    ```
 
 2. **Update the database with new content**:
+
    ```bash
    # Update database with all heritage site data
    python backend/rag.py
-   
+
    # Test query against the database
    python backend/rag.py --query "Tell me about Krishna Mandir" --results 3
    ```
@@ -127,9 +137,10 @@ language-learning-assistant/
 ### 4. Running the Chat Interface
 
 1. **Use the command line RAG chat interface**:
+
    ```bash
    python backend/rag_chat.py
-   
+
    # Use a different model
    python backend/rag_chat.py --model gpt-4
    ```
@@ -159,11 +170,13 @@ By default, the server runs on port 5000. You can change this by setting the POR
 ### API Endpoints
 
 1. **Health Check**
+
    ```
    GET /api/health
    ```
 
 2. **Standard LLM Chat**
+
    ```
    POST /api/chat
    {
@@ -175,6 +188,7 @@ By default, the server runs on port 5000. You can change this by setting the POR
    ```
 
 3. **RAG-Enhanced Chat**
+
    ```
    POST /api/rag-chat
    {
@@ -210,7 +224,7 @@ response = requests.post(
 if response.status_code == 200:
     data = response.json()
     print(data["response"])
-    
+
     # Print sources if available
     if "sources" in data:
         print("\nSources:")
@@ -249,7 +263,7 @@ If you encounter import errors:
 
 If you get authentication errors:
 
-1. Verify your OpenAI API key is correctly set in the `.env` file
+1. Verify your MistralLarge API key is correctly set in the `.env` file
 2. Ensure the `.env` file is in the correct location (project root)
 3. Check if your API key has sufficient quota/credits
 
@@ -281,7 +295,7 @@ streamlit run frontend/main.py
 - python-dotenv
 - streamlit
 - chromadb
-- openai
+- MistralLarge
 
 ## Future Enhancements
 

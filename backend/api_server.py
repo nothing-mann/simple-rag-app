@@ -58,7 +58,7 @@ def chat():
         "message": "Your question about heritage sites",
         "json_format": false,
         "temperature": 0.7,
-        "model_id": "gpt-4o-mini" (optional)
+        "model_id": "mistral/mistral-large-latest" (optional)
     }
     """
     data = request.json

@@ -40,7 +40,7 @@ def render_header():
     This tool demonstrates:
     - Base LLM Capabilities
     - RAG (Retrieval Augmented Generation)
-    - LiteLLM OpenAI Integration
+    - LiteLLM MistralLarge Integration
     - Agent-based Learning Systems
     """)
 
@@ -51,7 +51,7 @@ def render_sidebar():
         selected_stage = st.radio(
             "Select Stage:",
             [
-                "1. Chat with OpenAI",
+                "1. Chat with MistralLarge",
                 "2. Raw Transcript",
                 "3. Structured Data",
                 "4. RAG Implementation",
@@ -60,7 +60,7 @@ def render_sidebar():
         )
         
         stage_info = {
-            "1. Chat with OpenAI": """
+            "1. Chat with MistralLarge": """
             **Current Focus:**
             - Basic Cultural Heritage Information
             - Understanding LLM capabilities
@@ -83,7 +83,7 @@ def render_sidebar():
             
             "4. RAG Implementation": """
             **Current Focus:**
-            - OpenAI Embedding (text-embedding-ada-002)
+            - MistralLarge Embedding (text-embedding-ada-002)
             - Vector storage
             - Context retrieval
             """,
@@ -128,13 +128,13 @@ def display_chat_message(message, container=None):
             display.caption(f"sent at {timestamp}")
 
 def render_chat_stage():
-    st.header("Chat with OpenAI")
+    st.header("Chat with MistralLarge")
     
     if 'bedrock_chat' not in st.session_state:
         st.session_state.bedrock_chat = LiteLLMChat()
     
     st.markdown("""
-    Start by exploring OpenAI's base Nepali Cultural heritage information capabilities. Try asking questions about cultural heritages in Nepal.
+    Start by exploring MistralLarge's base Nepali Cultural heritage information capabilities. Try asking questions about cultural heritages in Nepal.
     """)
 
     chat_container = st.container()
@@ -438,7 +438,7 @@ def main():
     render_header()
     selected_stage = render_sidebar()
     
-    if selected_stage == "1. Chat with OpenAI":
+    if selected_stage == "1. Chat with MistralLarge":
         render_chat_stage()
         
         if st.session_state.is_typing:

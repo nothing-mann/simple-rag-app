@@ -3,10 +3,10 @@
 # from dotenv import load_dotenv
 
 # load_dotenv()
-# openai_api_key = os.getenv("OPENAI_API_KEY")
+# MistralLarge_api_key = os.getenv("MistralLarge_API_KEY")
 
-# if not openai_api_key:
-#     print("WARNING: OPENAI_API_KEY not found in the .env file")
+# if not MistralLarge_api_key:
+#     print("WARNING: MistralLarge_API_KEY not found in the .env file")
 
 # response = completion(
 #   model="gpt-4o-mini",
@@ -26,10 +26,10 @@
 
 # # Load environment variables
 # load_dotenv()
-# openai_api_key = os.getenv("OPENAI_API_KEY")
+# MistralLarge_api_key = os.getenv("MistralLarge_API_KEY")
 
-# if not openai_api_key:
-#     print("WARNING: OPENAI_API_KEY not found in the .env file")
+# if not MistralLarge_api_key:
+#     print("WARNING: MistralLarge_API_KEY not found in the .env file")
 
 # class LiteLLMChat:
 #     def __init__(self, model_id: str = "gpt-4o-mini"):
@@ -91,7 +91,7 @@ load_dotenv()
 mistral_api_key = os.getenv("MISTRAL_API_KEY")
 
 if not mistral_api_key:
-    print("WARNING: OPENAI_API_KEY not found in the .env file")
+    print("WARNING: MistralLarge_API_KEY not found in the .env file")
 
 class LiteLLMChat:
     def __init__(self, model_id: str = "mistral/mistral-large-latest"):
