@@ -15,10 +15,10 @@ from backend.config import HERITAGE_SITES_DIR, TRANSCRIPTS_DIR, DEFAULT_MODEL
 
 # Load environment variables
 load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
+mistral_api_key = os.getenv("MISTRAL_API_KEY")
 
-if not openai_api_key:
-    print("WARNING: OPENAI_API_KEY not found in the .env file")
+if not mistral_api_key:
+    print("WARNING: MISTRAL_API_KEY not found in the .env file")
 
 class HeritageDataStructurer:
     def __init__(self, model_id: str = DEFAULT_MODEL):

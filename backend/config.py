@@ -18,8 +18,11 @@ os.makedirs(HERITAGE_SITES_DIR, exist_ok=True)
 os.makedirs(TRANSCRIPTS_DIR, exist_ok=True)
 
 # Model settings
-DEFAULT_MODEL = "gpt-4o-mini"
-EMBEDDING_MODEL = "text-embedding-ada-002"
+DEFAULT_MODEL = "mistral/mistral-large-latest"
+# EMBEDDING_MODEL = "text-embedding-ada-002"
+# EMBEDDING_MODEL = "all-MiniLM-L6-v2"
+# EMBEDDING_MODEL = "hkunlp/instructor-large"
+EMBEDDING_MODEL = "hkunlp/instructor-xl"
 
 # Print configuration for debugging
 if __name__ == "__main__":

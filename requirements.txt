@@ -3,12 +3,14 @@ flask==2.3.3
 gunicorn==21.2.0
 
 # Core dependencies with specific versions
-litellm
-openai  
+litellm 
 chromadb
 youtube_transcript_api
 python-dotenv
 streamlit
+InstructorEmbedding
+torch
+sentence-transformers-4.1.0
 
 # Request library for API example
 requests==2.31.0

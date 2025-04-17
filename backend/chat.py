@@ -88,13 +88,13 @@ from typing import Optional, Dict, Any
 
 # Load environment variables
 load_dotenv()
-openai_api_key = os.getenv("OPENAI_API_KEY")
+mistral_api_key = os.getenv("MISTRAL_API_KEY")
 
-if not openai_api_key:
+if not mistral_api_key:
     print("WARNING: OPENAI_API_KEY not found in the .env file")
 
 class LiteLLMChat:
-    def __init__(self, model_id: str = "gpt-4o-mini"):
+    def __init__(self, model_id: str = "mistral/mistral-large-latest"):
         """Initialize chat client with LiteLLM"""
         self.model_id = model_id
         

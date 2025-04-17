@@ -14,10 +14,32 @@ from backend.config import CHROMA_DB_DIR, COLLECTION_NAME, HERITAGE_SITES_DIR, E
 
 # Load environment variables
 load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 
-if not OPENAI_API_KEY:
-    print("WARNING: OPENAI_API_KEY not found in the .env file")
+if not MISTRAL_API_KEY:
+    print("WARNING: MISTRAL_API_KEY not found in the .env file")
+
+# Import directly from sentence_transformers to avoid the token parameter issue
+import sentence_transformers
+import numpy as np
+
+class CustomInstructorEmbeddingFunction(embedding_functions.EmbeddingFunction):
+    def __init__(self, model_name: str = "hkunlp/instructor-large"):
+        """Initialize with a sentence transformer model that doesn't require the instructor pattern"""
+        self.model_name = model_name
+        print(f"Loading sentence-transformers model {model_name}...")
+        # Using regular SentenceTransformer instead of INSTRUCTOR to avoid compatibility issues
+        self._model = sentence_transformers.SentenceTransformer(model_name)
+
+    def __call__(self, texts: List[str]) -> List[List[float]]:
+        if not texts:
+            return []
+        
+        # Get embeddings directly without instruction format
+        embeddings = self._model.encode(texts)
+        
+        # Convert to native Python lists for JSON serialization
+        return embeddings.tolist()
 
 class HeritageRAG:
     def __init__(self, collection_name: str = COLLECTION_NAME):
@@ -28,11 +50,8 @@ class HeritageRAG:
         self.chroma_client = chromadb.PersistentClient(path=CHROMA_DB_DIR)
         self.chroma_client.heartbeat()
         
-        # Setup embedding function
-        self.embedding_function = embedding_functions.OpenAIEmbeddingFunction(
-            model_name=EMBEDDING_MODEL, 
-            api_key=OPENAI_API_KEY
-        )
+        # Use our custom embedding function with a standard model
+        self.embedding_function = CustomInstructorEmbeddingFunction()
         
         # Get or create collection
         self.collection = self.chroma_client.get_or_create_collection(

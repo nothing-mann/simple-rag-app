@@ -13,10 +13,10 @@ from backend.rag import HeritageRAG
 
 # Load environment variables
 load_dotenv()
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
 
-if not OPENAI_API_KEY:
-    print("WARNING: OPENAI_API_KEY not found in the .env file")
+if not MISTRAL_API_KEY:
+    print("WARNING: MISTRAL_API_KEY not found in the .env file")
 
 class HeritageRAGChat:
     def __init__(self, collection_name: str = COLLECTION_NAME, model_id: str = DEFAULT_MODEL):
@@ -98,7 +98,8 @@ Please provide a helpful and accurate response based on the above context. If th
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt}
                 ],
-                temperature=temperature
+                temperature=temperature,
+                api_key=MISTRAL_API_KEY  # Add Mistral API key here
             )
             
             return response.choices[0].message.content
@@ -145,8 +146,8 @@ def main():
     
     # Set up argument parser
     parser = argparse.ArgumentParser(description='Heritage RAG Chat Interface')
-    parser.add_argument('--model', type=str, default='gpt-4o-mini',
-                      help='LLM model to use (default: gpt-4o-mini)')
+    parser.add_argument('--model', type=str, default='mistral/mistral-large-latest',
+                      help='LLM model to use (default: mistral/mistral-large-latest)')
     parser.add_argument('--collection', type=str, default='cultural-heritage-information',
                       help='ChromaDB collection name (default: cultural-heritage-information)')
     
