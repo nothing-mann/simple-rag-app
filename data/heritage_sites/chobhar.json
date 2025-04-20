@@ -1,0 +1,76 @@
+[
+  {
+    "monument_name": "Chobhar",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": null,
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": null,
+      "municipality": null,
+      "heritage_area": "Kathmandu Valley",
+      "tola": null
+    },
+    "description": "According to Swayambhu Puran, the Kathmandu Valley was once a lake. The hill where the Swayambu Stupa rests had lotus plants with beautiful lotus flowers abloom. One story says that the god Manjusri cut a gorge at a place called Kashapaal (later called Chobhar) with a sword called Chandrahrasha and drained away the waters in order to establish a habitable land. According to Gopal Banshawali, Krishna cut the gorge with his Sudarshana Chakra to let the water out. He then handed the drained valley to the Gopal Vansi people, who were nomadic cow herders.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": null
+    },
+    "condition": {
+      "status": null,
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Draining of Kathmandu Valley",
+        "event_description": "The god Manjusri cut a gorge at a place called Kashapaal (later called Chobhar) with a sword called Chandrahrasha and drained away the waters in order to establish a habitable land."
+      },
+      {
+        "event_name": "Alternative Legend",
+        "event_description": "According to Gopal Banshawali, Krishna cut the gorge with his Sudarshana Chakra to let the water out."
+      }
+    ]
+  },
+  {
+    "monument_name": "Chobhar",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": null,
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": null,
+      "municipality": null,
+      "heritage_area": "Kathmandu Valley",
+      "tola": null
+    },
+    "description": "According to Swayambhu Puran, the Kathmandu Valley was once a lake. The hill where the Swayambu Stupa rests had lotus plants with beautiful lotus flowers abloom. One story says that the god Manjusri cut a gorge at a place called Kashapaal (later called Chobhar) with a sword called Chandrahrasha and drained away the waters in order to establish a habitable land. According to Gopal Banshawali, Krishna cut the gorge with his Sudarshana Chakra to let the water out. He then handed the drained valley to the Gopal Vansi people, who were nomadic cow herders.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": null
+    },
+    "condition": {
+      "status": null,
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Draining of Kathmandu Valley",
+        "event_description": "According to Swayambhu Puran, the god Manjusri cut a gorge at Chobhar with a sword called Chandrahrasha and drained away the waters to establish a habitable land. According to Gopal Banshawali, Krishna cut the gorge with his Sudarshana Chakra to let the water out."
+      }
+    ]
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "monument_name": "Bhandarkhal Pond and Taleju temple",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": null,
+    "main_deity": null,
+    "religion": null
+  },
+  "location": {
+    "province": null,
+    "district": null,
+    "municipality": "Kathmandu",
+    "heritage_area": "Patan Durbar Square",
+    "tola": null
+  },
+  "description": "The water color sketches by Henry Ambrose Oldfield, who was a doctor at the British Legation in Kathmandu in 1854. His drawing of Patan Darbar Square shows Tushahiti, the Bhandarkhal Pond and Taleju temple in background.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": null
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": null
+}

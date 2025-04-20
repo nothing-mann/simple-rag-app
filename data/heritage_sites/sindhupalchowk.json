@@ -1,0 +1,40 @@
+{
+  "monument_name": "Sindhupalchowk",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": null,
+    "main_deity": null,
+    "religion": null
+  },
+  "location": {
+    "province": "Bagmati",
+    "district": "Sindhupalchowk",
+    "municipality": null,
+    "heritage_area": null,
+    "tola": null
+  },
+  "description": "Sindhupalchowk was one of the districts severely affected by the 2015 Nepal earthquake. The devastation was extensive, with numerous casualties and widespread damage to infrastructure and cultural heritage sites.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": null
+  },
+  "condition": {
+    "status": "Severely damaged",
+    "threats": [
+      "Earthquakes",
+      "Natural disasters"
+    ]
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "2015 Nepal Earthquake",
+      "event_date": "25th April, 2015",
+      "event_description": "Sindhupalchowk was one of the districts severely affected by the 2015 Nepal earthquake. The devastation was extensive, with numerous casualties and widespread damage to infrastructure and cultural heritage sites.",
+      "event_significance": "The earthquake caused massive destruction in Sindhupalchowk, leading to significant loss of life and damage to cultural heritage sites."
+    }
+  ]
+}

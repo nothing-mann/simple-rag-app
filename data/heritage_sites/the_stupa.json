@@ -1,0 +1,75 @@
+[
+  {
+    "monument_name": "The Stupa",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": "Stupa",
+      "main_deity": null,
+      "religion": "Buddhist"
+    },
+    "location": {
+      "province": null,
+      "district": null,
+      "municipality": null,
+      "heritage_area": "Kathmandu Valley",
+      "tola": null
+    },
+    "description": "Swayambhu is the oldest Buddhist monument in the valley. But it has been renovated many times since its creation. Legends say that Swayambhu was built over an eternal flame. The whitewashed dome has a diameter of 20 meters. Look at the watchful eyes of Buddha. You have the impression that they follow you when you walk around Swayambhu. They give the stupa a life of its own. And look at the metal torana above the eyes. They carry metal images of the Pancha Buddhas and the Panchakula. Don’t miss the spire with thirteen gilded bronze rings, representing the thirteen levels of perfection.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": {
+        "dome_diameter": "20 meters"
+      },
+      "construction_materials": null
+    },
+    "condition": {
+      "status": null,
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": null
+  },
+  {
+    "monument_name": "The stupa",
+    "alternative_names": [
+      "Swayambhu",
+      "Bauddhanath"
+    ],
+    "typology": {
+      "monument_type": "stupa",
+      "main_deity": null,
+      "religion": "Buddhist"
+    },
+    "location": {
+      "province": null,
+      "district": null,
+      "municipality": null,
+      "heritage_area": "Kathmandu Valley",
+      "tola": null
+    },
+    "description": "Swayambhu is the oldest Buddhist monument in the valley. But it has been renovated many times since its creation. Legends say that Swayambhu was built over an eternal flame. The whitewashed dome has a diameter of 20 meters. Look at the watchful eyes of Buddha. You have the impression that they follow you when you walk around Swayambhu. They give the stupa a life of its own. And look at the metal torana above the eyes. They carry metal images of the Pancha Buddhas and the Panchakula. Don’t miss the spire with thirteen gilded bronze rings, representing the thirteen levels of perfection.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": {
+        "dome_diameter": "20 meters"
+      },
+      "construction_materials": null
+    },
+    "condition": {
+      "status": null,
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Renovations",
+        "event_date": null,
+        "event_description": "Swayambhu has been renovated many times since its creation."
+      }
+    ]
+  }
+]

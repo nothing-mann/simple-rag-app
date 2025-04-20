@@ -1,0 +1,146 @@
+[
+  {
+    "monument_name": "Taleju Temple",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": "Temple",
+      "main_deity": "Taleju Bhawani",
+      "religion": "Hinduism"
+    },
+    "location": {
+      "province": "Bagmati",
+      "district": "Kathmandu",
+      "municipality": "Kathmandu",
+      "heritage_area": "Kathmandu Durbar Square",
+      "tola": null
+    },
+    "description": "The oldest temples in the square are those built by Mahendra Malla (1560 –1574). They are the temples of Jagannath, Kotilingeswara Mahadev, Mahendreswara, and the Taleju Temple. This three-roofed Taleju Temple was established in 1564, in a typical Newari architectural style and is elevated on platforms that form a pyramid-like structure. The temple is dedicated to the goddess Taleju Bhawani, a form of the goddess Durga, who is considered the patron deity of the Malla kings.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": "Rectangular with a pyramid-like roof",
+      "storeys": 3,
+      "dimensions": null,
+      "construction_materials": [
+        "Brick",
+        "Wood",
+        "Terracotta"
+      ]
+    },
+    "condition": {
+      "status": "Damaged",
+      "threats": [
+        "Earthquakes",
+        "Deterioration due to age",
+        "Lack of proper maintenance"
+      ]
+    },
+    "cultural_activities": [
+      {
+        "name": "Dashain Festival",
+        "description": "During the Dashain festival, the Taleju Temple is opened for the public once a year. People gather to pay their respects to the goddess Taleju Bhawani and receive her blessings."
+      }
+    ],
+    "historical_events": [
+      {
+        "event": "Construction",
+        "date": "1564",
+        "description": "The Taleju Temple was established by Mahendra Malla in a typical Newari architectural style."
+      },
+      {
+        "event": "Earthquake Damage",
+        "date": "2015",
+        "description": "The temple was damaged during the major earthquake that occurred on 25th April, 2015."
+      }
+    ]
+  },
+  {
+    "monument_name": "Taleju Temple",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": "temple",
+      "main_deity": "Taleju Bhawani",
+      "religion": "Hinduism"
+    },
+    "location": {
+      "province": "Bagmati Province",
+      "district": "Kathmandu",
+      "municipality": "Kathmandu Metropolitan City",
+      "heritage_area": "Kathmandu Durbar Square",
+      "tola": null
+    },
+    "description": "This three-roofed Taleju Temple was established in 1564, in a typical Newari architectural style and is elevated on platforms that form a pyramid-like structure. It is one of the oldest temples in the square, built by Mahendra Malla (1560 –1574). The temple is dedicated to the goddess Taleju Bhawani, the patron deity of the Malla kings.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": "Rectangular with three roofs",
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": [
+        "Brick",
+        "Wood",
+        "Terracotta"
+      ]
+    },
+    "condition": {
+      "status": "Damaged",
+      "threats": [
+        "Earthquakes",
+        "Deterioration due to age"
+      ]
+    },
+    "cultural_activities": [
+      {
+        "name": "Dashain Festival",
+        "description": "During the Dashain festival, the Taleju Temple is one of the key sites for ritual activities and offerings to the goddess Taleju Bhawani."
+      }
+    ],
+    "historical_events": [
+      {
+        "event": "Construction",
+        "date": "1564",
+        "description": "The temple was built by Mahendra Malla."
+      },
+      {
+        "event": "Damage by 1934 Earthquake",
+        "date": "1934",
+        "description": "The temple was damaged during the 1934 earthquake."
+      },
+      {
+        "event": "Damage by 2015 Earthquake",
+        "date": "2015",
+        "description": "The temple was severely damaged during the 2015 earthquake."
+      }
+    ]
+  },
+  {
+    "monument_name": "Taleju temple",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": null,
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": null,
+      "municipality": null,
+      "heritage_area": "Hanuman Dhoka",
+      "tola": null
+    },
+    "description": "The Taleju temple is the most gorgeous. It is over 35 meters high and the tallest building here. You should tell your guests that these monuments are all important links to our past.  We, the Nepalis, and our guests from other countries, must protect them together.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": {
+        "height": "over 35 meters"
+      },
+      "construction_materials": null
+    },
+    "condition": {
+      "status": null,
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": null
+  }
+]

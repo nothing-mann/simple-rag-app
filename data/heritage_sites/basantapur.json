@@ -1,0 +1,41 @@
+{
+  "monument_name": "Basantapur",
+  "alternative_names": ["Kathmandu Durbar Square"],
+  "typology": {
+    "monument_type": null,
+    "main_deity": null,
+    "religion": null
+  },
+  "location": {
+    "province": null,
+    "district": "Kathmandu",
+    "municipality": null,
+    "heritage_area": "Kathmandu Valley",
+    "tola": null
+  },
+  "description": "Kathmandu Durbar Square was one of the three Durbar (royal palace) squares in Kathmandu valley which was the significant identity of spectacular architectures rich in Newari culture. The durbar square was built at the time of Lichhavi Kings and underwent various renovations and new addition till Shah Dynasty. Though there are no written archives stating the history of Kathmandu Durbar Square, construction of the palace in the square is credited to Sankharadev (1069 –1083). As the first king of the independent Kathmandu City, Ratna Malla is said to have built the Taleju temple in the Northern side of the palace in 1501. Construction of the Karnel Chok is not clearly stated in any historical inscriptions; although, it is probably the oldest among all the courtyards in the square. The Bhagavati Temple, originally known as a Narayan Temple, rises above the mansions surrounding it and was added during the time of Jagajaya Malla in the early eighteenth century. The Narayan idol within the temple was stolen so Prithvi Narayan Shah replaced it with an image of Bhagavati, completely transforming the name of the temple. The oldest temples in the square are those built by Mahendra Malla (1560 –1574). They are the temples of Jagannath, Kotilingeswara Mahadev, Mahendreswara, and the Taleju Temple. This three-roofed Taleju Temple was established in 1564, in a typical Newari architectural style and is elevated on platforms that form a pyramid-like structure. In the time of Pratap Malla, son of Laksminar Simha, the square was extensively developed. He was an intellectual, a pious devotee, and especially interested in arts. Immediately after his coronation as a king, he immediately began enlargements to his royal palace, and rebuilt some old temples and constructed new temples, shrines and stupas around his kingdom. He added Nasal chowk, Mohan chowk and several other temples to enhance the beauty of the city and durbar square. After the death of Pratap Malla, there was not much effort made by any other ruler in terms of cultural development. Later around 1692, Radhilasmi, the widowed queen of Pratap Malla, erected the tall temples of Shiva known as Maju Deval near the Garuda image in the square. This temple stands on nine stepped platforms and is one of the tallest buildings in the square. There was several effect on Durbar square after 1934 earthquake. The temples such as Kageshwara temple which was built by daughter-in-law of Pratap Malla was beautiful temple of Newari architecture. After it was damaged in 1934 earthquake, the roof was replaced by a plain tin roof which was no near to Newari architecture. In this way Kathmandu Durbar square has undergone various changes and modifications. The massive earthquake has damaged most of its part. The tallest temple standing nine-stepped tall is no more left and the museum has been completely destroyed.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": null
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Earthquake of 1934",
+      "event_date": "1934",
+      "event_description": "There was several effect on Durbar square after 1934 earthquake. The temples such as Kageshwara temple which was built by daughter-in-law of Pratap Malla was beautiful temple of Newari architecture. After it was damaged in 1934 earthquake, the roof was replaced by a plain tin roof which was no near to Newari architecture."
+    },
+    {
+      "event_name": "Earthquake of 2015",
+      "event_date": "25th April, 2015",
+      "event_description": "The massive earthquake has damaged most of its part. The tallest temple standing nine-stepped tall is no more left and the museum has been completely destroyed."
+    }
+  ]
+}

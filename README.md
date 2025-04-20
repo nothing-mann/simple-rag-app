@@ -4,32 +4,42 @@ An AI-powered tool for learning about Nepalese cultural heritage sites using mod
 
 ## Project Overview
 
-This project creates a language learning and cultural heritage assistant focused on Nepalese cultural sites and monuments. The system processes YouTube videos about Nepalese cultural heritage, extracts transcripts, translates them when needed, structures the information, and provides interactive access to this knowledge.
+This project creates a language learning and cultural heritage assistant focused on Nepalese cultural sites and monuments. The system processes YouTube videos, PDF documents, and web content about Nepalese cultural heritage, extracts content, translates when needed, structures the information, and provides interactive access to this knowledge through a modern web interface.
 
 ## Key Features
 
-- **YouTube Transcript Processing**: Automatically extracts transcripts from YouTube videos about heritage sites
+- **Multiple Content Sources**:
+  - YouTube transcript extraction
+  - PDF document processing
+  - Web content scraping
 - **Smart Language Handling**: Prioritizes manually created transcripts and translates non-English content
-- **AI-Powered Structuring**: Formats unstructured transcript data into consistent heritage site information
+- **AI-Powered Structuring**: Formats unstructured data into consistent heritage site information
 - **Interactive Chat Interface**: Ask questions about Nepalese heritage sites through a conversational interface
+- **RAG Implementation**: Retrieval-Augmented Generation for accurate heritage site information
+- **Monument Database**: Comprehensive, searchable database of heritage sites with filtering capabilities
 
 ## Technical Components
 
-### 1. Transcript Acquisition
+### 1. Content Acquisition
 
 - YouTube API integration for retrieving video transcripts
-- Prioritization of manually created transcripts over automated ones
+- PDF content extraction with metadata preservation
+- Web scraping for heritage site information
+- Prioritization of manually created content over automated ones
 - Automatic language detection and translation to English
 
 ### 2. Data Structuring
 
-- Processing raw transcript data into meaningful, structured information
+- Processing raw content data into meaningful, structured information
 - Information extraction for monument names, facts, and descriptions
 - Dynamic file organization based on monument names
+- Monument deduplication for consistent data presentation
 
 ### 3. AI Interaction
 
-- GPT-4o-mini integration via LiteLLM
+- Mistral Large integration via LiteLLM
+- RAG-enhanced responses using vector database
+- Side-by-side comparison of standard LLM vs RAG-enhanced responses
 - Contextual understanding of heritage site information
 - Natural language responses to user queries
 
@@ -38,18 +48,23 @@ This project creates a language learning and cultural heritage assistant focused
 ```
 language-learning-assistant/
 ├── backend/
+│   ├── api_server.py       # API server for external access
 │   ├── chat.py             # Basic AI chat interface using LiteLLM
 │   ├── config.py           # Central configuration settings
+│   ├── get_pdf_content.py  # PDF document extraction and processing
 │   ├── get_transcript.py   # YouTube transcript extraction and processing
+│   ├── get_web_content.py  # Web content scraping functionality
 │   ├── init_db.py          # Database initialization script
+│   ├── interactive.py      # Interactive learning features
 │   ├── rag.py              # Vector database management for heritage sites
 │   ├── rag_chat.py         # RAG-enhanced chat interface
 │   └── structured_data.py  # Data structuring for heritage site information
 ├── data/
 │   ├── heritage_sites/     # Structured JSON information about heritage sites
-│   └── transcripts/        # Raw and processed YouTube transcripts
+│   └── transcripts/        # Raw and processed content (YouTube, PDF, web)
 ├── frontend/
-│   └── main.py             # Streamlit user interface
+│   ├── main.py             # Streamlit user interface
+│   └── components/         # UI components for the frontend
 ├── chroma_db/              # Vector database storage
 └── README.md
 ```
@@ -62,7 +77,7 @@ language-learning-assistant/
 
    ```bash
    git clone <repository-url>
-   cd simple-rag-app
+   cd language-learning-assistant
    ```
 
 2. **Create and activate a virtual environment**:
@@ -82,12 +97,12 @@ language-learning-assistant/
    ```
 
 4. **Set up environment variables**:
-   - Create a `.env` file in the project root with your MistralLarge API key:
+   - Create a `.env` file in the project root with your API key:
      ```
-     MistralLarge_API_KEY=your_api_key_here
+     LITELLM_API_KEY=your_api_key_here
      ```
 
-### 2. Data Collection and Processing
+### 2. Content Collection and Processing
 
 1. **Download transcripts from YouTube**:
 
@@ -99,7 +114,33 @@ language-learning-assistant/
    python backend/get_transcript.py https://www.youtube.com/watch?v=VIDEO_ID true
    ```
 
-2. **Structure the transcript data**:
+2. **Process PDF documents**:
+
+   ```bash
+   # Process a single PDF
+   python backend/get_pdf_content.py --pdf path/to/document.pdf
+
+   # Process all PDFs in a directory
+   python backend/get_pdf_content.py --dir path/to/pdf/directory
+
+   # Specify custom output filename
+   python backend/get_pdf_content.py --pdf path/to/document.pdf --output custom_name
+   ```
+
+3. **Scrape web content**:
+
+   ```bash
+   # Scrape a single URL
+   python backend/get_web_content.py --url https://example.com/heritage-site
+
+   # Scrape multiple URLs from a file (one per line)
+   python backend/get_web_content.py --urls path/to/urls.txt
+
+   # Customize delay between requests (seconds)
+   python backend/get_web_content.py --urls path/to/urls.txt --delay 5
+   ```
+
+4. **Structure the transcript data**:
 
    ```bash
    # Process most recent transcript
@@ -134,7 +175,7 @@ language-learning-assistant/
    python backend/rag.py --query "Tell me about Krishna Mandir" --results 3
    ```
 
-### 4. Running the Chat Interface
+### 4. Running the Application
 
 1. **Use the command line RAG chat interface**:
 
@@ -142,14 +183,24 @@ language-learning-assistant/
    python backend/rag_chat.py
 
    # Use a different model
-   python backend/rag_chat.py --model gpt-4
+   python backend/rag_chat.py --model mistral/mistral-large-latest
    ```
 
 2. **Run the web application**:
+
    ```bash
    # Start the Streamlit web interface
    streamlit run frontend/main.py
    ```
+
+3. **Using the web interface**:
+   - The interface has multiple tabs for different functionality:
+     - **Chat with Mistral Large**: Basic AI-powered chat about Nepal's heritage
+     - **Raw Transcript**: Process YouTube, PDF, or web content
+     - **Structured Data**: View processed and structured data
+     - **RAG Implementation**: Compare RAG-enhanced vs. standard LLM responses
+     - **Interactive Learning**: Practice scenarios (under development)
+     - **Monument Database**: Browse and filter the complete heritage site database
 
 ## API Usage
 
@@ -183,7 +234,7 @@ By default, the server runs on port 5000. You can change this by setting the POR
      "message": "Your question about heritage sites",
      "json_format": false,
      "temperature": 0.7,
-     "model_id": "gpt-4o-mini" (optional)
+     "model_id": "mistral/mistral-large-latest" (optional)
    }
    ```
 
@@ -195,7 +246,7 @@ By default, the server runs on port 5000. You can change this by setting the POR
      "message": "Your question about heritage sites",
      "n_results": 3,
      "temperature": 0.7,
-     "model_id": "gpt-4o-mini" (optional),
+     "model_id": "mistral/mistral-large-latest" (optional),
      "include_sources": false (optional)
    }
    ```
@@ -234,6 +285,30 @@ if response.status_code == 200:
 
 See `api_example.py` for more detailed usage examples.
 
+## Monument Database
+
+The system maintains a comprehensive database of Nepal's heritage sites. Each monument is stored as a JSON file with standardized structure in the `data/heritage_sites` directory.
+
+### Monument Data Structure
+
+Each monument has information such as:
+
+- Name and alternative names
+- Location details (district, municipality, heritage area)
+- Typology (type, religion, deity)
+- Detailed description
+- Architectural information
+- Historical events and timeline
+- Cultural significance and activities
+
+### Viewing the Monument Database
+
+Use the web interface to browse and filter monuments by:
+
+- Religion (Hinduism, Buddhism, etc.)
+- Monument type (temple, stupa, palace, etc.)
+- Name search
+
 ## Troubleshooting
 
 ### Database Synchronization Issues
@@ -263,22 +338,37 @@ If you encounter import errors:
 
 If you get authentication errors:
 
-1. Verify your MistralLarge API key is correctly set in the `.env` file
+1. Verify your LiteLLM API key is correctly set in the `.env` file
 2. Ensure the `.env` file is in the correct location (project root)
 3. Check if your API key has sufficient quota/credits
 
+### Content Processing Issues
+
+If you experience issues with content processing:
+
+1. For PDF issues, ensure you have PyPDF2 installed
+2. For web scraping issues, check your internet connection and consider increasing the delay
+3. For YouTube transcripts, verify that the video has available transcripts
+
 ## Complete Workflow Example
 
-Here's a complete example of processing a new heritage site video:
+Here's a complete example of processing new heritage site content and using it in the application:
 
 ```bash
 # 1. Activate the environment
 source venv/bin/activate
 
-# 2. Download a transcript from a YouTube video
+# 2. Acquire content (choose one method)
+# From YouTube:
 python backend/get_transcript.py https://www.youtube.com/watch?v=EXAMPLE_ID
 
-# 3. Convert the transcript to structured data
+# From a PDF:
+python backend/get_pdf_content.py --pdf path/to/heritage_document.pdf
+
+# From a website:
+python backend/get_web_content.py --url https://example.com/heritage-site
+
+# 3. Convert the content to structured data
 python backend/structured_data.py
 
 # 4. Update the vector database with the new data
@@ -295,11 +385,14 @@ streamlit run frontend/main.py
 - python-dotenv
 - streamlit
 - chromadb
-- MistralLarge
+- PyPDF2
+- beautifulsoup4
+- requests
+- mistral/mistral-large-latest (or other compatible models)
 
 ## Future Enhancements
 
-- Web scraping for additional heritage site information
+- Expanded interactive learning features
 - Multi-language support for user interaction
 - Integration of image recognition for monument identification
 - Geographic mapping of heritage sites

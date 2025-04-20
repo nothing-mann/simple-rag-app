@@ -1,0 +1,223 @@
+[
+  {
+    "monument_name": "Bhimsen temple",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": null,
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": null,
+      "municipality": null,
+      "heritage_area": "Patan Durbar Square",
+      "tola": null
+    },
+    "description": "Look at the Bhimsen temple and the water spout just opposite of it. I have never seen anything like this!",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": null
+    },
+    "condition": {
+      "status": null,
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": null
+  },
+  {
+    "monument_name": "Bhīmasena Mandira (1681 CE)",
+    "alternative_names": ["Mangaḥ Bhindyaḥ", "Juju Bhindyaḥ"],
+    "typology": {
+      "monument_type": "Tiered temple",
+      "main_deity": "Bhīmasena",
+      "religion": "Hindu-Buddhist"
+    },
+    "location": {
+      "province": "3",
+      "district": "Lalitpur",
+      "municipality": "Lalitpur Metropolitan City",
+      "heritage_area": "Patan Durbar Square",
+      "tola": "Maṅgal Bazār"
+    },
+    "description": "Positioned at the northern end of Patan Darbar Square, this three-tiered temple is situated on a singular rectangular plinth, its broader side facing east, serving as the principal façade. The main entrance is guarded by two stone lions, while a three-bayed colonnaded opening and a door are found on the wall facing west. A small room at the northeast corner is accessible from both inside and the front, and a single-run stone staircase on the southern wall ascends towards the sanctum where the main statue of Bhīmasena, depicting him killing Duḥśāsana, is installed. Nearby, statues of a yellow Draupadī, a blue Bhairava, and a red Kālī can be found. The first floor also houses a secret room. The first floor's principal façade features a projecting canted bay window, clad in gilt copper and adorned with intricate carvings. Artistically crafted struts display carvings of various deities, supporting the broad overhanging roofs. The two lower roofs are covered with jhĩgaṭī tiles, while the top roof is covered with brass sheets, a later addition as indicated in a photograph by Bourne & Shepherd, taken around 1870 CE. Gilt pinnacles on each front roof, attached to the main core wall, culminate in the topmost pinnacle at the temple's highest ridge, highlighted by a crowning umbrella. Two metal banners (patāḥ) hang down from the central pinnacle. Bhīmasena, known as Bhindyaḥ in the local language, is a revered figure in Hindu mythology and is worshipped as the god of trade in Newar society. The temple is regarded as one of the eight jewels of the Patan Darbar Square. Lalitpur houses four main Bhīmasena temples: Juju Bhindyaḥ (the King's Bhīmasena) in Mangalbazar, Puṃ Bhindyaḥ (the artists' Bhīmasena) in Sundhara, Dhvākhā Bhindyaḥ (a Bhīmasena placed near a door) in Chāḥbahāla, and Kumhāḥ Bhindyaḥ (a Bhīmasena established by potters) in Cyāsal. Although no historical document records the initial construction, the monument was once a rest-house (capāḥ ot dharmaśālā) known as Balaṣūni Capāḍa. The Kīrtipatākā (in vers 79-80), a poem composed by Kunu Śarmā in 1652 CE (NS 772), mentions this building and explains that the merchants became prosperous thanks to Bhīmasena, who killed Kīcaka and defeated Kauravas in the Mahābhārata war. The post colophon of Dānaratnākara reveals that the building initially had only one storey. In 1627 CE (NS 747), during the reign of King Siddhinarasiṃha Malla, a certain Hari Bhāro renovated the capāḥ as a one-story building. A stone stele inscription confirms that in 1681 CE (NS 801), King Śrīnivāsa Malla reconstructed it into its present temple form by adding two additional stories. (Regmi 1960, 287). To the south of the entrance, a bell donated in 1697 CE (NS 817) can be found and another bell, donated in 1697 CE (NS 817), hangs to the north of the entrance. The temple's roofs are supported by struts adorned with images of Bhairava, Gaṇeśa, Bhīmasena, and other gods, donated between 1682-1683 CE (NS 802-803). Remnants of the original clay statue of Bhīmasena can be found on the second floor. In 1701 CE King Yoganarendra Malla replaced the clay statue of Bhīmasena with one made of bronze and initiated the Bhīmasena procession tradition. Legend has it that Kalyāṇa Siṃha of Naudvã Bāhāḥ fashioned the statue in the likeness of the fierce visage of Yoganarendra Malla. Surviving the 1934 CE earthquake, the temple suffered substantial damage during the earthquakes of 2015. The stone pillar, which supported a gilt metal lion, crumbled, and the upper stone shaft fractured into two pieces. Between 2015 and 2016, a team from the University of Applied Arts, Vienna, meticulously executed the restoration of both the pillar and the lion statue. Between 2019 and 2022 CE, the upper two tiers of the temple underwent dismantling and reconstruction under the technical guidance of the Kathmandu Valley Preservation Trust. During this period, a small replica of the Bhīmasena statue was installed on the ground floor to ensure uninterrupted worship.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": "Rectangular",
+      "storeys": 4,
+      "dimensions": {
+        "length": 1050,
+        "depth": 821,
+        "height": 1885,
+        "diameter": 0
+      },
+      "construction_materials": [
+        "jhĩgaṭī tiles",
+        "brass sheets",
+        "traditional brick"
+      ]
+    },
+    "condition": {
+      "status": "Restored, Heavily damaged (collapsed, demolished, major cracks and structural damages)",
+      "threats": ["Wall cracks"]
+    },
+    "cultural_activities": [
+      {
+        "activity": "Worships",
+        "description": "1. Daily ritual worship (nitya pūjā): Ācāju (Karmāchārya) used to be the priest of this temple. Later, Jośīs started to perform the daily ritual worship. The dyaḥpālā of the temple is Kapālī. In the absence of the Jośīs, Kapālī performs the nityapūjā. 2. A special pūjā of Bhīmasena is performed on the ninth day of the dark half of Śrāvaṇa. The pūjā begins in the early morning and devotees flock to the temple for it. A secret room in the temple contains a special statue of Bhīmasena that is taken out and exhibited only on this occasion. 3. Bhīmasena Ekādaśī (Bhimyādaśī): The eleventh day of the bright half of Māgha is celebrated as Bhīmasena Ekādaśī. A special worship is offered to Bhīmasena and his statue is taken around Lalitpur and worshipped."
+      }
+    ],
+    "historical_events": [
+      {
+        "event_name": "Repair of the capāḥ",
+        "description": "During the reign of King Siddhinarsimha Malla, Hari Bhāro undertook the renovation of the capāḥ. This marks the earliest reference to the Bhīmasena Mandira, originally built as a capāḥ, before being transformed into a temple in 1681.",
+        "event_date": {
+          "date": "1627",
+          "period": "Late Malla period (1482-1768/69)",
+          "year": "NS 747",
+          "nepali_month": "Bhādra (Bhadau)",
+          "pakṣa": "Bright fortnight"
+        }
+      },
+      {
+        "event_name": "Pavement of the ground floor",
+        "description": "The ground floor was paved with teliyā bricks by Vajrācārya Cintāmaṇi and Laghunātha Bhāro. In this inscription, Bhīmasena is referred to as Mahābhīma Māṇeśvara.",
+        "event_date": {
+          "date": "1679",
+          "period": "Late Malla period (1482-1768/69)",
+          "year": "NS 799",
+          "nepali_month": "Vaiśākha (Vaisākha)",
+          "pakṣa": "Bright fortnight",
+          "tithi": "3"
+        }
+      },
+      {
+        "event_name": "Reconstruction as a temple",
+        "description": "The stone stele inscription confirms that in 1681 CE (NS 801), King Śrīnivāsa Malla reconstructed the single floor capāḥ into its present temple form by adding two additional stories. (Regmi 1960, 287). The inscription refers to Śrīnivāsa Malla as Nepaleswara and mentions that the temple was built following the recommendations of Bhagīratha Bhaiyā. An offering of two pinnacles was made.",
+        "event_date": {
+          "date": "1681",
+          "period": "Late Malla period (1482-1768/69)",
+          "year": "NS 801",
+          "nepali_month": "Māgha",
+          "pakṣa": "Bright fortnight",
+          "tithi": "6"
+        }
+      },
+      {
+        "event_name": "Donation of a strut",
+        "description": "Viseśvara Bhāro donated a strut.",
+        "event_date": {
+          "date": "1682",
+          "year": "NS 802",
+          "nepali_month": "Śrāvaṇa (Sāuna)",
+          "pakṣa": "Bright fortnight",
+          "tithi": "7"
+        }
+      },
+      {
+        "event_name": "Donation of a bell",
+        "description": "The inscription notes that Yoganarendra Malla assumed the title of Saṅgītārṇṇva Pāragata. Dogs start howling when the bell is rung (Jośī 2065, 25).",
+        "event_date": {
+          "date": "1697",
+          "period": "Late Malla period (1482-1768/69)",
+          "year": "NS 817",
+          "nepali_month": "Śrāvaṇa (Sāuna)",
+          "pakṣa": "Bright fortnight"
+        }
+      },
+      {
+        "event_name": "Installation of a new statue",
+        "description": "The ancient clay statue of Bhīmasena was substituted with a new bronze statue, followed by a ceremonial installation ritual.",
+        "event_date": {
+          "date": "1701",
+          "period": "Late Malla period (1482-1768/69)",
+          "year": "NS 821",
+          "nepali_month": "Māgha",
+          "pakṣa": "Bright fortnight",
+          "tithi": "11"
+        }
+      },
+      {
+        "event_name": "Inaugural Bhīmasena Jātra",
+        "description": "The inaugural Bhīmasena jātrā was orchestrated in Lalitpur by Yoganarendra Malla. Buffaloes, goats, and ducks were offered as sacrifices during the event.",
+        "event_date": {
+          "date": "1702",
+          "period": "Late Malla period (1482-1768/69)",
+          "year": "NS 822",
+          "nepali_month": "Bhādra (Bhadau)"
+        }
+      },
+      {
+        "event_name": "Donation of the stone pillar",
+        "description": "In NS 827, a group of guṭhī members contributed to the donation of the stone pillar. The inscription on the brass collar also indicates that originally, in NS 777 during the rule of King Indra Malla, a wooden pillar was donated by Bhīmasena, Sunādevaju, Hākuju, Maṅgaladevaju, and others. The stone pillar replaced the wooden pillar. The inscription etched into the stone lists the names of the donors.",
+        "event_date": {
+          "date": "1709",
+          "period": "Late Malla period (1482-1768/69)",
+          "year": "NS 827",
+          "pakṣa": "Bright fortnight"
+        }
+      },
+      {
+        "event_name": "Donation of stone lions",
+        "description": "Bhīma Bhāro of Nakapasala donated the two stone lions flanking the main entrance.",
+        "event_date": {
+          "date": "1861",
+          "period": "Early Rana Period (1846-1885)",
+          "year": "NS 981",
+          "nepali_month": "Māgha",
+          "pakṣa": "Bright fortnight",
+          "tithi": "10"
+        }
+      },
+      {
+        "event_name": "Offering of a patāḥ",
+        "description": "Offering of the gilt patāḥ by Tīrtharāja Śreṣṭha, residing in Patan, to please Bhīmasena.",
+        "event_date": {
+          "date": "1932",
+          "period": "Shumsher Rana Period (1885-1951)",
+          "year": "VS 1889"
+        }
+      },
+      {
+        "event_name": "Collapse of the stone pillar",
+        "description": "The earthquake on April 26, 2015, resulted in the collapse of the stone pillar. The upper half of the shaft fractured into two pieces upon impact with the brick pavement."
+      },
+      {
+        "event_name": "Stabilisation of the temple",
+        "description": "Following the damage suffered from the 2015 earthquake, the temple was braced on all four sides.",
+        "event_date": {
+          "date": "2015",
+          "period": "Democratic Period (1990-)",
+          "year": "VS 2072",
+          "nepali_month": "Vaiśākha (Vaisākha)",
+          "gate": "12"
+        }
+      },
+      {
+        "event_name": "Restoration of the stone stambha and lion statue",
+        "description": "The stone pillar, which supported a gilt metal lion, crumbled in the 2015 CE earthquakes, and the upper stone shaft fractured into two pieces. In the period spanning 2015-2016, a team from the University of Applied Arts, Vienna, meticulously carried out the restoration of the pillar and the lion statue."
+      },
+      {
+        "event_name": "Offering of a patāḥ",
+        "description": "Offering of the patāḥ by Lakṣmīmāyā and her family members in memory of Nāyacā Maharjana, a resident of Lilitpur, Baliphal, to please Bhīmasena.",
+        "event_date": {
+          "date": "2021",
+          "period": "Democratic Period (1990-)",
+          "year": "VS 2078"
+        }
+      },
+      {
+        "event_name": "Restoration and partial rebuilding",
+        "description": "The restoration of the temple was executed by the Lalitpur Chamber of Commerce and the Mangal Tole Sudhar Sangh with technical support from KVPT. The inscription lists various donors to the restoration project.",
+        "event_date": {
+          "date": "2019/2022",
+          "period": "Democratic Period (1990-)"
+        }
+      }
+    ]
+  }
+]

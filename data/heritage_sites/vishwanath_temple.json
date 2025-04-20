@@ -1,0 +1,59 @@
+{
+  "monument_name": "Vishwanath Temple",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": "Temple",
+    "main_deity": "Lord Shiva",
+    "religion": "Hinduism"
+  },
+  "location": {
+    "province": "Bagmati",
+    "district": "Kathmandu",
+    "municipality": "Patan",
+    "heritage_area": "Patan Durbar Square",
+    "tola": null
+  },
+  "description": "Vishwanath Temple is one of the major attractions of Patan Durbar Square. It is dedicated to Lord Shiva and is a fine example of Newa architecture. The temple was built in 1627 by King Siddhinarasimh Malla.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Rectangular",
+    "storeys": 2,
+    "dimensions": null,
+    "construction_materials": [
+      "Stone",
+      "Wood"
+    ]
+  },
+  "condition": {
+    "status": "Partially Damaged",
+    "threats": [
+      "Earthquake",
+      "Neglect",
+      "Encroachment"
+    ]
+  },
+  "cultural_activities": [
+    {
+      "name": "Teej",
+      "type": "Festival",
+      "description": "Teej is a famous festival celebrated by Hindu women in Nepal. During this festival, women fast and pray to Lord Shiva for the long life of their husbands. Vishwanath Temple is one of the popular destinations for Teej celebrations."
+    },
+    {
+      "name": "Shivaratri",
+      "type": "Festival",
+      "description": "Shivaratri is a Hindu festival celebrated in honor of Lord Shiva. Devotees fast and offer prayers to Lord Shiva. Vishwanath Temple is one of the popular destinations for Shivaratri celebrations."
+    }
+  ],
+  "historical_events": [
+    {
+      "event": "Construction",
+      "date": "1627",
+      "description": "Vishwanath Temple was built by King Siddhinarasimh Malla."
+    },
+    {
+      "event": "Earthquake Damage",
+      "date": "2015-04-25",
+      "description": "Vishwanath Temple was partially damaged during the 2015 Nepal earthquake."
+    }
+  ]
+}

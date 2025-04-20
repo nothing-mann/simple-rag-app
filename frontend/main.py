@@ -1,5 +1,5 @@
 import streamlit as st
-from typing import Dict
+from typing import Dict, List
 import json
 from collections import Counter
 import re
@@ -12,8 +12,10 @@ import pytz
 project_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, project_root)
 
-from backend.config import COLLECTION_NAME, DEFAULT_MODEL
+from backend.config import COLLECTION_NAME, DEFAULT_MODEL, HERITAGE_SITES_DIR
 from backend.get_transcript import YouTubeTranscriptDownloader
+from backend.get_pdf_content import PDFContentExtractor
+from backend.get_web_content import WebScraper
 from backend.chat import LiteLLMChat
 from backend.rag_chat import HeritageRAGChat
 
@@ -55,7 +57,8 @@ def render_sidebar():
                 "2. Raw Transcript",
                 "3. Structured Data",
                 "4. RAG Implementation",
-                "5. Interactive Learning"
+                "5. Interactive Learning",
+                "6. Monument Database"
             ]
         )
         
@@ -93,6 +96,13 @@ def render_sidebar():
             - Scenario generation
             - Audio synthesis
             - Interactive practice
+            """,
+            
+            "6. Monument Database": """
+            **Current Focus:**
+            - Complete monument inventory
+            - Filtering and search
+            - Overview of heritage database
             """
         }
         
@@ -233,32 +243,129 @@ def count_characters(text):
 def render_transcript_stage():
     st.header("Raw Transcript Processing")
     
-    url = st.text_input(
-        "YouTube URL",
-        placeholder="Enter a Heritage site educational video YouTube URL"
-    )
+    # Create tabs for different input sources
+    youtube_tab, pdf_tab, web_tab = st.tabs(["YouTube Transcript", "PDF Document", "Web Content"])
     
-    if url:
-        if st.button("Download Transcript"):
-            try:
-                with st.spinner("Downloading transcript..."):
-                    downloader = YouTubeTranscriptDownloader()
-                    transcript = downloader.get_transcript(url)
-                    video_id = downloader.extract_video_id(url)
-                    
-                    transcript_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "backend", "data", "transcripts")
-                    os.makedirs(transcript_dir, exist_ok=True)
-                    
-                    file_path = os.path.join(transcript_dir, f"{video_id}")
-                    downloader.save_transcript(transcript, file_path)
-                    if transcript:
-                        transcript_text = "\n".join([entry['text'] for entry in transcript])
-                        st.session_state.transcript = transcript_text
-                        st.success("Transcript downloaded successfully!")
-                    else:
-                        st.error("No transcript found for this video.")
-            except Exception as e:
-                st.error(f"Error downloading transcript: {str(e)}")
+    # YouTube transcript download tab
+    with youtube_tab:
+        url = st.text_input(
+            "YouTube URL",
+            placeholder="Enter a Heritage site educational video YouTube URL",
+            key="youtube_url"
+        )
+        
+        if url:
+            if st.button("Download Transcript", key="youtube_download"):
+                try:
+                    with st.spinner("Downloading transcript..."):
+                        downloader = YouTubeTranscriptDownloader()
+                        transcript = downloader.get_transcript(url)
+                        video_id = downloader.extract_video_id(url)
+                        
+                        transcript_dir = os.path.join(project_root, "data", "transcripts")
+                        os.makedirs(transcript_dir, exist_ok=True)
+                        
+                        file_path = os.path.join(transcript_dir, f"{video_id}.txt")
+                        downloader.save_transcript(transcript, file_path)
+                        if transcript:
+                            transcript_text = "\n".join([entry['text'] for entry in transcript])
+                            st.session_state.transcript = transcript_text
+                            st.success(f"Transcript downloaded successfully and saved to {file_path}!")
+                        else:
+                            st.error("No transcript found for this video.")
+                except Exception as e:
+                    st.error(f"Error downloading transcript: {str(e)}")
+    
+    # PDF upload tab
+    with pdf_tab:
+        st.markdown("Upload a PDF document containing heritage site information")
+        
+        uploaded_file = st.file_uploader("Choose a PDF file", type="pdf")
+        custom_filename = st.text_input("Custom filename (optional)", placeholder="heritage_site_name", key="pdf_filename")
+        
+        if uploaded_file is not None:
+            if st.button("Process PDF", key="pdf_process"):
+                try:
+                    with st.spinner("Processing PDF..."):
+                        # Save uploaded PDF temporarily
+                        temp_pdf_path = os.path.join(project_root, "temp_upload.pdf")
+                        with open(temp_pdf_path, "wb") as f:
+                            f.write(uploaded_file.getbuffer())
+                        
+                        # Process the PDF
+                        extractor = PDFContentExtractor()
+                        output_filename = f"{custom_filename}.txt" if custom_filename else None
+                        text_file_path = extractor.process_pdf(temp_pdf_path, output_filename)
+                        
+                        # Remove the temporary file
+                        os.remove(temp_pdf_path)
+                        
+                        if text_file_path:
+                            # Read the extracted text to display
+                            with open(text_file_path, 'r', encoding='utf-8') as f:
+                                extracted_text = f.read()
+                            
+                            st.session_state.transcript = extracted_text
+                            st.success(f"PDF processed successfully and saved to {text_file_path}!")
+                        else:
+                            st.error("Failed to process PDF. Check if it contains extractable text.")
+                except Exception as e:
+                    st.error(f"Error processing PDF: {str(e)}")
+    
+    # Web Content tab
+    with web_tab:
+        st.markdown("Extract content from a webpage about heritage sites")
+        
+        web_url = st.text_input(
+            "Website URL",
+            placeholder="Enter a URL with heritage site information (e.g., https://example.com/heritage-site)",
+            key="web_url"
+        )
+        
+        custom_web_filename = st.text_input(
+            "Custom filename (optional)", 
+            placeholder="heritage_site_name", 
+            key="web_filename"
+        )
+        
+        if web_url:
+            if st.button("Download Web Content", key="web_download"):
+                try:
+                    with st.spinner("Downloading web content..."):
+                        # Initialize the web scraper
+                        transcript_dir = os.path.join(project_root, "data", "transcripts")
+                        web_scraper = WebScraper(output_dir=transcript_dir)
+                        
+                        # If custom filename provided, temporarily store it
+                        original_generate_filename = None
+                        if custom_web_filename:
+                            # Save the original method
+                            original_generate_filename = web_scraper._generate_filename
+                            
+                            # Override the filename generation method
+                            def custom_filename_generator(url, title=None):
+                                return f"{custom_web_filename}.txt"
+                            
+                            web_scraper._generate_filename = custom_filename_generator
+                        
+                        # Scrape the URL
+                        file_path = web_scraper.scrape_url(web_url)
+                        
+                        # Restore the original method if needed
+                        if original_generate_filename:
+                            web_scraper._generate_filename = original_generate_filename
+                        
+                        if file_path and os.path.exists(file_path):
+                            # Read the extracted text to display
+                            with open(file_path, 'r', encoding='utf-8') as f:
+                                extracted_text = f.read()
+                            
+                            st.session_state.transcript = extracted_text
+                            st.success(f"Web content downloaded successfully and saved to {file_path}!")
+                        else:
+                            st.error("Failed to download content from the website.")
+                except Exception as e:
+                    st.error(f"Error downloading web content: {str(e)}")
 
     col1, col2 = st.columns(2)
     
@@ -285,6 +392,12 @@ def render_transcript_stage():
             st.metric("Total Characters", total_chars)
             st.metric("Nepalese Characters", np_chars)
             st.metric("Total Lines", total_lines)
+            
+            # Add a "Process with Structured Data" button
+            if st.button("Process with Structured Data", type="primary"):
+                if 'transcript' in st.session_state and st.session_state.transcript:
+                    st.session_state.selected_stage = "3. Structured Data"
+                    st.rerun()
         else:
             st.info("Load a transcript to see statistics")
 
@@ -434,6 +547,230 @@ def render_interactive_stage():
         st.subheader("Feedback")
         st.info("Feedback will appear here")
 
+def render_monuments_list():
+    """Render a list of all available monuments in the database"""
+    st.header("📜 Monument Database")
+    
+    # Load all monuments
+    with st.spinner("Loading monument data..."):
+        monuments = load_monuments()
+    
+    st.write(f"Found {len(monuments)} unique monuments in the database.")
+    
+    # Create filters
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        # Get unique religions
+        religions = sorted(set(m["religion"] for m in monuments if m["religion"]))
+        religions = ["All"] + list(religions)
+        religion_filter = st.selectbox("Filter by Religion", religions)
+    
+    with col2:
+        # Get unique types
+        types = sorted(set(m["type"] for m in monuments if m["type"]))
+        types = ["All"] + list(types)
+        type_filter = st.selectbox("Filter by Monument Type", types)
+    
+    with col3:
+        # Search by name
+        search_query = st.text_input("Search by Name", "")
+    
+    # Apply filters
+    filtered_monuments = monuments
+    
+    if religion_filter != "All":
+        filtered_monuments = [m for m in filtered_monuments if m.get("religion") == religion_filter]
+    
+    if type_filter != "All":
+        filtered_monuments = [m for m in filtered_monuments if m.get("type") == type_filter]
+    
+    if search_query:
+        search_query = search_query.lower()
+        filtered_monuments = [m for m in filtered_monuments if search_query in m["name"].lower()]
+    
+    # Display monuments in a table
+    if filtered_monuments:
+        # Convert to format suitable for dataframe
+        table_data = []
+        for m in filtered_monuments:
+            table_data.append({
+                "Name": m["name"],
+                "Location": m["location"] or "Unknown",
+                "Religion": m["religion"] or "Unknown",
+                "Type": m["type"] or "Unknown"
+            })
+            
+        # Display in a dataframe
+        st.dataframe(
+            table_data, 
+            column_config={
+                "Name": st.column_config.TextColumn("Monument Name"),
+                "Location": st.column_config.TextColumn("Location"),
+                "Religion": st.column_config.TextColumn("Religion"),
+                "Type": st.column_config.TextColumn("Type"),
+            },
+            hide_index=True,
+            use_container_width=True
+        )
+    else:
+        st.info("No monuments found matching your filters.")
+
+def load_monuments() -> List[Dict]:
+    """
+    Load all monument data from JSON files in the heritage sites directory,
+    deduplicate by monument name, and return sorted by name.
+    
+    Returns:
+        List of dictionaries with monument information
+    """
+    monuments = []
+    seen_names = set()
+    
+    # Create a map to detect similar names
+    normalized_name_map = {}
+    
+    # Check if heritage sites directory exists
+    if not os.path.exists(HERITAGE_SITES_DIR):
+        print(f"Error: Heritage sites directory not found at {HERITAGE_SITES_DIR}")
+        return []
+    
+    # Get all JSON files
+    json_files = [f for f in os.listdir(HERITAGE_SITES_DIR) if f.endswith('.json')]
+    
+    # Process all files to extract monument information
+    for filename in json_files:
+        filepath = os.path.join(HERITAGE_SITES_DIR, filename)
+        try:
+            with open(filepath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+                
+                # Handle both single monument and arrays of monuments
+                items_to_process = []
+                if isinstance(data, list):
+                    items_to_process = data
+                elif isinstance(data, dict):
+                    items_to_process = [data]
+                    
+                for item in items_to_process:
+                    # Skip if not a dictionary
+                    if not isinstance(item, dict):
+                        continue
+                        
+                    # Get monument name - try different possible field names
+                    name = None
+                    for field in ["monument_name", "name", "title"]:
+                        if field in item and item[field]:
+                            name = item[field].strip()
+                            break
+                            
+                    if not name:
+                        continue
+                    
+                    # Normalize name for deduplication
+                    name_lower = name.lower()
+                    
+                    # Extract location details
+                    location = item.get("location", {})
+                    area = None
+                    
+                    # Try to get most specific location information available
+                    if location and isinstance(location, dict):
+                        if location.get("tola"):
+                            area = location.get("tola")
+                        elif location.get("heritage_area"):
+                            area = location.get("heritage_area")
+                        elif location.get("municipality"):
+                            area = location.get("municipality")
+                        elif location.get("district"):
+                            area = location.get("district")
+                        elif location.get("province"):
+                            area = location.get("province")
+                    
+                    # Get religion and monument type if available
+                    typology = item.get("typology", {})
+                    religion = None
+                    monument_type = None
+                    
+                    if typology and isinstance(typology, dict):
+                        religion = typology.get("religion")
+                        monument_type = typology.get("monument_type")
+                    
+                    # Create a new monument entry
+                    monument = {
+                        "name": name,
+                        "filename": filename,
+                        "location": area,
+                        "religion": religion,
+                        "type": monument_type
+                    }
+                    
+                    # Check for similar names before adding
+                    is_duplicate = False
+                    normalized_key = normalize_for_comparison(name_lower)
+                    
+                    if normalized_key in normalized_name_map:
+                        is_duplicate = True
+                        
+                        # If we find a more complete entry, update our stored version
+                        existing_idx = normalized_name_map[normalized_key]
+                        existing = monuments[existing_idx]
+                        
+                        # If the current entry has more information, replace the existing one
+                        if (not existing["location"] and monument["location"]) or \
+                           (not existing["religion"] and monument["religion"]) or \
+                           (not existing["type"] and monument["type"]):
+                            # Preserve the original name if it's more complete
+                            if len(monument["name"]) > len(existing["name"]):
+                                existing["name"] = monument["name"]
+                            existing["location"] = monument["location"] or existing["location"]
+                            existing["religion"] = monument["religion"] or existing["religion"]
+                            existing["type"] = monument["type"] or existing["type"]
+                    
+                    # Add to monuments list if not a duplicate
+                    if not is_duplicate:
+                        monuments.append(monument)
+                        normalized_name_map[normalized_key] = len(monuments) - 1
+        
+        except (json.JSONDecodeError, IOError) as e:
+            print(f"Error loading {filename}: {str(e)}")
+    
+    # Sort by name
+    monuments.sort(key=lambda x: x["name"])
+    return monuments
+
+def normalize_for_comparison(name: str) -> str:
+    """
+    Normalize a monument name for better comparison and deduplication.
+    - Removes common words like "temple", "stupa", etc.
+    - Removes special characters
+    - Converts to lowercase
+    - Removes extra spaces
+    
+    Args:
+        name: The monument name to normalize
+        
+    Returns:
+        A normalized version of the name for comparison
+    """
+    # Convert to lowercase
+    result = name.lower()
+    
+    # Remove common suffixes/variations
+    common_words = [
+        "temple", "stupa", "monastery", "mandir", "mandira", "square", 
+        "chowk", "dhara", "pillar", "statue", "the", "of", "and"
+    ]
+    
+    for word in common_words:
+        result = result.replace(f" {word}", "").replace(f"{word} ", "")
+    
+    # Remove special characters and extra spaces
+    result = re.sub(r'[^\w\s]', '', result)
+    result = re.sub(r'\s+', '', result)
+    
+    return result
+
 def main():
     render_header()
     selected_stage = render_sidebar()
@@ -498,6 +835,8 @@ def main():
                 
     elif selected_stage == "5. Interactive Learning":
         render_interactive_stage()
+    elif selected_stage == "6. Monument Database":
+        render_monuments_list()
     
     with st.expander("Debug Information"):
         st.json({

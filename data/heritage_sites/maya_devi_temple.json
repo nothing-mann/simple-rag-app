@@ -1,0 +1,47 @@
+{
+  "monument_name": "Maya Devi Temple",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": null,
+    "main_deity": null,
+    "religion": "Buddhist"
+  },
+  "location": {
+    "province": null,
+    "district": null,
+    "municipality": null,
+    "heritage_area": "Lumbini",
+    "tola": null
+  },
+  "description": "The complex of structures within the archaeological conservation area includes the Shakya Tank; the remains within the Maya Devi Temple consisting of brick structures in a cross-wall system dating from the 3rd century BC to the present century and the sandstone Ashoka pillar with its Pali inscription in Brahmi script. Additionally there are the excavated remains of Buddhist viharas (monasteries) of the 3rd century BC to the 5th century AD and the remains of Buddhist stupas (memorial shrines) from the 3rd century BC to the 15th century AD. The site is now being developed as a Buddhist pilgrimage centre, where the archaeological remains associated with the birth of the Lord Buddha form a central feature.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": ["brick", "sandstone"]
+  },
+  "condition": {
+    "status": null,
+    "threats": ["impact of visitors", "natural impacts including humidity", "industrial development in the region"]
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event": "Birth of Lord Buddha",
+      "date": "623 BC"
+    },
+    {
+      "event": "Erection of Ashoka pillar",
+      "date": "249 BC"
+    },
+    {
+      "event": "Discovery of the Ashoka pillar",
+      "date": "1896"
+    },
+    {
+      "event": "Initiation of the Master Plan for Lumbini",
+      "date": "1972-1978"
+    }
+  ]
+}

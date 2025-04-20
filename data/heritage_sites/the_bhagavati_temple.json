@@ -1,0 +1,41 @@
+{
+  "monument_name": "The Bhagavati Temple",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": "temple",
+    "main_deity": "Bhagavati",
+    "religion": null
+  },
+  "location": {
+    "province": null,
+    "district": null,
+    "municipality": null,
+    "heritage_area": "Kathmandu Durbar Square",
+    "tola": null
+  },
+  "description": "The Bhagavati Temple, originally known as a Narayan Temple, rises above the mansions surrounding it and was added during the time of Jagajaya Malla in the early eighteenth century. The Narayan idol within the temple was stolen so Prithvi Narayan Shah replaced it with an image of Bhagavati, completely transforming the name of the temple.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": null
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Construction of the Bhagavati Temple",
+      "event_date": "early eighteenth century",
+      "event_description": "The Bhagavati Temple was added during the time of Jagajaya Malla."
+    },
+    {
+      "event_name": "Transformation of the Temple",
+      "event_date": null,
+      "event_description": "The Narayan idol within the temple was stolen so Prithvi Narayan Shah replaced it with an image of Bhagavati, completely transforming the name of the temple."
+    }
+  ]
+}

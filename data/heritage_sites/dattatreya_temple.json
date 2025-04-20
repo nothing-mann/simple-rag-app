@@ -1,0 +1,30 @@
+{
+  "monument_name": "Dattatreya temple",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": null,
+    "main_deity": null,
+    "religion": null
+  },
+  "location": {
+    "province": null,
+    "district": null,
+    "municipality": null,
+    "heritage_area": "Bhaktapur Durbar Square",
+    "tola": null
+  },
+  "description": "The Dattatreya Square, with the famous Dattatreya temple and the peacock window at the eastern wing of the Pujari Math? It is the largest and most famous religious institution in Bhaktapur. A masterpiece in wood!",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": null
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": null
+}

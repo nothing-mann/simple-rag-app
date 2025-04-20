@@ -1,0 +1,30 @@
+{
+  "monument_name": "Nasal chowk",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": null,
+    "main_deity": null,
+    "religion": null
+  },
+  "location": {
+    "province": null,
+    "district": "Kathmandu",
+    "municipality": "Kathmandu",
+    "heritage_area": "Kathmandu Durbar Square",
+    "tola": null
+  },
+  "description": "He added Nasal chowk. The square was extensively developed during the time of Pratap Malla, son of Laksminar Simha. He was an intellectual, a pious devotee, and especially interested in arts. Immediately after his coronation as a king, he immediately began enlargements to his royal palace, and rebuilt some old temples and constructed new temples, shrines and stupas around his kingdom. He added Nasal chowk, Mohan chowk and several other temples to enhance the beauty of the city and durbar square.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": null
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": null
+}

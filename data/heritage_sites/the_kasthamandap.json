@@ -1,0 +1,32 @@
+{
+  "monument_name": "The Kasthamandap",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": "pavilion",
+    "main_deity": null,
+    "religion": null
+  },
+  "location": {
+    "province": null,
+    "district": null,
+    "municipality": "Kathmandu",
+    "heritage_area": "Hanuman Dhoka",
+    "tola": null
+  },
+  "description": "The Kasthamandap is one of the oldest buildings in Kathmandu. People say it was built more than 800 years ago. At that time, it was a rest house for travellers and traders passing through the city. According to the legend, it was built from the wood of the kalpa vriksha, a divine tree.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": [
+      "wood"
+    ]
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": null
+}

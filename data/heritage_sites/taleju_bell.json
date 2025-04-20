@@ -1,61 +1,93 @@
-{
-  "monument_name": "Taleju Bell",
-  "alternative_names": [
-    "Tagvvaḥ",
-    "Gã",
-    "Taleju Ghaṇṭā",
-    "Darbār Square Big Bell"
-  ],
-  "typology": {
-    "monument_type": null,
-    "main_deity": "Goddess Taleju",
-    "religion": "Buddhist, Hindu"
-  },
-  "location": {
-    "province": "3",
-    "district": "Lalitpur",
-    "municipality": "Lalitpur",
-    "heritage_area": "Patan Darbar Square",
-    "tola": "Patan Darbar Square"
-  },
-  "description": "The Taleju Bell is located between the Hariśaṅkara Temple and Cyāsiṃ Devala in the Patan Darbar Square. It was donated by Viṣṇu Malla (1729-1745). This large bell hangs on a stone structure between two stone pillars and has a metal roof with gajuras. It was built by King Jayavishnu Malla and Queen Chandra Lakshmidevi and used for special proclamations by the Malla Kings. It is now rung during Khadgajatra in honour of the Goddess Taleju (Pruscha 1975, 162). The Taleju Bell is located between the Hariśaṅkara Temple and Cyāsiṃ Devala in the Patan Darbar Square. Similar large bells also constructed during the Malla period can be found at Basantapur Darbar Square (Kathmandu) and the Bhaktapur Darbar Square. This bell hangs on a stone beam supported by two stone pillars that are erected on top of a platform. To reach the platform, one must enter the inside of the plateau through a narrow door to the east of the building and climb up a ladder with 9 rungs. Above the beam, one can see a gilded copper roof, and on top of the roof there are three pinnacles topped with parasols. Small wind chimes hang down from the bottom of the roof, which in turn is supported by 16 struts. Statues of śārdūlas can be found on the struts positioned in the four corners, while other struts contain carvings of Gaṇeśa, Kumāra, Bhairava and Mātṛkās. The body of the bell holds an inscription informing readers that it was commissioned by King Viṣṇu Malla (1729-1745) and Queen Candralakṣmī Devī. It also tells us that the work was supervised by general Mukunda Siṃha, and that this was paid for by the merchant Padma Siṃha. This inscription does not provide us any information about the intentions behind its construction. However, a Nepalese chronicle (see Bajracharya and Michaels 2016, 129) states that the King installed this bell to scare his enemies. It is said that in the Malla period, this bell was rung to let people know that a royal announcement was about to be made; upon hearing the noise, people nearby would gather near the palace. It may also have been rung to tell citizens to come together for other special occasions. There is also a legend that the bell was rung daily in the morning and evening when the palace worshipped Goddess Taleju. At present, the bell may be sounded only during special occasions in the Dashain festival (for example when the demon-dancers come to dance in Mul Chowk and sacrifice animals). Only then is the small gate to the bell's platform opened.",
-  "fun_fact": null,
-  "architecture": {
-    "shape": "Rectangular",
-    "storeys": 1,
-    "dimensions": {
-      "length": 312,
-      "depth": 50,
-      "height": 980,
-      "diameter": 0
+[
+  {
+    "monument_name": "Taleju Bell",
+    "alternative_names": [
+      "Tagvvaḥ",
+      "Gã",
+      "Taleju Ghaṇṭā",
+      "Darbār Square Big Bell"
+    ],
+    "typology": {
+      "monument_type": null,
+      "main_deity": "Goddess Taleju",
+      "religion": "Buddhist, Hindu"
     },
-    "construction_materials": [
-      "stone"
-    ]
+    "location": {
+      "province": "3",
+      "district": "Lalitpur",
+      "municipality": "Lalitpur",
+      "heritage_area": "Patan Darbar Square",
+      "tola": "Patan Darbar Square"
+    },
+    "description": "The Taleju Bell is located between the Hariśaṅkara Temple and Cyāsiṃ Devala in the Patan Darbar Square. It was donated by Viṣṇu Malla (1729-1745). This large bell hangs on a stone structure between two stone pillars and has a metal roof with gajuras. It was built by King Jayavishnu Malla and Queen Chandra Lakshmidevi and used for special proclamations by the Malla Kings. It is now rung during Khadgajatra in honour of the Goddess Taleju (Pruscha 1975, 162). The Taleju Bell is located between the Hariśaṅkara Temple and Cyāsiṃ Devala in the Patan Darbar Square. Similar large bells also constructed during the Malla period can be found at Basantapur Darbar Square (Kathmandu) and the Bhaktapur Darbar Square. This bell hangs on a stone beam supported by two stone pillars that are erected on top of a platform. To reach the platform, one must enter the inside of the plateau through a narrow door to the east of the building and climb up a ladder with 9 rungs. Above the beam, one can see a gilded copper roof, and on top of the roof there are three pinnacles topped with parasols. Small wind chimes hang down from the bottom of the roof, which in turn is supported by 16 struts. Statues of śārdūlas can be found on the struts positioned in the four corners, while other struts contain carvings of Gaṇeśa, Kumāra, Bhairava and Mātṛkās. The body of the bell holds an inscription informing readers that it was commissioned by King Viṣṇu Malla (1729-1745) and Queen Candralakṣmī Devī. It also tells us that the work was supervised by general Mukunda Siṃha, and that this was paid for by the merchant Padma Siṃha. This inscription does not provide us any information about the intentions behind its construction. However, a Nepalese chronicle (see Bajracharya and Michaels 2016, 129) states that the King installed this bell to scare his enemies. It is said that in the Malla period, this bell was rung to let people know that a royal announcement was about to be made; upon hearing the noise, people nearby would gather near the palace. It may also have been rung to tell citizens to come together for other special occasions. There is also a legend that the bell was rung daily in the morning and evening when the palace worshipped Goddess Taleju. At present, the bell may be sounded only during special occasions in the Dashain festival (for example when the demon-dancers come to dance in Mul Chowk and sacrifice animals). Only then is the small gate to the bell's platform opened.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": "Rectangular",
+      "storeys": 1,
+      "dimensions": {
+        "length": 312,
+        "depth": 50,
+        "height": 980,
+        "diameter": 0
+      },
+      "construction_materials": [
+        "stone"
+      ]
+    },
+    "condition": {
+      "status": "Heavily damaged (collapsed, demolished, major cracks and structural damages)",
+      "threats": [
+        "Water damages"
+      ]
+    },
+    "cultural_activities": [
+      {
+        "activity": "Religious annual festival",
+        "description": "A pole decorated with coloured banners is erected in front of the Kṛṣṇa Temple on the 8th day of the bright-half of the Phālguṇa as an indication of the coming Holi festival (cīra svanegu). The symbol of a half moon is then drawn on the bell and its supporting pillars are decorated with sindura."
+      },
+      {
+        "activity": "Dashain",
+        "description": "The following schedule explains when the bell is rung during the Dashain festival: From the ghaṭasthāpanā to navamī (the 9th day of the lunar calendar) at the time when gaṇa nāca (gaṃ pyākhaṃ) is performed in the main courtyard of the palace. In the morning of navamī when the pāyaḥ jātrā started from the Mahālakṣmī temple of Patan arrives to the Darbar Square. In the early morning of daśamī (the 10th day of the lunar calendar) when the pāyaḥ jātrā procession starts from the nearby Taleju temple. During Dashain, gathu pyākhaṃ is brought from Thecho of Lalitpur and performed in the main courtyard of the palace. The bell is also rung at the time when the dance is performed."
+      },
+      {
+        "activity": "Curfew",
+        "description": "A security post was placed in the Maṇimaṇḍapa Phalcā (LAL1362) during the Shumsher Rana Period. At 9:00 o'clock at night, the security guard used to play a bugle and ring this Taleju bell to remind the people of the curfew that was in place."
+      },
+      {
+        "activity": "Royal announcement",
+        "description": "During the Malla period, this bell was rung to tell people to gather near the palace to hear a royal announcement, or on other special occasions."
+      }
+    ],
+    "historical_events": []
   },
-  "condition": {
-    "status": "Heavily damaged (collapsed, demolished, major cracks and structural damages)",
-    "threats": [
-      "Water damages"
-    ]
-  },
-  "cultural_activities": [
-    {
-      "activity": "Religious annual festival",
-      "description": "A pole decorated with coloured banners is erected in front of the Kṛṣṇa Temple on the 8th day of the bright-half of the Phālguṇa as an indication of the coming Holi festival (cīra svanegu). The symbol of a half moon is then drawn on the bell and its supporting pillars are decorated with sindura."
+  {
+    "monument_name": "Taleju Bell",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": null,
+      "main_deity": null,
+      "religion": null
     },
-    {
-      "activity": "Dashain",
-      "description": "The following schedule explains when the bell is rung during the Dashain festival: From the ghaṭasthāpanā to navamī (the 9th day of the lunar calendar) at the time when gaṇa nāca (gaṃ pyākhaṃ) is performed in the main courtyard of the palace. In the morning of navamī when the pāyaḥ jātrā started from the Mahālakṣmī temple of Patan arrives to the Darbar Square. In the early morning of daśamī (the 10th day of the lunar calendar) when the pāyaḥ jātrā procession starts from the nearby Taleju temple. During Dashain, gathu pyākhaṃ is brought from Thecho of Lalitpur and performed in the main courtyard of the palace. The bell is also rung at the time when the dance is performed."
+    "location": {
+      "province": null,
+      "district": null,
+      "municipality": null,
+      "heritage_area": "Hanuman Dhoka",
+      "tola": null
     },
-    {
-      "activity": "Curfew",
-      "description": "A security post was placed in the Maṇimaṇḍapa Phalcā (LAL1362) during the Shumsher Rana Period. At 9:00 o'clock at night, the security guard used to play a bugle and ring this Taleju bell to remind the people of the curfew that was in place."
+    "description": "The Taleju temple is the most gorgeous. It is over 35 meters high and the tallest building here. You should tell your guests that these monuments are all important links to our past.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": null
     },
-    {
-      "activity": "Royal announcement",
-      "description": "During the Malla period, this bell was rung to tell people to gather near the palace to hear a royal announcement, or on other special occasions."
-    }
-  ],
-  "historical_events": []
-}
+    "condition": {
+      "status": null,
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": null
+  }
+]

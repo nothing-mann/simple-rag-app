@@ -10,7 +10,13 @@ python-dotenv
 streamlit
 InstructorEmbedding
 torch
-sentence-transformers-4.1.0
+sentence-transformers==4.1.0
 
 # Request library for API example
 requests==2.31.0
+
+# Add PyPDF2 for PDF extraction
+PyPDF2>=3.0.0
+
+# Web scraping dependencies
+beautifulsoup4>=4.12.0

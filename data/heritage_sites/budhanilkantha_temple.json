@@ -1,0 +1,38 @@
+{
+  "monument_name": "Budhanilkantha Temple",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": "Temple",
+    "main_deity": "Lord Vishnu",
+    "religion": "Hinduism"
+  },
+  "location": {
+    "province": "Bagmati",
+    "district": "Kathmandu",
+    "municipality": null,
+    "heritage_area": null,
+    "tola": null
+  },
+  "description": "Budhanilkantha Temple, also known as the Narayanthan temple, is situated at the foothills of the Shivapuri hills at the northern end of the Kathmandu valley. Dedicated to Lord Vishnu, the temple's main shrine is a magnificent statue of the reclining Vishnu or sleeping Vishnu which is about 5 meters in length and is considered the largest stone carving in Nepal. The statue is believed to have been sculpted during the 7th or 8th century and is one of the finest examples of stone carvings from the Licchavi period. The temple is revered by both Hindus and Buddhists and is an important pilgrimage site for the followers of Vaishnavism. The temple's name Budhanilkantha refers to the old blue throat, referring to the Hindu deity Shiva. According to Hindu mythology, Shiva drank poison to save the universe and his throat turned blue as a result. The statue of Lord Vishnu reclining on the cosmic sea with his consort Lakshmi at his feet is a symbol of the preservation of the universe. The temple is located in a serene and peaceful environment surrounded by lush greenery and is a popular spot for visitors seeking spiritual solace and tranquility.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": [
+      "stone"
+    ]
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": [
+    {
+      "name": "Haribodhini Ekadashi Mela",
+      "date": "November/December",
+      "description": "The Haribodhini Ekadashi Mela is an annual festival celebrated at the Budhanilkantha Temple. It is believed that on this day, Lord Vishnu wakes up from his long sleep. Thousands of devotees visit the temple to offer prayers and seek blessings. The festival is celebrated with great enthusiasm and devotion."
+    }
+  ],
+  "historical_events": null
+}

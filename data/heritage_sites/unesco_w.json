@@ -1,0 +1,86 @@
+{
+  "monument_name": "UNESCO W",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": null,
+    "main_deity": null,
+    "religion": null
+  },
+  "location": {
+    "province": null,
+    "district": null,
+    "municipality": null,
+    "heritage_area": null,
+    "tola": null
+  },
+  "description": "UNESCO W is one of the seven UNESCO World Heritage Sites within the Kathmandu valley. According to UNESCO, Kathmandu has at least 130 monuments including several pilgrimage sites for Hindus and Buddhists. UNESCO W is among the oldest religious sites in Nepal. The site has undergone various reformations and renovations due to damages caused by historical earthquakes. The most recent major earthquake in 2015 caused significant damage to the site.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": null
+  },
+  "condition": {
+    "status": "Damaged",
+    "threats": [
+      "Earthquakes",
+      "Neglect",
+      "Urbanization",
+      "Pollution"
+    ]
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Earthquake of 1255 AD",
+      "event_date": "1255 AD",
+      "event_description": "The earthquake of 1255 AD caused significant damage to UNESCO W and the surrounding area."
+    },
+    {
+      "event_name": "Earthquake of 1408 AD",
+      "event_date": "1408 AD",
+      "event_description": "The earthquake of 1408 AD destroyed several buildings and temples, including UNESCO W."
+    },
+    {
+      "event_name": "Earthquake of 1681 AD",
+      "event_date": "1681 AD",
+      "event_description": "The earthquake of 1681 AD caused damage to UNESCO W and other structures."
+    },
+    {
+      "event_name": "Earthquake of 1767 AD",
+      "event_date": "1767 AD",
+      "event_description": "The earthquake of 1767 AD was felt in Nepal and caused some damage to UNESCO W."
+    },
+    {
+      "event_name": "Earthquake of 1810 AD",
+      "event_date": "1810 AD",
+      "event_description": "The earthquake of 1810 AD damaged several buildings and temples, including UNESCO W."
+    },
+    {
+      "event_name": "Earthquake of 1834 AD",
+      "event_date": "1834 AD",
+      "event_description": "The earthquake of 1834 AD caused flooding and damage to UNESCO W and other structures."
+    },
+    {
+      "event_name": "Great Nepal Bihar Earthquake of 1934 AD",
+      "event_date": "1934 AD",
+      "event_description": "The Great Nepal Bihar Earthquake of 1934 AD caused significant damage to UNESCO W and the surrounding area."
+    },
+    {
+      "event_name": "Earthquake of 1974 AD",
+      "event_date": "1974 AD",
+      "event_description": "The earthquake of 1974 AD caused minor damage to UNESCO W."
+    },
+    {
+      "event_name": "Earthquake of 1980 AD",
+      "event_date": "1980 AD",
+      "event_description": "The earthquake of 1980 AD affected the far western region of Nepal and caused some damage to UNESCO W."
+    },
+    {
+      "event_name": "Nepal Earthquake of 2015 AD",
+      "event_date": "2015 AD",
+      "event_description": "The Nepal Earthquake of 2015 AD caused massive destruction to UNESCO W and the surrounding area."
+    }
+  ]
+}

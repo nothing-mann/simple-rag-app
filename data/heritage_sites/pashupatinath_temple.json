@@ -1,0 +1,48 @@
+{
+  "monument_name": "Pashupatinath Temple",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": "Temple",
+    "main_deity": "Lord Shiva",
+    "religion": "Hinduism"
+  },
+  "location": {
+    "province": "Bagmati",
+    "district": "Kathmandu",
+    "municipality": null,
+    "heritage_area": "Pashupati Area",
+    "tola": null
+  },
+  "description": "Pashupatinath Temple is one of the major attractions of Kathmandu. It is the oldest Hindu temple in Kathmandu. It is not known for certain when Pashupatinath Temple was founded. But according to the oldest ever chronicle found in Nepal, this temple was built by Supus Padeva, a Licchavi King, who according to the Genealogy of Kings ruled in Nepal from 464 A.D. to 505 A.D. However, there are implications that this temple is more than 2,000 years old. The main temple is built in Nepalese pagoda style of architecture. All the features of pagoda style are finely proportioned as they are found in Nepal, being neither conical nor cylindrical, but of many corners, projecting one above the other, with the tops of a shape approaching the cylindrical and above them rises a magnificent pinnacle which itself is a graceful ornament to the whole. This temple, or the Pashupati Area Development Trust (PADT) owns 246 hectares of land in total. Out of this, 13 hectares of land is registered in the name of PADT and the remaining 233 hectares of land, located in scattered plots around the valley, is registered in the name of Lord Pashupatinath. PADT has direct management control over 31 hectares of its land. The Pashupati Area consists of 518 temples and monuments. These religious structures were built from the 5th to the 12th centuries. With the passage of centuries, the temple has been renovated several times. It has a sprawling collection of temples, ashrams, images and inscriptions raised over the centuries along the banks of the sacred Bagmati River. The temples are a mixture of many styles and the wood carvings especially are the envy of connoisseurs and the pride of artisans. The holy river Bagmati has its source in Godavari (Sivapuri), 15 km east of Kathmandu. It flows into the sacred river Ganga in India.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Pagoda style",
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": [
+      "Wood",
+      "Brick"
+    ]
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": [
+    {
+      "name": "Maha Shivaratri",
+      "description": "The festival of Maha Shivaratri is celebrated in the Pashupatinath Temple with great enthusiasm. Thousands of devotees from Nepal and India visit the temple to worship Lord Shiva."
+    },
+    {
+      "name": "Teej",
+      "description": "Teej is another important festival celebrated in the Pashupatinath Temple. Married women fast and pray to Lord Shiva for the well-being of their husbands."
+    }
+  ],
+  "historical_events": [
+    {
+      "event": "Renovation",
+      "date": null,
+      "description": "With the passage of centuries, the temple has been renovated several times."
+    }
+  ]
+}

@@ -112,5 +112,293 @@
         "description": "A significant historical event after which a big palace was built for the kings."
       }
     ]
+  },
+  {
+    "monument_name": "Kathmandu Durbar Square",
+    "alternative_names": [
+      "Basantapur"
+    ],
+    "typology": {
+      "monument_type": "Durbar (royal palace) square",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": "Kathmandu",
+      "municipality": null,
+      "heritage_area": "Kathmandu Valley",
+      "tola": null
+    },
+    "description": "Kathmandu Durbar Square was one of the three Durbar (royal palace) squares in Kathmandu valley which was the significant identity of spectacular architectures rich in Newari culture. The durbar square was built at the time of Lichhavi Kings and underwent various renovations and new addition till Shah Dynasty. Though there are no written archives stating the history of Kathmandu Durbar Square, construction of the palace in the square is credited to Sankharadev (1069 –1083). As the first king of the independent Kathmandu City, Ratna Malla is said to have built the Taleju temple in the Northern side of the palace in 1501. The oldest temples in the square are those built by Mahendra Malla (1560 –1574). They are the temples of Jagannath, Kotilingeswara Mahadev, Mahendreswara, and the Taleju Temple. This three-roofed Taleju Temple was established in 1564, in a typical Newari architectural style and is elevated on platforms that form a pyramid-like structure. In the time of Pratap Malla, son of Laksminar Simha, the square was extensively developed. The square had undergone lot of changes and unplanned urbanization in the recent decades which has made this city over populated and over polluted.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": null
+    },
+    "condition": {
+      "status": "The massive earthquake has damaged most of its part. The tallest temple standing nine-stepped tall is no more left and the museum has been completely destroyed.",
+      "threats": [
+        "earthquake",
+        "unplanned urbanization"
+      ]
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Earthquake of 1934",
+        "event_date": "1934",
+        "event_description": "There was several effect on Durbar square after 1934 earthquake. The temples such as Kageshwara temple which was built by daughter-in-law of Pratap Malla was beautiful temple of Newari architecture. After it was damaged in 1934 earthquake, the roof was replaced by a plain tin roof which was no near to Newari architecture."
+      },
+      {
+        "event_name": "Earthquake of 2015",
+        "event_date": "2015",
+        "event_description": "The massive earthquake has damaged most of its part. The tallest temple standing nine-stepped tall is no more left and the museum has been completely destroyed."
+      }
+    ]
+  },
+  {
+    "monument_name": "Kathmandu Durbar Square",
+    "alternative_names": [
+      "Basantapur",
+      "Hanuman Dhoka"
+    ],
+    "typology": {
+      "monument_type": "Durbar Square",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": "Bagmati",
+      "district": "Kathmandu",
+      "municipality": "Kathmandu Metropolitan City",
+      "heritage_area": "Kathmandu Durbar Square",
+      "tola": null
+    },
+    "description": "Kathmandu Durbar Square was one of the three Durbar (royal palace) squares in Kathmandu valley which was the significant identity of spectacular architectures rich in Newari culture. The durbar square was built at the time of Lichhavi Kings and underwent various renovations and new addition till Shah Dynasty.\n\nThough there are no written archives stating the history of Kathmandu Durbar Square, construction of the palace in the square is credited to Sankharadev (1069 –1083). As the first king of the independent Kathmandu City, Ratna Malla is said to have built the Taleju temple in the Northern side of the palace in 1501. Construction of the Karnel Chok is not clearly stated in any historical inscriptions; although, it is probably the oldest among all the courtyards in the square. The Bhagavati Temple, originally known as a Narayan Temple, rises above the mansions surrounding it and was added during the time of Jagajaya Malla in the early eighteenth century.\n\nThe oldest temples in the square are those built by Mahendra Malla (1560 –1574). They are the temples of Jagannath, Kotilingeswara Mahadev, Mahendreswara, and the Taleju Temple. This three-roofed Taleju Temple was established in 1564, in a typical Newari architectural style and is elevated on platforms that form a pyramid-like structure.\n\nIn the time of Pratap Malla, son of Laksminar Simha, the square was extensively developed. He was an intellectual, a pious devotee, and especially interested in arts. Immediately after his coronation as a king, he immediately began enlargements to his royal palace, and rebuilt some old temples and constructed new temples, shrines and stupas around his kingdom. He added Nasal chowk, Mohan chowk and several other temples to enhance the beauty of the city and durbar square.\n\nAfter the death of Pratap Malla, there was not much effort made by any other ruler in terms of cultural development. Later around 1692, Radhilasmi, the widowed queen of Pratap Malla, erected the tall temples of Shiva known as Maju Deval near the Garuda image in the square. This temple stands on nine stepped platforms and is one of the tallest buildings in the square.\n\nThere were several effects on Durbar square after the 1934 earthquake. The temples such as Kageshwara temple which was built by daughter-in-law of Pratap Malla was beautiful temple of Newari architecture. After it was damaged in 1934 earthquake, the roof was replaced by a plain tin roof which was no near to Newari architecture.\n\nIn this way Kathmandu Durbar square has undergone various changes and modifications. The massive earthquake has damaged most of its part. The tallest temple standing nine-stepped tall is no more left and the museum has been completely destroyed.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": null
+    },
+    "condition": {
+      "status": "Damaged",
+      "threats": [
+        "Earthquakes",
+        "Deterioration due to lack of proper maintenance"
+      ]
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Construction of Taleju Temple",
+        "event_date": "1501",
+        "event_description": "Ratna Malla is said to have built the Taleju temple in the Northern side of the palace."
+      },
+      {
+        "event_name": "Construction of Bhagavati Temple",
+        "event_date": "Early eighteenth century",
+        "event_description": "The Bhagavati Temple was added during the time of Jagajaya Malla."
+      },
+      {
+        "event_name": "Construction of Temples by Mahendra Malla",
+        "event_date": "1560 –1574",
+        "event_description": "The oldest temples in the square are those built by Mahendra Malla. They are the temples of Jagannath, Kotilingeswara Mahadev, Mahendreswara, and the Taleju Temple."
+      },
+      {
+        "event_name": "Development of the Square by Pratap Malla",
+        "event_date": "Time of Pratap Malla",
+        "event_description": "In the time of Pratap Malla, son of Laksminar Simha, the square was extensively developed. He added Nasal chowk, Mohan chowk and several other temples to enhance the beauty of the city and durbar square."
+      },
+      {
+        "event_name": "Construction of Maju Deval",
+        "event_date": "Around 1692",
+        "event_description": "Radhilasmi, the widowed queen of Pratap Malla, erected the tall temples of Shiva known as Maju Deval near the Garuda image in the square."
+      },
+      {
+        "event_name": "Damage by 1934 Earthquake",
+        "event_date": "1934",
+        "event_description": "There were several effects on Durbar square after the 1934 earthquake. The temples such as Kageshwara temple were damaged."
+      },
+      {
+        "event_name": "Damage by 2015 Earthquake",
+        "event_date": "2015",
+        "event_description": "The massive earthquake has damaged most of its part. The tallest temple standing nine-stepped tall is no more left and the museum has been completely destroyed."
+      }
+    ]
+  },
+  {
+    "monument_name": "Kathmandu Durbar Square",
+    "alternative_names": [
+      "Basantapur",
+      "Hanuman Dhoka"
+    ],
+    "typology": {
+      "monument_type": "Palace Square",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": "Bagmati",
+      "district": "Kathmandu",
+      "municipality": null,
+      "heritage_area": "Kathmandu Valley",
+      "tola": null
+    },
+    "description": "Kathmandu Durbar Square was one of the three Durbar (royal palace) squares in Kathmandu valley which was the significant identity of spectacular architectures rich in Newari culture. The durbar square was built at the time of Lichhavi Kings and underwent various renovations and new addition till Shah Dynasty.\n\nThough there are no written archives stating the history of Kathmandu Durbar Square, construction of the palace in the square is credited to Sankharadev (1069 –1083). As the first king of the independent Kathmandu City, Ratna Malla is said to have built the Taleju temple in the Northern side of the palace in 1501. Construction of the Karnel Chok is not clearly stated in any historical inscriptions; although, it is probably the oldest among all the courtyards in the square. The Bhagavati Temple, originally known as a Narayan Temple, rises above the mansions surrounding it and was added during the time of Jagajaya Malla in the early eighteenth century. The Narayan idol within the temple was stolen so Prithvi Narayan Shah replaced it with an image of Bhagavati, completely transforming the name of the temple.\n\nThe oldest temples in the square are those built by Mahendra Malla (1560 –1574). They are the temples of Jagannath, Kotilingeswara Mahadev, Mahendreswara, and the Taleju Temple. This three-roofed Taleju Temple was established in 1564, in a typical Newari architectural style and is elevated on platforms that form a pyramid-like structure\nIn the time of Pratap Malla, son of Laksminar Simha, the square was extensively developed. He was an intellectual, a pious devotee, and especially interested in arts. Immediately after his coronation as a king, he immediately began enlargements to his royal palace, and rebuilt some old temples and constructed new temples, shrines and stupas around his kingdom. He added Nasal chowk, Mohan chowk and several other temples to enhance the beauty of the city and durbar square.\nAfter the death of Pratap Malla, there was not much effort made by any other ruler in terms of cultural development. Later around 1692, Radhilasmi, the widowed queen of Pratap Malla, erected the tall temples of Shiva known as Maju Deval near the Garuda image in the square. This temple stands on nine stepped platforms and is one of the tallest buildings in the square.\nThere was several effect on Durbar square after 1934 earthquake. The temples such as Kageshwara temple which was built by daughter-in-law of Pratap Malla was beautiful temple of Newari architecture. After it was damaged in 1934 earthquake, the roof was replaced by a plain tin roof which was no near to Newari architecture.\nIn this way Kathmandu Durbar square has undergone various changes and modifications. The massive earthquake has damaged most of its part. The tallest temple standing nine-stepped tall is no more left and the museum has been completely destroyed.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": null
+    },
+    "condition": {
+      "status": "Damaged",
+      "threats": [
+        "Earthquakes",
+        "Deterioration of original Newari architecture due to renovations"
+      ]
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Construction of the palace",
+        "event_date": null,
+        "event_description": "Construction of the palace in the square is credited to Sankharadev (1069 –1083)."
+      },
+      {
+        "event_name": "Construction of Taleju Temple",
+        "event_date": "1501",
+        "event_description": "Ratna Malla is said to have built the Taleju temple in the Northern side of the palace."
+      },
+      {
+        "event_name": "Construction of Bhagavati Temple",
+        "event_date": "Early eighteenth century",
+        "event_description": "The Bhagavati Temple was added during the time of Jagajaya Malla."
+      },
+      {
+        "event_name": "Construction of oldest temples",
+        "event_date": null,
+        "event_description": "The oldest temples in the square are those built by Mahendra Malla (1560 –1574). They are the temples of Jagannath, Kotilingeswara Mahadev, Mahendreswara, and the Taleju Temple."
+      },
+      {
+        "event_name": "Development of the square",
+        "event_date": null,
+        "event_description": "In the time of Pratap Malla, son of Laksminar Simha, the square was extensively developed."
+      },
+      {
+        "event_name": "Construction of Maju Deval",
+        "event_date": "Around 1692",
+        "event_description": "Radhilasmi, the widowed queen of Pratap Malla, erected the tall temples of Shiva known as Maju Deval near the Garuda image in the square."
+      },
+      {
+        "event_name": "Damage by 1934 earthquake",
+        "event_date": "1934",
+        "event_description": "There was several effect on Durbar square after 1934 earthquake."
+      },
+      {
+        "event_name": "Damage by 2015 earthquake",
+        "event_date": "2015",
+        "event_description": "The massive earthquake has damaged most of its part. The tallest temple standing nine-stepped tall is no more left and the museum has been completely destroyed."
+      }
+    ]
+  },
+  {
+    "monument_name": "Kathmandu Durbar Square",
+    "alternative_names": [
+      "Basantapur",
+      "Hanuman Dhoka"
+    ],
+    "typology": {
+      "monument_type": "Durbar Square",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": "Bagmati",
+      "district": "Kathmandu",
+      "municipality": "Kathmandu Metropolitan City",
+      "heritage_area": "Kathmandu Durbar Square",
+      "tola": null
+    },
+    "description": "Kathmandu Durbar Square was one of the three Durbar (royal palace) squares in Kathmandu valley which was the significant identity of spectacular architectures rich in Newari culture. The durbar square was built at the time of Lichhavi Kings and underwent various renovations and new addition till Shah Dynasty. Though there are no written archives stating the history of Kathmandu Durbar Square, construction of the palace in the square is credited to Sankharadev (1069 –1083). As the first king of the independent Kathmandu City, Ratna Malla is said to have built the Taleju temple in the Northern side of the palace in 1501. The oldest temples in the square are those built by Mahendra Malla (1560 –1574). They are the temples of Jagannath, Kotilingeswara Mahadev, Mahendreswara, and the Taleju Temple. This three-roofed Taleju Temple was established in 1564, in a typical Newari architectural style and is elevated on platforms that form a pyramid-like structure. In the time of Pratap Malla, son of Laksminar Simha, the square was extensively developed. The major temples and shrines built in the square by Pratap Malla are Mohan chowk, Nasal chowk, Degutale Temple, Taleju Temple, and Krishna Temple. After the death of Pratap Malla, there was not much effort made by any other ruler in terms of cultural development. In this way Kathmandu Durbar squ are has undergone various changes and modifications.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": null
+    },
+    "condition": {
+      "status": "Damaged",
+      "threats": [
+        "Earthquakes",
+        "Deterioration due to lack of maintenance"
+      ]
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Earthquake of 1934",
+        "event_date": "16 January, 1934 AD",
+        "event_description": "The earthquake is also known as Great Nepal Bihar Earthquake, occurred at around 2pm. The 8.4 Richter Earthquake killed 8519 people, destroyed 80893 buildings and severely damaged 126355 more houses."
+      },
+      {
+        "event_name": "Earthquake of 2015",
+        "event_date": "25th April, 2015",
+        "event_description": "Nepal was hit by 7.9 magnitude earthquake making Barpak of Gorkha as its epicenter devastating Kathmandu and its other peripheral districts (Lamjung, Sindhupalchowk , Dhading, Nuwakot, Kavre, Lamjung and Sankhu). Devastation got more serious after the 6.7 magnitude aftershock in the next day of the major earthquake. The death tolls have raised upto 8,786 dead in Nepal (officially) and 8,947 in total 21,952 injured (officially). Over 2 and half lakhs household was destroyed."
+      }
+    ]
+  },
+  {
+    "monument_name": "Kathmandu Durbar Square",
+    "alternative_names": [
+      "Basantapur"
+    ],
+    "typology": {
+      "monument_type": "Durbar (royal palace) square",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": "Kathmandu",
+      "municipality": null,
+      "heritage_area": "Kathmandu Valley",
+      "tola": null
+    },
+    "description": "Kathmandu Durbar Square was one of the three Durbar (royal palace) squares in Kathmandu valley which was the significant identity of spectacular architectures rich in Newari culture. The durbar square was built at the time of Lichhavi Kings and underwent various renovations and new addition till Shah Dynasty. Though there are no written archives stating the history of Kathmandu Durbar Square, construction of the palace in the square is credited to Sankharadev (1069 –1083). As the first king of the independent Kathmandu City, Ratna Malla is said to have built the Taleju temple in the Northern side of the palace in 1501. The oldest temples in the square are those built by Mahendra Malla (1560 –1574). They are the temples of Jagannath, Kotilingeswara Mahadev, Mahendreswara, and the Taleju Temple. This three-roofed Taleju Temple was established in 1564, in a typical Newari architectural style and is elevated on platforms that form a pyramid-like structure. In the time of Pratap Malla, son of Laksminar Simha, the square was extensively developed. The square had undergone various changes and modifications. The massive earthquake has damaged most of its part.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": null
+    },
+    "condition": {
+      "status": "Damaged",
+      "threats": [
+        "Earthquakes",
+        "Unplanned urbanization"
+      ]
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Earthquake of 1934 AD",
+        "event_date": "16 January, 1934 AD",
+        "event_description": "The earthquake is also known as Great Nepal Bihar Earthquake, occurred at around 2pm. The 8.4 Richter Earthquake killed 8519 people, destroyed 80893 buildings and severely damaged 126355 more houses."
+      },
+      {
+        "event_name": "Earthquake of 2015 AD",
+        "event_date": "25th April, 2015",
+        "event_description": "Nepal was hit by 7.9 magnitude earthquake making Barpak of Gorkha as its epicenter devastating Kathmandu and its other peripheral districts."
+      }
+    ]
   }
 ]

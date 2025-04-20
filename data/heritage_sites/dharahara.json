@@ -1,0 +1,373 @@
+[
+  {
+    "monument_name": "Dharahara",
+    "alternative_names": ["Bhimsen Tower"],
+    "typology": {
+      "monument_type": "Tower",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": "Kathmandu",
+      "municipality": null,
+      "heritage_area": "Sundhara",
+      "tola": null
+    },
+    "description": "Dharahara, also known as Bhimsen Tower, was a nine-story tall tower located in the center of Sundhara, Kathmandu. It was built by the then Mukhtiyar (equivalent to Prime Minister) Bhimsen Thapa in 1832 BS for Queen Tripura Sundari. The tower was initially 11 stories tall, but the top two stories were damaged during the major earthquake of 1934 AD and were later rebuilt to make it a nine-story tower. The earthquake on 25th April 2015 damaged the tower completely, leaving only its base. The purpose of the construction of Dharahara was for military use as a watchtower. When incidents of national importance occurred, bugles were blown from the top floor of the tower as a signal for soldiers to assemble. This tradition continued until the collapse of the tower.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": "Tall tower",
+      "storeys": 9,
+      "dimensions": {
+        "height": "203.0 ft"
+      },
+      "construction_materials": null
+    },
+    "condition": {
+      "status": "Destroyed",
+      "threats": ["Earthquakes"]
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event": "Construction of Dharahara",
+        "date": "1832 BS",
+        "description": "Dharahara was built by Bhimsen Thapa for Queen Tripura Sundari."
+      },
+      {
+        "event": "Earthquake of 1934 AD",
+        "date": "1934 AD",
+        "description": "The top two stories of Dharahara were damaged during the earthquake."
+      },
+      {
+        "event": "Renovation after 1934 earthquake",
+        "date": "1934 AD",
+        "description": "The tower was rebuilt to make it a nine-story tower after the earthquake."
+      },
+      {
+        "event": "Earthquake on 25th April 2015",
+        "date": "2015 AD",
+        "description": "The tower was completely destroyed, leaving only its base."
+      }
+    ]
+  },
+  {
+    "monument_name": "Dharahara",
+    "alternative_names": ["Bhimsen Tower"],
+    "typology": {
+      "monument_type": "Tower",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": "Kathmandu",
+      "municipality": null,
+      "heritage_area": "Sundhara",
+      "tola": null
+    },
+    "description": "Dharahara, also known as Bhimsen Tower, is a historic nine-story tower located in Sundhara, Kathmandu. It was originally built by Bhimsen Thapa in 1832 BS for Queen Tripura Sundari. The tower was initially 11 stories tall, but the top two stories were damaged during the 1934 earthquake and subsequently rebuilt to stand nine stories tall. The tower was completely destroyed in the 2015 earthquake, leaving only its base intact. The tower was used for military purposes as a watchtower, and bugles were blown from the top floor to signal soldiers to assemble during national emergencies.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": "Octagonal",
+      "storeys": 9,
+      "dimensions": {
+        "height": "203.0 ft"
+      },
+      "construction_materials": ["Brick", "Mud", "Wood"]
+    },
+    "condition": {
+      "status": "Destroyed",
+      "threats": ["Earthquakes"]
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event": "Construction of Dharahara",
+        "date": "1832 BS",
+        "description": "Bhimsen Thapa built Dharahara for Queen Tripura Sundari."
+      },
+      {
+        "event": "1934 Earthquake",
+        "date": "1934 AD",
+        "description": "The top two stories of Dharahara were damaged during the earthquake."
+      },
+      {
+        "event": "Renovation",
+        "date": "1934 AD",
+        "description": "The tower was rebuilt to stand nine stories tall after the earthquake."
+      },
+      {
+        "event": "2015 Earthquake",
+        "date": "2015 AD",
+        "description": "Dharahara was completely destroyed in the earthquake, leaving only its base intact."
+      }
+    ]
+  },
+  {
+    "monument_name": "Dharahara",
+    "alternative_names": ["Bhimsen Tower"],
+    "typology": {
+      "monument_type": "Tower",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": "Kathmandu",
+      "municipality": null,
+      "heritage_area": "Sundhara",
+      "tola": null
+    },
+    "description": "Dharahara, also known as Bhimsen Tower, was a nine-story tall tower located in the center of Sundhara, Kathmandu. It was built by Bhimsen Thapa in 1832 BS for Queen Tripura Sundari. The tower was initially 11 stories tall, but the top two stories were damaged during the major earthquake of 1934 AD and later rebuilt to nine stories. The earthquake on 25th April 2015 damaged the tower completely, leaving only its base. The purpose of its construction was for military use as a watchtower. When incidents of national importance occurred, bugles were blown from the top floor of the tower as a signal for soldiers to assemble. This tradition continued until the collapse of the tower.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": "Tall tower",
+      "storeys": 9,
+      "dimensions": {
+        "height": "203.0 ft"
+      },
+      "construction_materials": null
+    },
+    "condition": {
+      "status": "Destroyed",
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Construction of Dharahara",
+        "event_date": null,
+        "event_description": "Dharahara was first built by Bhimsen Thapa in 1832 BS for Queen Tripura Sundari."
+      },
+      {
+        "event_name": "Damage during 1934 Earthquake",
+        "event_date": "1934-01-15",
+        "event_description": "The top two stories of Dharahara were damaged during the major earthquake of 1934 AD."
+      },
+      {
+        "event_name": "Renovation after 1934 Earthquake",
+        "event_date": null,
+        "event_description": "The tower was rebuilt to nine stories after the 1934 earthquake."
+      },
+      {
+        "event_name": "Destruction during 2015 Earthquake",
+        "event_date": "2015-04-25",
+        "event_description": "The earthquake on 25th April 2015 damaged the tower completely, leaving only its base."
+      }
+    ]
+  },
+  {
+    "monument_name": "Dharahara",
+    "alternative_names": ["Bhimsen Tower"],
+    "typology": {
+      "monument_type": "Tower",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": "Kathmandu",
+      "municipality": "Kathmandu",
+      "heritage_area": "Sundhara",
+      "tola": null
+    },
+    "description": "Dharahara, also known as Bhimsen Tower, was a nine-story tall tower located in the center of Sundhara, Kathmandu. It was built by the then Mukhtiyar (equivalent to Prime Minister) Bhimsen Thapa in 1832 BS for Queen Tripura Sundari, the niece of Bhimsen Thapa. Initially, Dharahara was an 11-story tall tower, but the top two stories were damaged during the major earthquake of 1934 AD. The remaining nine stories were rebuilt later and stood as the oldest tower in the city until the 2015 earthquake, which damaged the tower completely, leaving only its base.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": "Octagonal",
+      "storeys": 9,
+      "dimensions": {
+        "height": "203.0 ft"
+      },
+      "construction_materials": ["Brick", "Mud", "Wood"]
+    },
+    "condition": {
+      "status": "Destroyed",
+      "threats": ["Earthquakes"]
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event": "Construction of Dharahara",
+        "date": "1832 BS",
+        "description": "Dharahara was first built by then Mukhtiyar Bhimsen Thapa for Queen Tripura Sundari."
+      },
+      {
+        "event": "Damage during 1934 earthquake",
+        "date": "1934 AD",
+        "description": "The top two stories of Dharahara were damaged during the major earthquake of 1934 AD."
+      },
+      {
+        "event": "Renovation after 1934 earthquake",
+        "date": "1934 AD",
+        "description": "The remaining nine stories of Dharahara were rebuilt after the 1934 earthquake."
+      },
+      {
+        "event": "Destruction during 2015 earthquake",
+        "date": "2015 AD",
+        "description": "Dharahara was completely destroyed during the 2015 earthquake, leaving only its base."
+      }
+    ]
+  },
+  {
+    "monument_name": "Dharahara",
+    "alternative_names": ["Bhimsen Tower"],
+    "typology": {
+      "monument_type": "Tower",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": "Kathmandu",
+      "municipality": null,
+      "heritage_area": "Sundhara",
+      "tola": null
+    },
+    "description": "Dharahara, also known as Bhimsen Tower, was a nine-story tall tower located in the center of Sundhara, Kathmandu. It was built by Mukhtiyar (equivalent to Prime Minister) Bhimsen Thapa in 1832 BS for Queen Tripura Sundari. The tower was initially 11 stories tall, but the top two stories were damaged during the major earthquake of 1934 AD and later rebuilt to be 9 stories tall. The tower was completely destroyed by the earthquake on 25th April, 2015, leaving only its base. The purpose of its construction was for military use as a watchtower. When incidents of national importance occurred, bugles were blown from the top floor of the tower as a signal for soldiers to assemble. This tradition continued until the collapse of the tower. Bhimsen Thapa built another tower eight years earlier in 1824, which was 11 stories high but was destroyed during the earthquake of 1934.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": 9,
+      "dimensions": {
+        "height": "203.0 ft"
+      },
+      "construction_materials": null
+    },
+    "condition": {
+      "status": "Destroyed",
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Construction of Dharahara",
+        "event_date": null,
+        "event_description": "Dharahara was first built by then Mukhtiyar Bhimsen Thapa in 1832 BS for Queen Tripura Sundari."
+      },
+      {
+        "event_name": "Damage during 1934 Earthquake",
+        "event_date": "1934-01-15",
+        "event_description": "The top two stories of Dharahara were damaged during the major earthquake of 1934 AD."
+      },
+      {
+        "event_name": "Renovation after 1934 Earthquake",
+        "event_date": null,
+        "event_description": "The remaining 9 stories of Dharahara were rebuilt later and stood as the oldest tower in the city until the 2015 earthquake."
+      },
+      {
+        "event_name": "Destruction during 2015 Earthquake",
+        "event_date": "2015-04-25",
+        "event_description": "The earthquake in 25th April, 2015, damaged the tower completely leaving only its base."
+      }
+    ]
+  },
+  {
+    "monument_name": "Dharahara (Bhimsen Tower)",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": "Tower",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": "Kathmandu",
+      "municipality": null,
+      "heritage_area": "Sundhara",
+      "tola": null
+    },
+    "description": "Dharahara, also known as Bhimsen Tower, is a nine-story tall tower located in the center of Sundhara, Kathmandu. It was built by Mukhtiyar Bhimsen Thapa in 1832 BS for Queen Tripura Sundari. The tower was initially 11 stories tall, but the top two stories were damaged during the major earthquake of 1934 AD and later rebuilt to nine stories. The earthquake in 2015 damaged the tower completely, leaving only its base. The purpose of its construction was for military use as a watchtower.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": 9,
+      "dimensions": {
+        "height": "203.0 ft"
+      },
+      "construction_materials": null
+    },
+    "condition": {
+      "status": "Damaged",
+      "threats": ["Earthquakes"]
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Construction of Dharahara",
+        "event_date": null,
+        "event_description": "Dharahara was built by Mukhtiyar Bhimsen Thapa in 1832 BS for Queen Tripura Sundari."
+      },
+      {
+        "event_name": "Earthquake of 1934 AD",
+        "event_date": "1934-01-15",
+        "event_description": "The earthquake destroyed the top two stories of the tower."
+      },
+      {
+        "event_name": "Renovation after 1934 Earthquake",
+        "event_date": null,
+        "event_description": "The tower was rebuilt to nine stories after the earthquake."
+      },
+      {
+        "event_name": "Earthquake of 2015 AD",
+        "event_date": "2015-04-25",
+        "event_description": "The earthquake damaged the tower completely, leaving only its base."
+      }
+    ]
+  },
+  {
+    "monument_name": "Dharahara (Bhimsen Tower)",
+    "alternative_names": ["Bhimsen Stambha", "Bhimsen Tower"],
+    "typology": {
+      "monument_type": "Tower",
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": "Kathmandu",
+      "municipality": null,
+      "heritage_area": "Sundhara",
+      "tola": null
+    },
+    "description": "Dharahara, also known as Bhimsen Tower, is a nine-storied tower located in the center of Sundhara, Kathmandu. It was originally built by Bhimsen Thapa in 1832 BS for Queen Tripura Sundari. The tower was initially 11 stories tall, but the top two stories were damaged during the major earthquake of 1934 AD and later rebuilt to stand at nine stories. The tower was completely destroyed by the earthquake on 25th April, 2015, leaving only its base intact. The tower was built for military use as a watchtower and served as a historic and cultural landmark in Kathmandu.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": "Octagonal",
+      "storeys": 9,
+      "dimensions": {
+        "height": "203.0 ft"
+      },
+      "construction_materials": ["Brick", "Mud", "Wood"]
+    },
+    "condition": {
+      "status": "Destroyed",
+      "threats": ["Earthquakes"]
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event_name": "Construction of Dharahara",
+        "event_date": "1832 BS",
+        "event_description": "Bhimsen Thapa built Dharahara for Queen Tripura Sundari."
+      },
+      {
+        "event_name": "Earthquake of 1934 AD",
+        "event_date": "15 January 1934",
+        "event_description": "The earthquake destroyed the top two stories of Dharahara."
+      },
+      {
+        "event_name": "Renovation after 1934 Earthquake",
+        "event_date": "1934 AD",
+        "event_description": "The tower was rebuilt to stand at nine stories after the earthquake."
+      },
+      {
+        "event_name": "Earthquake of 2015 AD",
+        "event_date": "25 April 2015",
+        "event_description": "The earthquake completely destroyed Dharahara, leaving only its base intact."
+      }
+    ]
+  }
+]

@@ -1,0 +1,51 @@
+{
+  "monument_name": "Swoyambhunath Monastery",
+  "alternative_names": ["Monkey Temple"],
+  "typology": {
+    "monument_type": "religious complex",
+    "main_deity": null,
+    "religion": "Buddhism"
+  },
+  "location": {
+    "province": null,
+    "district": "Kathmandu",
+    "municipality": null,
+    "heritage_area": "Kathmandu Valley",
+    "tola": null
+  },
+  "description": "Swayambhunath is an ancient religious complex atop a hill in the Kathmandu Valley, west of Kathmandu city. It is also known as the Monkey Temple as there are holy monkeys living in the north-west parts of the temple. The Tibetan name for the site means 'Sublime Trees' for the many varieties of trees found on the hill. Swayambhunath is the major pilgrimage site for Buddhist Newars and second most important place after Boudhanath for Tibetan Buddhists. Swayambhunath is among the oldest religious sites in Nepal. According to the Gopālarājavaṃśāvalī Swayambhunath was founded by the great-grandfather of King Mānadeva (464 -505 CE), King Vṛsadeva, about the beginning of the 5th century CE. This seems to be confirmed by a damaged stone inscription found at the site, which indicates that King Mānadeva ordered work done in 640 CE. The stupa was completely renovated in May 2010, its first major renovation since 1921 and its 15th in the nearly 1,500 years since it was built. However, the stupa faced many damages in the earthquake 2015.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": null
+  },
+  "condition": {
+    "status": "Damaged",
+    "threats": ["Earthquake"]
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Founding of Swayambhunath",
+      "event_date": "Beginning of the 5th century CE",
+      "event_description": "Swayambhunath was founded by King Vṛsadeva, the great-grandfather of King Mānadeva."
+    },
+    {
+      "event_name": "Renovation by King Mānadeva",
+      "event_date": "640 CE",
+      "event_description": "King Mānadeva ordered work done at the site."
+    },
+    {
+      "event_name": "Major Renovation",
+      "event_date": "May 2010",
+      "event_description": "The stupa was completely renovated, its first major renovation since 1921 and its 15th in the nearly 1,500 years since it was built."
+    },
+    {
+      "event_name": "Earthquake Damage",
+      "event_date": "2015",
+      "event_description": "The stupa faced many damages in the earthquake."
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "monument_name": "Sundari Chowk",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": null,
+    "main_deity": null,
+    "religion": null
+  },
+  "location": {
+    "province": null,
+    "district": null,
+    "municipality": "Kathmandu",
+    "heritage_area": "Patan Durbar Square",
+    "tola": null
+  },
+  "description": "The southern Sundari Chowk used to be a royal bath made of carved stone.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": [
+      "stone"
+    ]
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": null
+}

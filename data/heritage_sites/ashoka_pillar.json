@@ -1,0 +1,50 @@
+{
+  "monument_name": "Ashoka Pillar",
+  "alternative_names": ["Asoka Pillar", "Asoka pillar"],
+  "typology": {
+    "monument_type": "Commemorative Pillar",
+    "main_deity": null,
+    "religion": "Buddhist"
+  },
+  "location": {
+    "province": null,
+    "district": null,
+    "municipality": null,
+    "heritage_area": "Lumbini",
+    "tola": null
+  },
+  "description": "The Indian emperor Ashoka, who was one of the pilgrims to Lumbini, erected one of his commemorative pillars there. The site is now being developed as a Buddhist pilgrimage centre, where the archaeological remains associated with the birth of the Lord Buddha form a central feature. The sandstone Ashoka pillar with its Pali inscription in Brahmi script is a significant part of the complex of structures within the archaeological conservation area. The integrity of Lumbini has been achieved by means of preserving the archaeological remains within the property boundary that give the property its Outstanding Universal Value. The inscription on the Ashoka Pillar is written in a very old language. The inscription says that the Buddha was born here.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": "Pillar",
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": ["sandstone"]
+  },
+  "condition": {
+    "status": "Preserved archaeological remain",
+    "threats": [
+      "impact of visitors",
+      "natural impacts including humidity",
+      "industrial development in the region"
+    ]
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Birth of Lord Buddha",
+      "event_date": "623 BC",
+      "event_description": "Siddhartha Gautama, the Lord Buddha, was born in 623 B.C. in the famous gardens of Lumbini."
+    },
+    {
+      "event_name": "Erection of Asoka pillar",
+      "event_date": "249 BC",
+      "event_description": "The Mauryan Emperor Asoka erected a pillar in 249 BC, testifying the birthplace of the Lord Buddha."
+    },
+    {
+      "event_name": "Discovery of Asoka pillar",
+      "event_date": "1896",
+      "event_description": "The Asoka pillar was discovered in 1896."
+    }
+  ]
+}

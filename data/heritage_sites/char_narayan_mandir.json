@@ -34,9 +34,7 @@
   },
   "condition": {
     "status": "Collapsed, Rebuilt",
-    "threats": [
-      "Earthquake"
-    ]
+    "threats": ["Earthquake"]
   },
   "cultural_activities": [
     {

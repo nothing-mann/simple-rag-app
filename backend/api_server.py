@@ -103,7 +103,7 @@ def rag_chat_endpoint():
         "message": "Your question about heritage sites",
         "n_results": 3,
         "temperature": 0.7,
-        "model_id": "gpt-4o-mini" (optional),
+        "model_id": "mistral/mistral-large-latest" (optional),
         "include_sources": false (optional)
     }
     """

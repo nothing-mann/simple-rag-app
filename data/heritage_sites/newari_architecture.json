@@ -1,0 +1,61 @@
+{
+  "monument_name": "Newari architecture",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": null,
+    "main_deity": null,
+    "religion": null
+  },
+  "location": {
+    "province": null,
+    "district": null,
+    "municipality": null,
+    "heritage_area": "Kathmandu Valley",
+    "tola": null
+  },
+  "description": "Newari architecture is a unique and ancient style of architecture that has shaped Nepal's identity globally. It is heavily inspired by Hinduism and Buddhism, reflecting the art, culture, and crafts of the Nepalese people. The cultural beauty of Newari architecture manifests in music, dance, festivals, and costumes of the people. Nepalese people are divided into 4 castes and 36 sub-castes, each with their own set of norms and culture. The temples, monasteries, and heritages built in Newari architecture have existed since the 3rd to 5th centuries and have undergone various reformations, especially during the Malla era. These structures hold symbolic meaning and history of Nepal's civilization. The Kathmandu Valley, consisting of Kathmandu, Bhaktapur, and Lalitpur districts, is home to at least 130 monuments, including several pilgrimage sites for Hindus and Buddhists. UNESCO has listed seven World Heritage Sites within this valley, each a testament to the unique architecture and rich culture of Nepal.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": null
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Establishment of Swayambhunath",
+      "event_date": "Beginning of the 5th century CE",
+      "event_description": "Swayambhunath, an ancient religious complex, was founded by King Vṛsadeva, the great-grandfather of King Mānadeva."
+    },
+    {
+      "event_name": "Construction of Kathmandu Durbar Square",
+      "event_date": "Time of Lichhavi Kings",
+      "event_description": "Kathmandu Durbar Square was built during the time of Lichhavi Kings and underwent various renovations and new additions till the Shah Dynasty."
+    },
+    {
+      "event_name": "Founding of Bhaktapur",
+      "event_date": "12th century",
+      "event_description": "Bhaktapur, an ancient Newar city, was founded by King Ananda Malla and was the capital of the Greater Malla Kingdom until the 15th century."
+    },
+    {
+      "event_name": "Construction of Patan Durbar Square",
+      "event_date": "Before the Malla reign",
+      "event_description": "Patan Durbar Square was built even before the Malla reign, with many current architectures dating back to the 1600s, reformed during the Malla period."
+    },
+    {
+      "event_name": "Establishment of Changu Narayan Temple",
+      "event_date": "325 BC",
+      "event_description": "Changu Narayan Temple, considered the oldest Hindu temple in Nepal, was established during the time of Lichhavi King Hari Datta Verma."
+    },
+    {
+      "event_name": "Construction of Boudhanath Stupa",
+      "event_date": "Reign of King Mānadeva (464-505 CE) or King Śivadeva (c. 590-604 CE)",
+      "event_description": "Boudhanath Stupa, a important pilgrimage site for Buddhists, was constructed by the Nepalese Licchavi king Śivadeva or King Mānadeva."
+    }
+  ]
+}

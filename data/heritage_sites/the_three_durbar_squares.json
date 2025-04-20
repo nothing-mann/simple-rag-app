@@ -1,0 +1,30 @@
+{
+  "monument_name": "The three durbar squares",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": null,
+    "main_deity": null,
+    "religion": null
+  },
+  "location": {
+    "province": null,
+    "district": null,
+    "municipality": null,
+    "heritage_area": "Kathmandu Valley",
+    "tola": null
+  },
+  "description": "The three durbar squares at Hanuman Dhoka, Patan and Bhaktapur are part of the seven monument zones that make up the Kathmandu Valley World Heritage Site. Hanuman Dhoka is the heart of old Kathmandu, where kings used to live and were crowned. It features notable structures like the Taleju temple, which is over 35 meters high, and the Kasthamandap, a rest house built more than 800 years ago from the wood of a single tree according to legend. Patan Durbar Square is known for its rich history and cultural expressions, including the Kwa Baha Golden Temple, the Kumbheshwar temple, and the Krishna Mandir with its beautiful stone carvings. Bhaktapur Durbar Square, the smallest of the three cities, was the capital of the Malla Kingdom until the 15th century and showcases the Newari lifestyle from centuries ago. It includes notable sites like the 55-windows palace, the Naytapola temple, and the Dattatreya Square with its famous peacock window.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": null
+  },
+  "condition": {
+    "status": null,
+    "threats": null
+  },
+  "cultural_activities": null,
+  "historical_events": null
+}

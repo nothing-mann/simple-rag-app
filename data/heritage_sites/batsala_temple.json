@@ -1,0 +1,40 @@
+{
+  "monument_name": "Batsala Temple",
+  "alternative_names": null,
+  "typology": {
+    "monument_type": "temple",
+    "main_deity": "Batsala Devi",
+    "religion": "Hinduism"
+  },
+  "location": {
+    "province": "Bagmati Province",
+    "district": "Bhaktapur",
+    "municipality": "Bhaktapur",
+    "heritage_area": "Bhaktapur Durbar Square",
+    "tola": null
+  },
+  "description": "Batsala Temple is one of the major attractions of Bhaktapur Durbar Square. It is dedicated to Batsala Devi, a form of the goddess Laxmi. The temple is known for its unique architecture and intricate carvings. It was severely damaged during the 2015 earthquake.",
+  "fun_fact": null,
+  "architecture": {
+    "shape": null,
+    "storeys": null,
+    "dimensions": null,
+    "construction_materials": null
+  },
+  "condition": {
+    "status": "Partially Damaged",
+    "threats": [
+      "Earthquake Damage",
+      "Neglect",
+      "Lack of Funds for Restoration"
+    ]
+  },
+  "cultural_activities": null,
+  "historical_events": [
+    {
+      "event_name": "Damage during 2015 Earthquake",
+      "event_date": "2015-04-25",
+      "event_description": "The temple was severely damaged during the 2015 earthquake."
+    }
+  ]
+}

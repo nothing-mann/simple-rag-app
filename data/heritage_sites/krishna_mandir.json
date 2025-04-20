@@ -1,85 +1,219 @@
-{
-  "monument_name": "Krishna Mandir",
-  "alternative_names": [
-    "Kṛṣṇa Mandira",
-    "Rādhā-Kṛṣṇā Mandira",
-    "Krishna Temple",
-    "Kṛṣṇa Degaḥ"
-  ],
-  "typology": {
-    "monument_type": "Śikhara temple",
-    "main_deity": "Kṛṣṇa",
-    "religion": "Vaishnava"
-  },
-  "location": {
-    "province": "3",
-    "district": "Lalitpur",
-    "municipality": "Lalitpur",
-    "heritage_area": "Mangal Bazar",
-    "tola": "Patan Darbar Square"
-  },
-  "description": "The Kṛṣṇa Temple is located in the Patan Durbar Square. Thanks to its position, it plays a large role in the general impression of the area around the palace. The east-facing temple is built in a śikhara-style from stone and stands on top of four layered plinths. Two pairs of lions sit on the eastern plinths. In front of the temple, one can find a stone pillar with a metal image of Garuḍa on top of it. The temple is supported by 24 octagonal columns that rise up from its first floor. The story of Ramāyaṇa can be found alongside an explanation in the Newari language inscribed on the lintels of the first floor. A toraṇa containing images of Garuḍa and śivaliṅga is fixed above the entrance. Information regarding the initial construction of the temple can be found on a stone inscription dated NS 757 (1637 CE). This inscription is located to the south of the main entrance.\n\nLocated on the first floor, the main sanctum of the temple contains images of Kṛṣṇa, Rukmiṇī and Satyabhāmā, all of which have been made using black stone. On the floor, one can find images of the Ten Incarnations of Lord Viṣṇu in all four cardinal directions. The Mahābhārata and an explanation in the Newari language have both been inscribed on the lintels of the second floor. A śivaliṅga is enshrined on the second floor of the temple, and Lokeśvara is enshrined on the third floor. Standing on the first and the second floors of the temple, one can see three turrets from every side. Above the second floor are four turrets, one in each of the cardinal directions. All of them are attached to the śikhara structure. The temple contains 21 pinnacles; as such, it is also known as the Temple of 21 Pinnacles. Bernier (1978, 64) says that the temple was made as an imitation of one of the Kṛṣṇa Temples of Mathurā in India. For a more detailed description see Gutschow (2011, 527-531).\n\nSiddhinarasiṃha Malla, one of the Kings of Patan, began the initial construction of this temple on the full moon day of Bhādra of NS 750. The construction was completed on the 10th day of the bright half of NS 757 (Yogī 2013, 57 and Vajrācārya VS 2056, 74-78). It is stated that the artisans of the Jom Bāhāḥ constructed this temple, and that the tools used for its construction are still preserved inside the āgãchẽ of the bāhāḥ (Śākya NS 1128, 22). The earthquake of 1934 did not harm this temple. However, the earthquake of 2015 caused some minor damage. For more information regarding renovation works see N. Das 2016.",
-  "fun_fact": "The temple contains 21 pinnacles; as such, it is also known as the Temple of 21 Pinnacles.",
-  "architecture": {
-    "shape": "Square",
-    "storeys": 3,
-    "dimensions": {
-      "length": 865,
-      "depth": 865,
-      "height": 2023,
-      "diameter": 0
+[
+  {
+    "monument_name": "Krishna Mandir",
+    "alternative_names": [
+      "Kṛṣṇa Mandira",
+      "Rādhā-Kṛṣṇā Mandira",
+      "Krishna Temple",
+      "Kṛṣṇa Degaḥ"
+    ],
+    "typology": {
+      "monument_type": "Śikhara temple",
+      "main_deity": "Kṛṣṇa",
+      "religion": "Vaishnava"
     },
-    "construction_materials": [
-      "stone"
-    ]
-  },
-  "condition": {
-    "status": "Repaired",
-    "threats": [
-      "2015 earthquake caused some minor damage"
-    ]
-  },
-  "cultural_activities": [
-    {
-      "activity": "Legend",
-      "description": "A legend tells that King Siddhinarasiṃha Malla encountered the gods Rādhā and Kṛṣṇa in a dream. They asked him to unearth them and enshrine them inside a temple. Following their orders he asked his people to dig up an area in the Bhaṇḍārakhāla Garden. The people unearthed images of Rādhā and Kṛṣṇa."
+    "location": {
+      "province": "3",
+      "district": "Lalitpur",
+      "municipality": "Lalitpur",
+      "heritage_area": "Mangal Bazar",
+      "tola": "Patan Darbar Square"
     },
-    {
-      "activity": "Worship, procession",
-      "description": "The priest family who claim they are the descendants of Harivaṃśa Rājopādhyāya, guru of King Siddhinarasiṃha Malla, perform the daily and other ritual worships of the temple. The priest of this temple performs the role of Narasiṃha in the Kārttika Nāca. During the daily worship, Kṛṣṇa is bathed in the pañcāmṛta in the morning and āratī is performed in the evening. The daily ritual worship is funded by the Guṭhī Saṃsthāna, which provides 1 rupee and 50 paisa every day (Śākya 1128, 62). The anniversary ritual is performed on the 10th day of the Phāguṇa. On this day, tantric worship is performed and a goat is sacrificed. Kṛṣṇajanmāṣṭamī: The 8th day of the dark half of Bhādra is celebrated as the birthday of Lord Kṛṣṇa. Thousands of people come to the temple to take part in the festival. On this occasion, the head of the nation also comes to worship the god. Devaśayana Pūjā: In Hinduism it is believed that, starting on the 11th day of the bright half of the Āṣāḍha (Hariśayanī Ekādaśī) Lord Nārāyaṇa sleeps for four months. Kṛṣṇa an incarnation of Nārāyaṇa, also sleeps in this period. Leaving the main image of this temple standing, another small image of Kṛṣṇa placed nearby the main image. Utthāna Pūjā: The 11th day of the bright half of Kārttika is considered as Haribodhanī Ekādaśī. On the 12th day, the sleeping image of Kṛṣṇa is raised up and worshipped. Mahāsnāna: The mahāsnāna of Kṛṣṇa is performed on the full moon day of the Jyeṣṭha. On that day the golden throne of Śrīnivāsa Malla was presented by Jodhāju of Oku Bāhāḥ (LAL2260) in NS 787. A paubhā (a kind of traditional religious painting) created by King Siddhinarasiṃha Malla containing the chanting of Lord Kṛṣṇa is exhibited. Dolā Yātrā: On the 12th day of the dark half of the Phālguṇa, an image of Kṛṣṇa is placed on a palanquin and swung."
-    }
-  ],
-  "historical_events": [
-    {
-      "event_name": "Construction of the Temple",
-      "description": "King Siddhinarasiṃha Malla constructed this Kṛṣṇa Temple. During the construction period, other kings attacked Lalitpur. However, Siddhinarasiṃha defeated them. Viṣvanātha Upādhyāya organised a koṭyāhuti for the consecration of the temple. Lands were also bestowed upon it for the ritual worships.",
-      "date": {
-        "BCE/CE": "1637",
-        "period": "Late Malla period (1482-1768/69)",
-        "year": "NS 757",
-        "nepali_month": "Phālguna (Phāguna)",
-        "pakṣa": "Bright fortnight",
-        "tithi": "10"
+    "description": "The Kṛṣṇa Temple is located in the Patan Durbar Square. Thanks to its position, it plays a large role in the general impression of the area around the palace. The east-facing temple is built in a śikhara-style from stone and stands on top of four layered plinths. Two pairs of lions sit on the eastern plinths. In front of the temple, one can find a stone pillar with a metal image of Garuḍa on top of it. The temple is supported by 24 octagonal columns that rise up from its first floor. The story of Ramāyaṇa can be found alongside an explanation in the Newari language inscribed on the lintels of the first floor. A toraṇa containing images of Garuḍa and śivaliṅga is fixed above the entrance. Information regarding the initial construction of the temple can be found on a stone inscription dated NS 757 (1637 CE). This inscription is located to the south of the main entrance.\n\nLocated on the first floor, the main sanctum of the temple contains images of Kṛṣṇa, Rukmiṇī and Satyabhāmā, all of which have been made using black stone. On the floor, one can find images of the Ten Incarnations of Lord Viṣṇu in all four cardinal directions. The Mahābhārata and an explanation in the Newari language have both been inscribed on the lintels of the second floor. A śivaliṅga is enshrined on the second floor of the temple, and Lokeśvara is enshrined on the third floor. Standing on the first and the second floors of the temple, one can see three turrets from every side. Above the second floor are four turrets, one in each of the cardinal directions. All of them are attached to the śikhara structure. The temple contains 21 pinnacles; as such, it is also known as the Temple of 21 Pinnacles. Bernier (1978, 64) says that the temple was made as an imitation of one of the Kṛṣṇa Temples of Mathurā in India. For a more detailed description see Gutschow (2011, 527-531).\n\nSiddhinarasiṃha Malla, one of the Kings of Patan, began the initial construction of this temple on the full moon day of Bhādra of NS 750. The construction was completed on the 10th day of the bright half of NS 757 (Yogī 2013, 57 and Vajrācārya VS 2056, 74-78). It is stated that the artisans of the Jom Bāhāḥ constructed this temple, and that the tools used for its construction are still preserved inside the āgãchẽ of the bāhāḥ (Śākya NS 1128, 22). The earthquake of 1934 did not harm this temple. However, the earthquake of 2015 caused some minor damage. For more information regarding renovation works see N. Das 2016.",
+    "fun_fact": "The temple contains 21 pinnacles; as such, it is also known as the Temple of 21 Pinnacles.",
+    "architecture": {
+      "shape": "Square",
+      "storeys": 3,
+      "dimensions": {
+        "length": 865,
+        "depth": 865,
+        "height": 2023,
+        "diameter": 0
       },
-      "sources": [
-        "Vajrācārya 2056, 74-78"
-      ]
+      "construction_materials": ["stone"]
     },
-    {
-      "event_name": "Damage by earthquake",
-      "description": "The structure was partially damaged by the earthquake, especially the upper stories. Immediately after the earthquake, the structure was shored up to prevent further damage.",
-      "date": {
-        "BCE/CE": "2015",
-        "period": "Democratic Period (1990-)"
-      }
+    "condition": {
+      "status": "Repaired",
+      "threats": ["2015 earthquake caused some minor damage"]
     },
-    {
-      "event_name": "Conservation of the Temple",
-      "description": "The damaged threshold stone at the north-west corner of the innermost sanctum was replaced. The base stones at the second floor level were replaced with new stone carvings reminiscent of the original ones. Various water problems have been solved with the careful conservation of dislocated stones. On 24 August 2018, the restoration work was completed and a kṣamāpūjā was performed. The temple was made open to the public.",
-      "date": {
-        "BCE/CE": "2018",
-        "period": "Democratic Period (1990-)"
+    "cultural_activities": [
+      {
+        "activity": "Legend",
+        "description": "A legend tells that King Siddhinarasiṃha Malla encountered the gods Rādhā and Kṛṣṇa in a dream. They asked him to unearth them and enshrine them inside a temple. Following their orders he asked his people to dig up an area in the Bhaṇḍārakhāla Garden. The people unearthed images of Rādhā and Kṛṣṇa."
+      },
+      {
+        "activity": "Worship, procession",
+        "description": "The priest family who claim they are the descendants of Harivaṃśa Rājopādhyāya, guru of King Siddhinarasiṃha Malla, perform the daily and other ritual worships of the temple. The priest of this temple performs the role of Narasiṃha in the Kārttika Nāca. During the daily worship, Kṛṣṇa is bathed in the pañcāmṛta in the morning and āratī is performed in the evening. The daily ritual worship is funded by the Guṭhī Saṃsthāna, which provides 1 rupee and 50 paisa every day (Śākya 1128, 62). The anniversary ritual is performed on the 10th day of the Phāguṇa. On this day, tantric worship is performed and a goat is sacrificed. Kṛṣṇajanmāṣṭamī: The 8th day of the dark half of Bhādra is celebrated as the birthday of Lord Kṛṣṇa. Thousands of people come to the temple to take part in the festival. On this occasion, the head of the nation also comes to worship the god. Devaśayana Pūjā: In Hinduism it is believed that, starting on the 11th day of the bright half of the Āṣāḍha (Hariśayanī Ekādaśī) Lord Nārāyaṇa sleeps for four months. Kṛṣṇa an incarnation of Nārāyaṇa, also sleeps in this period. Leaving the main image of this temple standing, another small image of Kṛṣṇa placed nearby the main image. Utthāna Pūjā: The 11th day of the bright half of Kārttika is considered as Haribodhanī Ekādaśī. On the 12th day, the sleeping image of Kṛṣṇa is raised up and worshipped. Mahāsnāna: The mahāsnāna of Kṛṣṇa is performed on the full moon day of the Jyeṣṭha. On that day the golden throne of Śrīnivāsa Malla was presented by Jodhāju of Oku Bāhāḥ (LAL2260) in NS 787. A paubhā (a kind of traditional religious painting) created by King Siddhinarasiṃha Malla containing the chanting of Lord Kṛṣṇa is exhibited. Dolā Yātrā: On the 12th day of the dark half of the Phālguṇa, an image of Kṛṣṇa is placed on a palanquin and swung."
       }
-    }
-  ]
-}
+    ],
+    "historical_events": [
+      {
+        "event_name": "Construction of the Temple",
+        "description": "King Siddhinarasiṃha Malla constructed this Kṛṣṇa Temple. During the construction period, other kings attacked Lalitpur. However, Siddhinarasiṃha defeated them. Viṣvanātha Upādhyāya organised a koṭyāhuti for the consecration of the temple. Lands were also bestowed upon it for the ritual worships.",
+        "date": {
+          "BCE/CE": "1637",
+          "period": "Late Malla period (1482-1768/69)",
+          "year": "NS 757",
+          "nepali_month": "Phālguna (Phāguna)",
+          "pakṣa": "Bright fortnight",
+          "tithi": "10"
+        },
+        "sources": ["Vajrācārya 2056, 74-78"]
+      },
+      {
+        "event_name": "Damage by earthquake",
+        "description": "The structure was partially damaged by the earthquake, especially the upper stories. Immediately after the earthquake, the structure was shored up to prevent further damage.",
+        "date": {
+          "BCE/CE": "2015",
+          "period": "Democratic Period (1990-)"
+        }
+      },
+      {
+        "event_name": "Conservation of the Temple",
+        "description": "The damaged threshold stone at the north-west corner of the innermost sanctum was replaced. The base stones at the second floor level were replaced with new stone carvings reminiscent of the original ones. Various water problems have been solved with the careful conservation of dislocated stones. On 24 August 2018, the restoration work was completed and a kṣamāpūjā was performed. The temple was made open to the public.",
+        "date": {
+          "BCE/CE": "2018",
+          "period": "Democratic Period (1990-)"
+        }
+      }
+    ]
+  },
+  {
+    "monument_name": "Krishna Mandir",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": null,
+      "main_deity": null,
+      "religion": null
+    },
+    "location": {
+      "province": null,
+      "district": null,
+      "municipality": null,
+      "heritage_area": "Patan Durbar Square",
+      "tola": null
+    },
+    "description": "It has beautiful stone carvings which tell stories of the Ramayana and the Mahabharata.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": ["stone"]
+    },
+    "condition": {
+      "status": null,
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": null
+  },
+
+  {
+    "monument_name": "Krishna Temple",
+    "alternative_names": ["Krishna Temple of Patan"],
+    "typology": {
+      "monument_type": "Hindu Temple",
+      "main_deity": "Lord Krishna",
+      "religion": "Hinduism"
+    },
+    "location": {
+      "province": null,
+      "district": "Lalitpur",
+      "municipality": "Patan",
+      "heritage_area": null,
+      "tola": null
+    },
+    "description": "King City Nursing Mala of Barton built the Krishna Temple in Mangal Bazar of Patan in the courtyard of Patton Palace. It was built around 1693 Bikram Sambad. The temple was established as a copy of another Hindu temple of Lord Krishna present in Mathura in India by City Nursing Mala Patan. The temple is entirely built with stone and does not contain wood or bronze for any kind of support. It is also said that the entire temple was built with one stone alone. There is an interesting reason behind placing the idols of Shiva and Krishna in the same temple. Towards the end of the 17th century, there was a boost on the site of the present Krishna Temple. This land was prepared to be built for Shiva's temple. Legend says that Krishna Temple was inspired by a dream. One night, King City Nursing Mala dreamed that the gods Krishna and Radha were standing in front of the palace, so the king ordered a temple built on the same location. According to the legend, an idol of Lord Krishna was found while cutting down a bush. Since the idol of Krishna was found, the land allotted for the Sivalaya was set aside. City Nursing started worshiping the idols of Shiva and Krishna. Religious King City Nursing Mala used to perform havan in the years Nakunda regularly. Even on the day he dreamed, the smoke that came out during the same havan took the shape of the present Krishna Temple. It is believed that the temple was built in the seeker's child on the same basis. Generally, most of the temples in Nepal are built in Pagoda Style, but this is built in Seeker Style, and one can see the influence of Dravidian and Mughal style also. Patan's Krishna Temple is also known as the first temple built in Seeker Style. It took six and a half years to build this temple. This temple is considered to be a very rare type with a total of 21 gujures. The 21 gujures in Krishna Temple also have different meanings. During the regular havan after King City Nursing Mala, 21 urns were installed. The name of the urns was also different; however, the name of the urns is not mentioned in the inscription of the temple. It is believed that 21 gujures were made to represent the urn after the same urn was born in the yajna. This temple is made of stone and has 21 gujures, which is the most in Nepal. During a war with the neighboring kingdom at the cat later, King City Nursing Mala emerged victorious after calling on Krishna to vanquish his enemies. In gratitude, the king built a replica of the temple inside the Sundaricho courtyard. Outside the temple is a statue of the 10 incarnations of Lord Vishnu. There is a statue of the first incarnation in the east corner, and the idols of various incarnations of God Vishnu are placed in the clockwise direction. On the first floor of the temple, one can see the carved image and script depicting the events of Mahabharata, and the second floor has a carving depicting the Ramayana. The first floor has Krishna, the second Shiva in the form of linga, and the third location. Among its three floors, there is a statue of Sri Krishna on the middle floor. There are 10 avatars of Vishnu around the statue of Krishna. This area is listed as a World Heritage Site. In front of this temple, there is a statue of Garuda, the mount of Vishnu, kneeling with outstretched arms on top of a pillar facing the temple, and on the back of the statue of Garuda is Kotihu Manda. Non-Hindus are prohibited from entering the temple. Every year, a huge number of worshipers throng the temple during the festival of Krishna's birthday held in August-September.",
+    "fun_fact": "This temple is known as the first temple built in Seeker Style.",
+    "architecture": {
+      "shape": "Seeker Style",
+      "storeys": 3,
+      "dimensions": null,
+      "construction_materials": ["stone"]
+    },
+    "condition": {
+      "status": null,
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": [
+      {
+        "event": "Construction of Krishna Temple",
+        "date": "1693 Bikram Sambad"
+      },
+      {
+        "event": "King City Nursing Mala's dream of Krishna and Radha",
+        "date": null
+      },
+      {
+        "event": "Installation of 21 urns during regular havan",
+        "date": null
+      },
+      {
+        "event": "Victory in war with neighboring kingdom",
+        "date": null
+      }
+    ]
+  },
+  {
+    "monument_name": "Krishna Temple",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": "Temple",
+      "main_deity": "Krishna",
+      "religion": "Hinduism"
+    },
+    "location": {
+      "province": null,
+      "district": "Lalitpur",
+      "municipality": null,
+      "heritage_area": "Patan Durbar Square",
+      "tola": null
+    },
+    "description": "Krishna Temple is the major temple of Patan which is said to have been built of one single stone. The cravings and design of the temple is one of the highlighting factor and resemblance of finest Newa architecture. The temple was built in 1637 by King Siddhinarasimh Malla.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": null
+    },
+    "condition": {
+      "status": null,
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": null
+  },
+  {
+    "monument_name": "Krishna Temple",
+    "alternative_names": null,
+    "typology": {
+      "monument_type": "Temple",
+      "main_deity": "Krishna",
+      "religion": "Hinduism"
+    },
+    "location": {
+      "province": null,
+      "district": "Lalitpur",
+      "municipality": null,
+      "heritage_area": "Patan Durbar Square",
+      "tola": null
+    },
+    "description": "Krishna Temple is the major temple of Patan which is said to have been built of one single stone. The carvings and design of the temple is one of the highlighting factor and resemblance of finest Newa architecture. The temple was built in 1637 by King Siddhinarasimh Malla.",
+    "fun_fact": null,
+    "architecture": {
+      "shape": null,
+      "storeys": null,
+      "dimensions": null,
+      "construction_materials": ["stone"]
+    },
+    "condition": {
+      "status": null,
+      "threats": null
+    },
+    "cultural_activities": null,
+    "historical_events": null
+  }
+]
