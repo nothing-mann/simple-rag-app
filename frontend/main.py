@@ -18,6 +18,7 @@ from backend.get_pdf_content import PDFContentExtractor
 from backend.get_web_content import WebScraper
 from backend.chat import LiteLLMChat
 from backend.rag_chat import HeritageRAGChat
+from backend.interactive import AudioGenerator
 
 st.set_page_config(
     page_title="Cultural Heritage Information",
@@ -526,26 +527,526 @@ def render_rag_stage():
 def render_interactive_stage():
     st.header("Interactive Learning")
     
+    # Initialize session state variables for interactive learning
+    if "practice_type" not in st.session_state:
+        st.session_state.practice_type = "Dialogue Practice"
+    
+    if "current_scenario" not in st.session_state:
+        st.session_state.current_scenario = None
+    
+    if "user_answers" not in st.session_state:
+        st.session_state.user_answers = []
+    
+    if "feedback" not in st.session_state:
+        st.session_state.feedback = None
+    
+    if "score" not in st.session_state:
+        st.session_state.score = 0
+    
+    if "total_questions" not in st.session_state:
+        st.session_state.total_questions = 0
+    
+    if "current_monument" not in st.session_state:
+        st.session_state.current_monument = None
+    
+    # Practice type selector
     practice_type = st.selectbox(
         "Select Practice Type",
-        ["Dialogue Practice", "Vocabulary Quiz", "Listening Exercise"]
+        ["Dialogue Practice", "Vocabulary Quiz", "Listening Exercise", "Cultural Context"],
+        index=["Dialogue Practice", "Vocabulary Quiz", "Listening Exercise", "Cultural Context"].index(st.session_state.practice_type),
+        key="practice_selector"
     )
+    
+    # Update session state if practice type changes
+    if practice_type != st.session_state.practice_type:
+        st.session_state.practice_type = practice_type
+        st.session_state.current_scenario = None
+        st.session_state.user_answers = []
+        st.session_state.feedback = None
+        st.rerun()
+    
+    # Monument selector for practice context
+    if "monuments_list" not in st.session_state:
+        with st.spinner("Loading monuments data..."):
+            st.session_state.monuments_list = load_monuments()
+    
+    monuments = st.session_state.monuments_list
+    monument_names = ["Random"] + [m["name"] for m in monuments]
+    
+    selected_monument = st.selectbox(
+        "Select Heritage Site Context",
+        monument_names,
+        index=0 if st.session_state.current_monument is None else monument_names.index(st.session_state.current_monument),
+        key="monument_selector"
+    )
+    
+    if selected_monument != "Random" and selected_monument != st.session_state.current_monument:
+        st.session_state.current_monument = selected_monument
+        st.session_state.current_scenario = None
+        st.rerun()
+    
+    # Generate new scenario button
+    col1, col2, col3 = st.columns([1, 1, 1])
+    with col2:
+        if st.button("Generate New Scenario", type="primary", use_container_width=True):
+            with st.spinner("Generating practice scenario..."):
+                generate_practice_scenario()
+                st.rerun()
+    
+    # Display practice area
+    st.markdown("---")
+    
+    # If no scenario exists, show instructions
+    if st.session_state.current_scenario is None:
+        st.info("Click 'Generate New Scenario' to start practicing!")
+        
+        st.markdown("""
+        ### How Interactive Learning Works
+        
+        1. Select a practice type above
+        2. Choose a specific heritage site for context (or leave as 'Random')
+        3. Generate a new scenario to begin practicing
+        4. Complete the exercises to test your knowledge
+        5. Get instant feedback and track your progress
+        
+        This feature uses our RAG system with LLM capabilities to create realistic learning scenarios
+        about Nepali cultural heritage.
+        """)
+    else:
+        # Display the current scenario based on practice type
+        display_practice_scenario()
+    
+    # Display the scoring information
+    if st.session_state.total_questions > 0:
+        st.markdown("---")
+        st.subheader("Learning Progress")
+        
+        col1, col2 = st.columns(2)
+        with col1:
+            st.metric("Score", f"{st.session_state.score}/{st.session_state.total_questions}")
+        with col2:
+            percentage = (st.session_state.score / st.session_state.total_questions) * 100
+            st.metric("Accuracy", f"{percentage:.1f}%")
+
+def generate_practice_scenario():
+    """Generate a new practice scenario based on selected type and monument."""
+    practice_type = st.session_state.practice_type
+    monument = st.session_state.current_monument
+    
+    # Initialize LLM if not already done
+    if 'bedrock_chat' not in st.session_state:
+        st.session_state.bedrock_chat = LiteLLMChat()
+    
+    # Prepare the appropriate prompt based on practice type
+    prompt = create_scenario_prompt(practice_type, monument)
+    
+    # Generate scenario content using LLM
+    try:
+        response = st.session_state.bedrock_chat.generate_response(prompt)
+        
+        # Parse the response into a structured format
+        scenario = parse_scenario_response(response, practice_type)
+        
+        # Store the scenario in session state
+        st.session_state.current_scenario = scenario
+        st.session_state.feedback = None
+        st.session_state.user_answers = []
+        
+    except Exception as e:
+        st.error(f"Error generating scenario: {str(e)}")
+        st.session_state.current_scenario = None
+
+def create_scenario_prompt(practice_type, monument=None):
+    """Create a prompt for the LLM to generate a practice scenario."""
+    base_prompt = "Create an interactive learning exercise about Nepali heritage sites. "
+    
+    if monument and monument != "Random":
+        base_prompt += f"Focus specifically on {monument}. "
+    
+    if practice_type == "Dialogue Practice":
+        prompt = base_prompt + """
+        Create a dialogue practice scenario with the following JSON structure:
+        {
+            "title": "Conversation title",
+            "context": "Brief context about where this conversation is taking place",
+            "dialogue": [
+                {"speaker": "Person 1", "text": "Line 1"},
+                {"speaker": "Person 2", "text": "Line 2"},
+                {"speaker": "Person 1", "text": "Line 3 with a [BLANK] to fill in"}
+            ],
+            "options": ["option 1", "option 2", "option 3", "option 4"],
+            "correct_answer": "The correct option (full text)",
+            "explanation": "Why this is the correct answer"
+        }
+        
+        Include 2-3 blanks in the dialogue where important cultural or historical information should be filled in.
+        Make the options challenging but related to Nepali heritage.
+        """
+        
+    elif practice_type == "Vocabulary Quiz":
+        prompt = base_prompt + """
+        Create a vocabulary quiz about Nepali heritage terms with the following JSON structure:
+        {
+            "title": "Quiz title",
+            "questions": [
+                {
+                    "term": "Nepali heritage term",
+                    "question": "Question about what this term means",
+                    "options": ["option 1", "option 2", "option 3", "option 4"],
+                    "correct_answer": "The correct option (exactly matching one of the options)",
+                    "explanation": "Explanation of the term and its cultural significance"
+                },
+                {... more questions in the same structure...}
+            ]
+        }
+        
+        Include 5 questions about important architectural features, religious terminology, or cultural practices.
+        """
+        
+    elif practice_type == "Listening Exercise":
+        prompt = base_prompt + """
+        Create a listening comprehension exercise about Nepali heritage with the following JSON structure:
+        {
+            "title": "Exercise title",
+            "audio_script": "A 2-3 paragraph narration describing aspects of a Nepali heritage site, as if it was being explained by a tour guide",
+            "questions": [
+                {
+                    "question": "A question about information contained in the audio",
+                    "options": ["option 1", "option 2", "option 3", "option 4"],
+                    "correct_answer": "The correct option (exactly matching one of the options)",
+                    "explanation": "Why this answer is correct based on the audio"
+                },
+                {... 2 more questions in the same structure...}
+            ]
+        }
+        """
+        
+    else:  # Cultural Context
+        prompt = base_prompt + """
+        Create a cultural context exercise about appropriate behavior at Nepali heritage sites with the following JSON structure:
+        {
+            "title": "Cultural context scenario",
+            "scenario": "A detailed description of a situation a visitor might encounter at a heritage site that involves cultural considerations",
+            "question": "What would be the most culturally appropriate action in this situation?",
+            "options": ["option 1", "option 2", "option 3", "option 4"],
+            "correct_answer": "The correct option (exactly matching one of the options)",
+            "explanation": "Explanation of why this is appropriate and the cultural context behind it"
+        }
+        """
+    
+    # Add instruction to format properly as JSON
+    prompt += "\nReturn ONLY the JSON structure, properly formatted for parsing."
+    
+    return prompt
+
+def parse_scenario_response(response, practice_type):
+    """Parse the LLM response into a structured scenario format."""
+    try:
+        # Extract JSON from response (some LLMs might wrap it)
+        json_start = response.find('{')
+        json_end = response.rfind('}') + 1
+        
+        if json_start >= 0 and json_end > 0:
+            json_str = response[json_start:json_end]
+            scenario = json.loads(json_str)
+            return scenario
+        else:
+            # Fallback simple parsing based on practice type
+            lines = response.split('\n')
+            scenario = {"title": "Practice Exercise", "error": "Could not parse proper JSON"}
+            
+            # Add some basic structure based on practice type
+            if practice_type == "Dialogue Practice":
+                scenario["dialogue"] = []
+                scenario["options"] = ["Option A", "Option B", "Option C", "Option D"]
+                scenario["correct_answer"] = "Option A"
+            elif practice_type == "Vocabulary Quiz":
+                scenario["questions"] = [{"term": "Term", "question": "Question", 
+                                         "options": ["A", "B", "C", "D"], 
+                                         "correct_answer": "A"}]
+            
+            return scenario
+    
+    except json.JSONDecodeError:
+        # Return a simple error scenario
+        return {
+            "title": "Error in Scenario Generation",
+            "error": "Could not create a proper scenario. Please try again."
+        }
+
+def display_practice_scenario():
+    """Display the current practice scenario based on type."""
+    scenario = st.session_state.current_scenario
+    practice_type = st.session_state.practice_type
+    
+    # Check for error in scenario
+    if "error" in scenario:
+        st.error(scenario["error"])
+        return
+    
+    # Display based on practice type
+    if practice_type == "Dialogue Practice":
+        display_dialogue_practice(scenario)
+    elif practice_type == "Vocabulary Quiz":
+        display_vocabulary_quiz(scenario)
+    elif practice_type == "Listening Exercise":
+        display_listening_exercise(scenario)
+    else:  # Cultural Context
+        display_cultural_context(scenario)
+
+def display_dialogue_practice(scenario):
+    """Display a dialogue practice scenario."""
+    st.subheader(scenario["title"])
+    st.markdown(f"**Context:** {scenario['context']}")
+    
+    # Display dialogue with blanks
+    st.markdown("### Dialogue")
+    for i, line in enumerate(scenario["dialogue"]):
+        speaker = line["speaker"]
+        text = line["text"]
+        
+        # Check if line contains blanks
+        if "[BLANK]" in text:
+            parts = text.split("[BLANK]")
+            st.markdown(f"**{speaker}:** {parts[0]} _____ {parts[1] if len(parts) > 1 else ''}")
+            
+            # Only show options if no feedback yet
+            if st.session_state.feedback is None:
+                st.session_state.current_question_idx = i
+                options = scenario["options"]
+                selected = st.radio(f"Complete the dialogue:", options, key=f"dialogue_option_{i}")
+                
+                if st.button("Submit Answer", key=f"submit_{i}"):
+                    check_answer(selected, scenario["correct_answer"])
+        else:
+            st.markdown(f"**{speaker}:** {text}")
+    
+    # Display feedback if available
+    if st.session_state.feedback:
+        display_feedback(scenario["explanation"])
+
+def display_vocabulary_quiz(scenario):
+    """Display a vocabulary quiz scenario."""
+    st.subheader(scenario["title"])
+    
+    # For vocabulary quiz, we display one question at a time
+    if "current_question_idx" not in st.session_state or st.session_state.feedback is not None:
+        if len(st.session_state.user_answers) < len(scenario["questions"]):
+            st.session_state.current_question_idx = len(st.session_state.user_answers)
+        else:
+            # Quiz completed
+            st.success("Quiz completed!")
+            
+            # Show summary of results
+            correct = sum(1 for ans in st.session_state.user_answers if ans["correct"])
+            st.markdown(f"### Results: {correct}/{len(scenario['questions'])} correct")
+            
+            for i, (ans, q) in enumerate(zip(st.session_state.user_answers, scenario["questions"])):
+                status = "✓" if ans["correct"] else "✗"
+                st.markdown(f"**Question {i+1}**: {status} {q['term']}")
+                st.markdown(f"*{q['explanation']}*")
+                
+            if st.button("Start New Quiz"):
+                st.session_state.current_scenario = None
+                st.rerun()
+                
+            return
+    
+    # Get current question
+    idx = st.session_state.current_question_idx
+    question = scenario["questions"][idx]
+    
+    # Display question
+    st.markdown(f"### Question {idx+1} of {len(scenario['questions'])}")
+    st.markdown(f"**Term:** {question['term']}")
+    st.markdown(question["question"])
+    
+    # Display options
+    selected = st.radio("Choose the correct answer:", question["options"], key=f"vocab_option_{idx}")
+    
+    # Submit button
+    if st.button("Submit Answer", key=f"submit_vocab_{idx}"):
+        correct = selected == question["correct_answer"]
+        
+        st.session_state.user_answers.append({
+            "question_idx": idx,
+            "selected": selected,
+            "correct": correct
+        })
+        
+        if correct:
+            st.session_state.score += 1
+        
+        st.session_state.total_questions += 1
+        
+        # Display feedback
+        if correct:
+            st.success("Correct! " + question["explanation"])
+        else:
+            st.error(f"Incorrect. The correct answer is: {question['correct_answer']}")
+            st.markdown(question["explanation"])
+            
+        # Move to next question button
+        st.session_state.feedback = {
+            "correct": correct,
+            "explanation": question["explanation"]
+        }
+        
+        if idx < len(scenario["questions"]) - 1:
+            if st.button("Next Question"):
+                st.session_state.feedback = None
+                st.rerun()
+        else:
+            if st.button("See Results"):
+                st.rerun()
+
+def display_listening_exercise(scenario):
+    """Display a listening exercise scenario with audio playback."""
+    st.subheader(scenario["title"])
+    
+    # Initialize audio generator if not already in session state
+    if "audio_generator" not in st.session_state:
+        st.session_state.audio_generator = AudioGenerator(language="en")
+    
+    # Generate audio for this scenario if not already generated
+    if "current_audio" not in st.session_state or st.session_state.current_scenario != st.session_state.last_audio_scenario:
+        try:
+            with st.spinner("Generating audio..."):
+                audio_base64 = st.session_state.audio_generator.generate_audio_base64(scenario["audio_script"])
+                st.session_state.current_audio = audio_base64
+                st.session_state.last_audio_scenario = st.session_state.current_scenario
+        except Exception as e:
+            st.error(f"Error generating audio: {str(e)}")
+            st.session_state.current_audio = None
     
     col1, col2 = st.columns([2, 1])
     
     with col1:
-        st.subheader("Practice Scenario")
-        st.info("Practice scenario will appear here")
+        st.markdown("### Audio Player")
         
-        options = ["Option 1", "Option 2", "Option 3", "Option 4"]
-        selected = st.radio("Choose your answer:", options)
+        # Display audio player if audio is available
+        if st.session_state.current_audio:
+            st.audio(st.session_state.current_audio, format="audio/mp3")
+            st.info("👆 Listen to the audio above to answer the questions on the right.")
+            
+            # Show/hide transcript button
+            if "show_transcript" not in st.session_state:
+                st.session_state.show_transcript = False
+                
+            if st.button("Show/Hide Transcript"):
+                st.session_state.show_transcript = not st.session_state.show_transcript
+                st.rerun()
+                
+            if st.session_state.show_transcript:
+                st.markdown("### Audio Transcript")
+                st.markdown(f"*{scenario['audio_script']}*")
+        else:
+            st.error("Unable to generate audio. Please try refreshing the page.")
+            st.markdown("### Audio Transcript (Fallback)")
+            st.markdown(f"*{scenario['audio_script']}*")
         
     with col2:
-        st.subheader("Audio")
-        st.info("Audio will appear here")
+        st.markdown("### Comprehension Check")
         
-        st.subheader("Feedback")
-        st.info("Feedback will appear here")
+        # For listening exercise, we allow answering questions one by one
+        if "current_listening_q" not in st.session_state:
+            st.session_state.current_listening_q = 0
+            
+        if st.session_state.current_listening_q < len(scenario["questions"]):
+            q = scenario["questions"][st.session_state.current_listening_q]
+            
+            st.markdown(f"**Question {st.session_state.current_listening_q+1} of {len(scenario['questions'])}:**")
+            st.markdown(q["question"])
+            
+            selected = st.radio("Your answer:", q["options"], key=f"listening_{st.session_state.current_listening_q}")
+            
+            if st.button("Check Answer", key=f"check_listening_{st.session_state.current_listening_q}"):
+                correct = selected == q["correct_answer"]
+                
+                if correct:
+                    st.success("Correct!")
+                    st.session_state.score += 1
+                else:
+                    st.error(f"Incorrect. The correct answer was: {q['correct_answer']}")
+                
+                st.markdown(f"*{q['explanation']}*")
+                st.session_state.total_questions += 1
+                
+                if st.session_state.current_listening_q < len(scenario["questions"]) - 1:
+                    if st.button("Next Question", key=f"next_listening_{st.session_state.current_listening_q}"):
+                        st.session_state.current_listening_q += 1
+                        st.rerun()
+                else:
+                    if st.button("See Results"):
+                        st.session_state.current_listening_q = len(scenario["questions"])
+                        st.rerun()
+        else:
+            # All questions answered
+            st.success("Exercise completed!")
+            correct = st.session_state.score - (st.session_state.total_questions - len(scenario["questions"]))
+            st.markdown(f"### Results: {correct}/{len(scenario['questions'])} correct")
+            
+            if st.button("Try Another Exercise"):
+                st.session_state.current_scenario = None
+                st.session_state.current_audio = None
+                st.session_state.current_listening_q = 0
+                st.rerun()
+
+def display_cultural_context(scenario):
+    """Display a cultural context scenario."""
+    st.subheader(scenario["title"])
+    
+    # Display scenario
+    st.markdown("### Scenario")
+    st.markdown(f"{scenario['scenario']}")
+    
+    # Display question
+    st.markdown(f"**{scenario['question']}**")
+    
+    # Display options if no feedback yet
+    if st.session_state.feedback is None:
+        selected = st.radio("Choose the most appropriate response:", scenario["options"], key="cultural_option")
+        
+        if st.button("Submit Answer", key="submit_cultural"):
+            check_answer(selected, scenario["correct_answer"])
+    
+    # Display feedback if available
+    if st.session_state.feedback:
+        display_feedback(scenario["explanation"])
+        
+        # Allow for next scenario
+        if st.button("Try Another Scenario"):
+            st.session_state.current_scenario = None
+            st.rerun()
+
+def check_answer(selected, correct_answer):
+    """Check if the selected answer is correct and update session state."""
+    correct = selected == correct_answer
+    
+    st.session_state.feedback = {
+        "correct": correct,
+        "selected": selected,
+        "correct_answer": correct_answer
+    }
+    
+    # Update score
+    if correct:
+        st.session_state.score += 1
+    st.session_state.total_questions += 1
+    
+    st.rerun()
+
+def display_feedback(explanation):
+    """Display feedback for the current answer."""
+    feedback = st.session_state.feedback
+    
+    if feedback["correct"]:
+        st.success("✓ Correct!")
+    else:
+        st.error(f"✗ Incorrect. The correct answer was: {feedback['correct_answer']}")
+    
+    st.markdown("### Explanation")
+    st.markdown(explanation)
 
 def render_monuments_list():
     """Render a list of all available monuments in the database"""
